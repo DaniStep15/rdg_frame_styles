@@ -28,6 +28,7 @@
   "homepage": "https://github.com/DaniStep15/rdg_frame_styles#readme",
   "devDependencies": {
     "@types/webpack-dev-server": "^4.7.2",
+    "copy-webpack-plugin": "10.0.0",
     "css-loader": "^6.8.1",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.5.3",
@@ -39,5 +40,8 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

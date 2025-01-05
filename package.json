@@ -1,0 +1,43 @@
+{
+  "name": "rdg-mediwho",
+  "version": "1.0.0",
+  "description": "iframe rdg page",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --env mode=production",
+    "start": "npm run build && webpack serve",
+    "prettier": "prettier --write \"src/**/*.{json,scss,js,html}\""
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 200
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniStep15/rdg_frame_styles.git"
+  },
+  "keywords": [],
+  "author": "Danil Stepanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaniStep15/rdg_frame_styles/issues"
+  },
+  "homepage": "https://github.com/DaniStep15/rdg_frame_styles#readme",
+  "devDependencies": {
+    "@types/webpack-dev-server": "^4.7.2",
+    "css-loader": "^6.8.1",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "prettier": "1.19.1",
+    "sass": "1.69.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

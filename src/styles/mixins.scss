@@ -1,0 +1,45 @@
+@mixin flex_row_center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex_column_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin before_after_head($text, $left, $right, $top, $bottom, $color, $size, $weight) {
+    content: $text;
+    display: block;
+    position: absolute;
+    width: max-content;
+    color: $color !important;
+    font-size: #{$size}px !important;
+    font-weight: $weight !important;
+    top: #{$top}px;
+    bottom: #{$bottom}px;
+    left: #{$left}px;
+    right: #{$right}px;
+}
+
+@mixin input_nth_child($text, $width) {
+    width: #{$width}px;
+    height: 39px;
+    box-shadow: 0 2.227px 23.381px rgba(103, 136, 213, 0.25) !important;
+    border-radius: 2rem;
+    background-color: #fff !important;
+    &:before {
+        content: $text;
+        display: block;
+        position: absolute;
+        width: max-content;
+        color: #808080 !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        top: -25px;
+        right: 10px;
+    }
+}

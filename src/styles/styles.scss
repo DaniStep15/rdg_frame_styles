@@ -14,7 +14,7 @@ html {
     overscroll-behavior: none;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,20 +23,16 @@ html {
     height: 100vh;
     background: url('/src/assets/main_bg.png') center/cover no-repeat;
 
-    .popup-wrapper{
+    .popup-wrapper {
         width: 634px;
         height: 638px;
         border-radius: 60px;
-        border: 1px solid #E2E0E0;
-        background: #FFF;
+        border: 1px solid #e2e0e0;
         box-shadow: 0px 4px 43px 0px rgba(166, 163, 157, 0.22);
         position: relative;
-        background: #fff url('/src/assets/ellipse.png') no-repeat;
-        background-position: -35px 555px;
-        .close{
+        background: rgb(100%, 100%, 100%, .5) url('/src/assets/ellipse.png') no-repeat -35px 555px;
+        .close {
             position: absolute;
-            //right: 30px;
-            //top: 30px;
             cursor: pointer;
             width: 44px;
             height: 44px;
@@ -46,13 +42,11 @@ html {
             align-items: center;
             justify-content: center;
             background-color: #fff;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            top: -65px;
+            right: -30px;
+            top: -30px;
             box-shadow: 0px 4px 43px 0px rgba(166, 163, 157, 0.22);
         }
-        #contentframe{
+        #contentframe {
             border: none;
             outline: none;
             width: 100vw;

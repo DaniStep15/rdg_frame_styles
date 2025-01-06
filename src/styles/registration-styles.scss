@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxanium:wght@200..800&family=Rubik+Wet+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tiny5&display=swap');
+@import 'mixins';
+
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  font-family: 'Open Sans', sans-serif !important;
+  font-style: normal !important;
+  line-height: normal !important;
+  overscroll-behavior: none !important;
+  background-color: unset !important;
+  border: unset !important;
+  text-align: unset !important;
+  text-transform: uppercase !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  transition: unset !important;
+  box-shadow: unset !important;
+}
+html {
+}
+body {
+  height: 100%;
+}
+
+.container {
+  @include flex_column_center();
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.container > div:first-of-type {
+  position: relative !important;
+  width: 551px !important;
+  height: 65px !important;
+  background-color: #f9fbfd !important;
+  border-radius: 49px !important;
+  border: 1px solid #e1e1e1 !important;
+  padding: 17px 10px 17px 0 !important;
+  margin-bottom: 20px !important;
+  h4 {
+    color: transparent !important;
+    text-align: center !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    width: 100% !important;
+  }
+  a {
+    position: relative !important;
+    width: 94px !important;
+    height: 28px !important;
+    background-color: #5bd7f2 !important;
+    border-radius: 2rem !important;
+    line-height: 28px !important;
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    translate: 6px 0;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100px !important;
+      height: 32px !important;
+      border-radius: 2rem !important;
+      border: 1px solid #5bd7f2 !important;
+      top: -2px;
+      left: -3px;
+    }
+  }
+  &:before {
+    @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 71, 18, '', #656362, 17, 700);
+  }
+  &:after {
+    @include before_after_head('כדי להתחבר', 61, '', 18, '', #656362, 17, 700);
+  }
+  br {
+    display: none !important;
+  }
+}
+
+.container > .row {
+  .col-md-12 {
+    .panel {
+      @include flex_column_center();
+      .panel-heading {
+        position: relative;
+        color: transparent !important;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        &:before {
+          @include before_after_head('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, '', #ffa800, 20, 600);
+          margin: 0 auto !important;
+        }
+      }
+      .panel-body {
+        @include flex_column_center();
+        //errors
+        .alert {
+          position: absolute;
+          color: red !important;
+        }
+
+        #contactSuccess {
+          position: absolute;
+          text-align: center !important;
+          font-size: 11px !important;
+          bottom: 53px;
+          width: max-content !important;
+          color: #92db14 !important;
+          font-weight: 600 !important;
+          &:after,
+          &:before {
+            content: '';
+          }
+        }
+        #contactError {
+          position: absolute;
+          text-align: center !important;
+          top: 246px;
+          color: red !important;
+        }
+
+        #contactExists {
+          top: 200px;
+        }
+
+        #requestTimeout {
+          top: 175px;
+        }
+        #captchaError {
+          top: 117px;
+        }
+        //alerts
+        #top_info {
+          .page-title {
+            text-align: center !important;
+            color: #656362 !important;
+            font-size: 16px !important;
+            font-weight: 550 !important;
+          }
+          p {
+            position: absolute;
+            width: max-content;
+            left: 0;
+            right: 0;
+            bottom: 200px;
+            color: #28ccde !important;
+            margin: 0 auto !important;
+            font-size: 13px;
+            font-weight: 600;
+          }
+        }
+
+        .contact-form {
+          margin-top: 40px !important;
+          height: 400px !important;
+          p {
+            display: none;
+          }
+          #g-recaptcha {
+            position: absolute;
+            bottom: 35px !important;
+            transform: scale(0.8) !important;
+          }
+          #contact-form {
+            @include flex_row_center();
+            flex-wrap: wrap;
+            width: 470px;
+            gap: 30px 10px;
+            .form-group {
+              @include flex_row_center();
+              label,
+              i {
+                display: none;
+              }
+              .form-control {
+                padding: 0 10px !important;
+              }
+              &:nth-child(1) {
+                @include input_nth_child('שם פרטי', 228);
+              }
+              &:nth-child(2) {
+                @include input_nth_child('שם משפחה', 228);
+              }
+              &:nth-child(3) {
+                @include input_nth_child('כתובת מייל', 468);
+              }
+              &:nth-child(4) {
+                @include input_nth_child('כתובת מייל', 468);
+              }
+            }
+            .btn {
+              position: absolute !important;
+              width: 120px;
+              height: 28px;
+              bottom: 0 !important;
+              color: #fff !important;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 600;
+              background: linear-gradient(180deg, #ffa800 0%, #ff5c00 100%);
+              text-align: center !important;
+              border-radius: 2rem !important;
+              text-space: -1px !important;
+              letter-spacing: -1px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

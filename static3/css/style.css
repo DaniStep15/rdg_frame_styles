@@ -1078,7 +1078,7 @@ tbody {
 
 /* 4 Pages
 ----------------------------------------------------------------------------- */
-/* Blog pages
+/* Blog sub-pages
 ---------------------------------- */
 .blogpost {
     background-color: #fafafa;
@@ -1610,7 +1610,7 @@ tbody {
     }
 }
 
-/* About Us pages
+/* About Us sub-pages
 ---------------------------------- */
 .team-member small {
     display: block;
@@ -1710,7 +1710,7 @@ tbody {
     }
 }
 
-/* Shop pages
+/* Shop sub-pages
 ---------------------------------- */
 .listing-item {
     margin: 0 0 20px 0;
@@ -1840,7 +1840,7 @@ tbody {
     }
 }
 
-/* Cart and Checkout pages
+/* Cart and Checkout sub-pages
 ---------------------------------- */
 .cart.table .price {
     width: 18%;

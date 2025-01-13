@@ -235,3 +235,42 @@
     letter-spacing: -1px !important;
     line-height: 0 !important;
 }
+
+@mixin login_page_title($font-size, $line-height) {
+    color: $color-bright-orange;
+    text-align: center !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 26px !important;
+}
+
+@mixin login_page_alert($font-size, $top) {
+    position: absolute !important;
+    color: $alert-red !important;
+    font-size: $font-size !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    top: $top;
+}
+
+@mixin login_paragraph($font-size) {
+    color: $color-gray-warm !important;
+    text-align: center !important;
+    font-size: $font-size !important;
+    font-weight: 600 !important;
+    line-height: normal !important;
+}
+
+@mixin login_type_title($font-size, $line-height) {
+    color: $slate-gray !important;
+    text-align: center !important;
+    font-size: $font-size !important;
+    font-weight: 700 !important;
+    line-height: $line-height !important; /* 180.475% */
+}
+
+@mixin login_captcha_position($bottom, $scale) {
+    position: absolute;
+    bottom: $bottom !important;
+    transform: scale($scale) !important;
+}

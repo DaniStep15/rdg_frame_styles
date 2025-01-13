@@ -13,11 +13,7 @@ html {
     width: 100% !important;
     height: 100% !important;
     .page-title {
-        color: $color-bright-orange;
-        text-align: center !important;
-        font-size: 20px !important;
-        font-weight: 700 !important;
-        line-height: 26px !important;
+        @include login_page_title(20px, 26px);
     }
     .row {
         .col-md-6 {
@@ -29,19 +25,10 @@ html {
                 .panel-body {
                     @include flex_column_center();
                     p {
-                        color: $color-gray-warm !important;
-                        text-align: center !important;
-                        font-size: 14px !important;
-                        font-weight: 600 !important;
-                        line-height: normal !important;
+                        @include login_paragraph(14px);
                     }
                     .alert {
-                        position: absolute !important;
-                        color: $alert-red !important;
-                        font-size: 11px !important;
-                        font-weight: 600 !important;
-                        text-align: center !important;
-                        top: 98px;
+                        @include login_page_alert(11px, 98px);
                         &#captchaError {
                             top: 226px;
                         }
@@ -62,9 +49,7 @@ html {
                             }
                         }
                         #g-recaptcha {
-                            position: absolute;
-                            bottom: 4px !important;
-                            transform: scale(0.8) !important;
+                            @include login_captcha_position(4px, 0.8);
                         }
                         #btn_sendpid {
                             @include submit_btn(105px, 27px, 12px, -30px);
@@ -76,11 +61,7 @@ html {
                         #btn_loginbyemail {
                             position: absolute !important;
                             bottom: -60px !important;
-                            color: $slate-gray !important;
-                            text-align: center !important;
-                            font-size: 12px !important;
-                            font-weight: 700 !important;
-                            line-height: 21.657px !important; /* 180.475% */
+                            @include login_type_title(12px, 21.657px);
                         }
                     }
                 }

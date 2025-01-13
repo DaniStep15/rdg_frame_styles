@@ -21,6 +21,8 @@ let config = {
     }
 }
 
-module.exports = config['login_page_identity']
+//new HtmlWebpackPlugin({ template: path.resolve(__dirname, './src/index.html'), chunks: ['main'] }),
+
+module.exports = config['registration_page_source']
 
 

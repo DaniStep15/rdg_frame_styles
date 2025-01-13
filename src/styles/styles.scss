@@ -8,10 +8,26 @@ body {
     height: 100svh;
 }
 
+.container-for-mediwho {
+    @include flex_row_center();
+    width: 100%;
+    height: 100%;
+    iframe {
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+}
+
 .container {
     @include flex_row_center();
     width: 100%;
     height: 100%;
+    iframe {
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
     background: url('/src/assets/main_bg.png') center/cover no-repeat;
     .popup-wrapper {
         &.registration_page_source {

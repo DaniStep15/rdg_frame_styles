@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const config = require('./htmlWebpackConfig')
+const main_config = require('./htmlMainLocation')
 
 module.exports = env => {
     return {
@@ -36,7 +37,7 @@ module.exports = env => {
             new CopyWebpackPlugin({
                 patterns: [{ from: 'static3', to: 'static3' }]
             }),
-            new HtmlWebpackPlugin({ template: path.resolve(__dirname, './src/index.html'), chunks: ['main'] }),
+            new HtmlWebpackPlugin(main_config),
             new HtmlWebpackPlugin(config),
             new webpack.ProgressPlugin(),
             new MiniCssExtractPlugin({

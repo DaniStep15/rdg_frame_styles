@@ -12,9 +12,15 @@ let config = {
         chunks: ['iframe'],
         filename: 'rdg-login-page.html',
         pseudo: 'login_page_email'
+    },
+    login_page_identity : {
+        template: './src/sub-pages/rdg-login-page-identity.html',
+        chunks: ['iframe'],
+        filename: 'rdg-login-page-identity.html',
+        pseudo: 'login_page_identity'
     }
 }
 
-module.exports = config['registration_page_source']
+module.exports = config['login_page_identity']
 
 

@@ -1,460 +1,344 @@
 @import 'mixins';
 @import 'vars';
 * {
-  @include start_config_rdg()
+    @include start_config_rdg();
 }
-body, html {
-  height: 100%;
+body,
+html {
+    height: 100%;
 }
 
 .container {
-  @include flex_column_center();
-  width: 100% !important;
-  height: 100% !important;
+    @include flex_column_center();
+    width: 100% !important;
+    height: 100% !important;
 }
 .container > div:first-of-type {
-  position: relative !important;
-  width: 551px !important;
-  height: 65px !important;
-  background-color: #f9fbfd !important;
-  border-radius: 49px !important;
-  border: 1px solid #e1e1e1 !important;
-  padding: 17px 10px 17px 0 !important;
-  margin-bottom: 25px !important;
-  h4 {
-    color: transparent !important;
-    text-align: center !important;
-    font-size: 17px !important;
-    font-weight: 700 !important;
-    width: 100% !important;
-  }
-  a {
     position: relative !important;
-    width: 94px !important;
-    height: 28px !important;
-    background-color: $color-light-cyan !important;
-    border-radius: 2rem !important;
-    line-height: 28px !important;
-    color: $color-white !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    translate: 6px 0;
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100px !important;
-      height: 32px !important;
-      border-radius: 2rem !important;
-      border: 1px solid $color-light-cyan !important;
-      top: -2px;
-      left: -3px;
+    width: 551px !important;
+    height: 65px !important;
+    background-color: #f9fbfd !important;
+    border-radius: 49px !important;
+    border: 1px solid #e1e1e1 !important;
+    padding: 17px 10px 17px 0 !important;
+    margin-bottom: 25px !important;
+    h4 {
+        color: transparent !important;
+        text-align: center !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        width: 100% !important;
     }
-  }
-  &:before {
-    @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 71, 18, '', $color-gray-warm, 17, 700);
-  }
-  &:after {
-    @include before_after_head('כדי להתחבר', 61, '', 18, '', $color-gray-warm, 17, 700);
-  }
-  br {
-    display: none !important;
-  }
+    a {
+      @include header_btn (94px, 28px, 28px, 13px, 6px);
+    }
+    &:before {
+        @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 71, 18, '', $color-gray-warm, 17, 700);
+    }
+    &:after {
+        @include before_after_head('כדי להתחבר', 61, '', 18, '', $color-gray-warm, 17, 700);
+    }
+    br {
+        display: none !important;
+    }
 }
 
 .container > .row {
-  .col-md-12 {
-    .panel {
-      @include flex_column_center();
-      .panel-heading {
-        position: relative;
-        color: transparent !important;
-        font-size: 20px !important;
-        font-weight: bold !important;
-        &:before {
-          @include before_after_head('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, '', $color-bright-orange, 20, bold);
-          margin: 0 auto !important;
-        }
-      }
-      .panel-body {
-        @include flex_column_center();
-        #div_enter_with_email{
-          display: none !important;
-        }
-        .alert {
-          position: absolute;
-          color: #EC1313 !important;
-          font-size: 11px !important;
-          font-weight: 600 !important;
-          text-align: center !important;
-          bottom: -25px;
-        }
-        #contactSuccess {
-          color: #92db14 !important;
-          overflow: hidden !important;
-          width: 130px !important;
-          height: 15px !important;
-          &:after,
-          &:before {
-            content: '';
-          }
-        }
-        #top_info {
-          .page-title {
-            text-align: center !important;
-            color: $color-gray-warm !important;
-            font-size: 16px !important;
-            font-weight: 550 !important;
-          }
-          p {
-            position: absolute;
-            width: max-content;
-            left: 0;
-            right: 0;
-            bottom: 185px;
-            color: #28ccde !important;
-            margin: 0 auto !important;
-            font-size: 13px;
-            font-weight: 600;
-          }
-        }
+    .col-md-12 {
+        .panel {
+            @include flex_column_center();
+            .panel-heading {
+                position: relative;
+                color: transparent !important;
+                font-size: 20px !important;
+                font-weight: bold !important;
+                &:before {
+                    @include before_after_head('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, '', $color-bright-orange, 20, bold);
+                    margin: 0 auto !important;
+                }
+            }
+            .panel-body {
+                @include flex_column_center();
+                #div_enter_with_email {
+                    display: none !important;
+                }
+                .alert {
+                    position: absolute;
+                    color: $alert-red !important;
+                    font-size: 11px !important;
+                    font-weight: 600 !important;
+                    text-align: center !important;
+                    bottom: -25px;
+                }
+                #contactSuccess {
+                    color: $lime-green !important;
+                    overflow: hidden !important;
+                    width: 130px !important;
+                    height: 15px !important;
+                    &:after,
+                    &:before {
+                        content: '';
+                    }
+                }
+                #top_info {
+                    .page-title {
+                        text-align: center !important;
+                        color: $color-gray-warm !important;
+                        font-size: 16px !important;
+                        font-weight: 550 !important;
+                    }
+                    p {
+                        position: absolute;
+                        width: max-content;
+                        left: 0;
+                        right: 0;
+                        bottom: 185px;
+                        color: #28ccde !important;
+                        margin: 0 auto !important;
+                        font-size: 13px;
+                        font-weight: 600;
+                    }
+                }
 
-        .contact-form {
-          margin-top: 45px !important;
-          height: 346px !important;
-          //background-color: rgba(166, 163, 157, 0.22) !important;
-          p {
-            display: none;
-          }
-          #g-recaptcha {
-            position: absolute;
-            bottom: 35px !important;
-            transform: scale(0.8) !important;
-          }
-          #contact-form {
-            @include flex_row_center();
-            flex-wrap: wrap;
-            width: 550px;
-            gap: 40px 30px;
-            //background-color: rgba(166, 163, 157, 0.22) !important;
-            .form-group {
-              @include flex_row_center();
-              label,
-              i {
-                display: none;
-              }
-              .form-control {
-                padding: 0 10px !important;
-              }
-              &:nth-child(1) {
-                @include input_nth_child('שם פרטי', 260, 39, 13, -22, 15);
-              }
-              &:nth-child(2) {
-                @include input_nth_child('שם משפחה', 260, 39, 13, -22, 15);
-              }
-              &:nth-child(3) {
-                @include input_nth_child('כתובת מייל', 260, 39, 13, -22, 15);
-              }
-              &:nth-child(4) {
-                @include input_nth_child('טלפון נייד', 260, 39, 13, -22, 15);
-              }
+                .contact-form {
+                    margin-top: 45px !important;
+                    height: 346px !important;
+                    //background-color: rgba(166, 163, 157, 0.22) !important;
+                    p {
+                        display: none;
+                    }
+                    #g-recaptcha {
+                        position: absolute;
+                        bottom: 35px !important;
+                        transform: scale(0.8) !important;
+                    }
+                    #contact-form {
+                        @include flex_row_center();
+                        flex-wrap: wrap;
+                        width: 550px;
+                        gap: 40px 30px;
+                        //background-color: rgba(166, 163, 157, 0.22) !important;
+                        .form-group {
+                            @include flex_row_center();
+                            label,
+                            i {
+                                display: none;
+                            }
+                            &:nth-child(1) {
+                                @include input_nth_child('שם פרטי', 260, 39, 13, -22, 15);
+                            }
+                            &:nth-child(2) {
+                                @include input_nth_child('שם משפחה', 260, 39, 13, -22, 15);
+                            }
+                            &:nth-child(3) {
+                                @include input_nth_child('כתובת מייל', 260, 39, 13, -22, 15);
+                            }
+                            &:nth-child(4) {
+                                @include input_nth_child('טלפון נייד', 260, 39, 13, -22, 15);
+                            }
+                        }
+                        .btn {
+                            @include submit_btn(120px, 28px, 12px, 0);
+                        }
+                    }
+                }
             }
-            .btn {
-              position: absolute !important;
-              width: 120px;
-              height: 28px;
-              bottom: 0 !important;
-              color: $color-white !important;
-              font-size: 12px;
-              font-style: normal;
-              font-weight: 600;
-              background-color: #F90 !important;
-              text-align: center !important;
-              border-radius: 2rem !important;
-              letter-spacing: -1px !important;
-            }
-          }
         }
-      }
     }
-  }
 }
 // laptop
 @media screen and (max-width: $small-popup) {
-  .container > div:first-of-type {
-    width: 409px !important;
-    height: 48px !important;
-    padding: 11px 2px 11px 0 !important;
-    margin-bottom: 20px !important;
-    h4 {
-      font-size: 14px !important;
-    }
-    a {
-      width: 75px !important;
-      height: 21px !important;
-      line-height: 21px !important;
-      font-size: 10px !important;
-      &:before {
-        width: 80px !important;
-        height: 26px !important;
-        top: -2.5px;
-        left: -2.5px;
-      }
-    }
-    &:before {
-      @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 30, 12, '', $color-gray-warm, 14, 700);
-    }
-    &:after {
-      @include before_after_head('כדי להתחבר', 30, '', 12, '', $color-gray-warm, 14, 700);
-    }
-  }
-  .container > .row {
-    .col-md-12 {
-      .panel {
-        @include flex_column_center();
-        .panel-heading {
-          font-size: 16px !important;
-          &:before {
-            @include before_after_head('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, '', $color-bright-orange, 16, bold);
-          }
+    .container > div:first-of-type {
+        width: 409px !important;
+        height: 48px !important;
+        padding: 11px 2px 11px 0 !important;
+        margin-bottom: 20px !important;
+        h4 {
+            font-size: 14px !important;
         }
-        .panel-body {
-          @include flex_column_center();
-          .alert {
-            font-size: 10px !important;
-            bottom: -20px;
-          }
-          #top_info {
-            .page-title {
-              font-size: 13px !important;
-            }
-            p {
-              bottom: 155px;
-              font-size: 11px;
-            }
-          }
-          .contact-form {
-            margin-top: 40px !important;
-            height: 280px !important;
-            #g-recaptcha {
-              bottom: 20px !important;
-              transform: scale(0.65) !important;
-            }
-            #contact-form {
-              width: 435px;
-              gap: 30px 15px;
-              .form-group {
-                &:nth-child(1) {
-                  @include input_nth_child('שם פרטי', 210, 30, 10, -18, 13);
-                }
-                &:nth-child(2) {
-                  @include input_nth_child('שם משפחה', 210, 30, 10, -18, 13);
-                }
-                &:nth-child(3) {
-                  @include input_nth_child('כתובת מייל', 210, 30, 10, -18, 13);
-                }
-                &:nth-child(4) {
-                  @include input_nth_child('טלפון נייד', 210, 30, 10, -18, 13);
-                }
-              }
-              .btn {
-                width: 103px;
-                height: 25px;
-                font-size: 10px;
-              }
-            }
-          }
+        a {
+          @include header_btn (75px, 21px, 21px, 10px, 6px);
         }
-      }
+        &:before {
+            @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 30, 12, '', $color-gray-warm, 14, 700);
+        }
+        &:after {
+            @include before_after_head('כדי להתחבר', 30, '', 12, '', $color-gray-warm, 14, 700);
+        }
     }
-  }
+    .container > .row {
+        .col-md-12 {
+            .panel {
+                @include flex_column_center();
+                .panel-heading {
+                    font-size: 16px !important;
+                    &:before {
+                        @include before_after_head('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, '', $color-bright-orange, 16, bold);
+                    }
+                }
+                .panel-body {
+                    @include flex_column_center();
+                    .alert {
+                        font-size: 10px !important;
+                        bottom: -20px;
+                    }
+                    #top_info {
+                        .page-title {
+                            font-size: 13px !important;
+                        }
+                        p {
+                            bottom: 155px;
+                            font-size: 11px;
+                        }
+                    }
+                    .contact-form {
+                        margin-top: 40px !important;
+                        height: 280px !important;
+                        #g-recaptcha {
+                            bottom: 20px !important;
+                            transform: scale(0.65) !important;
+                        }
+                        #contact-form {
+                            width: 435px;
+                            gap: 30px 15px;
+                            .form-group {
+                                &:nth-child(1) {
+                                    @include input_nth_child('שם פרטי', 210, 30, 10, -18, 13);
+                                }
+                                &:nth-child(2) {
+                                    @include input_nth_child('שם משפחה', 210, 30, 10, -18, 13);
+                                }
+                                &:nth-child(3) {
+                                    @include input_nth_child('כתובת מייל', 210, 30, 10, -18, 13);
+                                }
+                                &:nth-child(4) {
+                                    @include input_nth_child('טלפון נייד', 210, 30, 10, -18, 13);
+                                }
+                            }
+                            .btn {
+                                @include submit_btn(103px, 25px, 10px, 0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 // mobile
 @media screen and (max-width: $mobile) {
-  .container > div:first-of-type {
-    width: 42svh !important;
-    height: 6svh !important;
-    min-height: 6svh !important;
-    border-radius: 15px !important;
-    padding: unset !important;
-    margin-bottom: 20px !important;
-    @include flex_row_center();
-    h4 {
-      font-size: 0 !important;
-    }
-    a {
-      width: 7svh !important;
-      height: 3svh !important;
-      line-height: 2.9svh !important;
-      font-size: 1.3svh !important;
-      translate: -5.5svh 0 !important;
-      &:before {
-        width: calc(100% + 4px) !important;
-        height: calc(100% + 4px) !important;
-        top: -2px;
-        left: -2px;
-      }
-    }
-    &:before {
-      @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 0, 10, 0, $color-gray-warm, 15, 700);
-      font-size: 2.7vw !important;
-      line-height: 0;
-      top: unset !important;
-      bottom:unset !important;
-      right: 2svh;
-    }
-    &:after {
-      @include before_after_head('כדי להתחבר', 0, '', 10, 0, $color-gray-warm, 15, 700);
-      font-size: 2.7vw !important;
-      line-height: 0;
-      top: unset !important;
-      bottom:unset !important;
-      left: 2svh;
-    }
-  }
-
-  .container > .row {
-    .col-md-12 {
-      .panel {
-        .panel-heading {
-          font-size: 2.4svh !important;
-          width: 28svh !important;
-          text-align: center !important;
-          line-height: 23.565px !important;
-          &:before {
-            @include before_after_head('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, '', $color-bright-orange, 21, bold);
-            width: 27svh !important;
-            text-align: center !important;
-            line-height: 23.565px !important;
-            font-size: 2.4svh !important;
-          }
+    .container > div:first-of-type {
+        width: 42svh !important;
+        height: 6svh !important;
+        min-height: 6svh !important;
+        border-radius: 15px !important;
+        padding: unset !important;
+        margin-bottom: 20px !important;
+        @include flex_row_center();
+        h4 {
+            font-size: 0 !important;
         }
-        .panel-body {
-          @include flex_column_center();
-          .alert {
-            position: absolute;
-            color: #EC1313 !important;
-            font-size: 1.3svh !important;
-            font-weight: 600 !important;
-            text-align: center !important;
-            bottom: -3svh !important;
-          }
-          #contactSuccess {
-            color: #92db14 !important;
-            overflow: hidden !important;
-            width: 130px !important;
-            height: 15px !important;
-            &:after,
-            &:before {
-              content: '';
-            }
-          }
-          #top_info {
-            .page-title {
-              text-align: center !important;
-              color: $color-gray-warm !important;
-              font-size: 1.6svh !important;
-              font-weight: 550 !important;
-            }
-            p {
-              bottom: 27svh !important;
-              font-size: 1.3svh !important;
-            }
-          }
-
-          .contact-form {
-            margin-top: 4svh !important;
-            height: 58svh !important;
-            background-color: rgba(166, 163, 157, 0.22) !important;
-            #g-recaptcha {
-              position: absolute;
-              bottom: 2svh !important;
-              transform: scale(0.7) !important;
-              background-color: rgba(166, 163, 157, 0.22) !important;
-            }
-            #contact-form {
-              @include flex_row_center();
-              flex-wrap: wrap;
-              width: 100%;
-              gap: 3.3svh 0;
-              background-color: rgba(166, 163, 157, 0.22) !important;
-              .form-group {
-                @include flex_row_center();
-                label,
-                i {
-                  display: none;
-                }
-                .form-control {
-                  padding: 0 10px !important;
-                }
-                &:nth-child(1) {
-                  @include input_nth_child('שם פרטי', 260, 34, 12, -19, 11);
-                  width: 80% !important;
-                  height:  4svh !important;
-                  input{
-                    font-size: 1.4svh !important;
-                  }
-                  &:before {
-                    font-size: 1.3svh !important;
-                    top: -2.2svh;
-                  }
-                }
-                &:nth-child(2) {
-                  @include input_nth_child('שם משפחה', 260, 34, 12, -19, 11);
-                  width: 80% !important;
-                  height:  4svh !important;
-                  input{
-                    font-size: 1.4svh !important;
-                  }
-                  &:before {
-                    font-size: 1.3svh !important;
-                    top: -2.2svh;
-                  }
-                }
-                &:nth-child(3) {
-                  @include input_nth_child('כתובת מייל', 260, 34, 12, -19, 11);
-                  width: 80% !important;
-                  height:  4svh !important;
-                  input{
-                    font-size: 1.4svh !important;
-                  }
-                  &:before {
-                    font-size: 1.3svh !important;
-                    top: -2.2svh;
-                  }
-                }
-                &:nth-child(4) {
-                  @include input_nth_child('טלפון נייד', 260, 34, 12, -19, 11);
-                  width: 80% !important;
-                  height:  4svh !important;
-                  input{
-                    font-size: 1.4svh !important;
-                  }
-                  &:before {
-                    font-size: 1.3svh !important;
-                    top: -2.2svh;
-                  }
-                }
-              }
-              .btn {
-                position: absolute !important;
-                width: 20% !important;
-                height: 3svh !important;
-                bottom: 0 !important;
-                color: $color-white !important;
-                font-size: 1.5svh !important;
-                font-style: normal !important;
-                font-weight: 600;
-                background-color: #F90 !important;
-                text-align: center !important;
-                line-height: 0 !important;
-                border-radius: 2rem !important;
-                letter-spacing: -1px !important;
-              }
-            }
-          }
+        a {
+          @include header_btn (7svh, 3svh, 2.9svh, 1.3svh, -5.5svh);
         }
-      }
+        &:before {
+            @include before_after_head_mobile('לקוח קיים? אם כבר נרשמתם', unset, 2svh, unset, unset, $color-gray-warm, 2.7vw, 700, 0px, max-content);
+        }
+        &:after {
+            @include before_after_head_mobile('כדי להתחבר', 2svh, unset, unset, unset, $color-gray-warm, 2.7vw, 700, 0px, max-content);
+        }
     }
-  }
+
+    .container > .row {
+        .col-md-12 {
+            .panel {
+                .panel-heading {
+                    font-size: 2.4svh !important;
+                    width: 28svh !important;
+                    text-align: center !important;
+                    line-height: 23.565px !important;
+                    &:before {
+                        @include before_after_head_mobile('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, unset, $color-bright-orange, 2.4svh, bold, 23.565px, 27svh);
+                    }
+                }
+                .panel-body {
+                    @include flex_column_center();
+                    .alert {
+                        position: absolute;
+                        color: $alert-red !important;
+                        font-size: 1.3svh !important;
+                        font-weight: 600 !important;
+                        text-align: center !important;
+                        bottom: -3svh !important;
+                    }
+                    #contactSuccess {
+                        color: $lime-green !important;
+                        overflow: hidden !important;
+                        width: 130px !important;
+                        height: 15px !important;
+                        &:after,
+                        &:before {
+                            content: '';
+                        }
+                    }
+                    #top_info {
+                        .page-title {
+                            text-align: center !important;
+                            color: $color-gray-warm !important;
+                            font-size: 1.6svh !important;
+                            font-weight: 550 !important;
+                        }
+                        p {
+                            bottom: 27svh !important;
+                            font-size: 1.3svh !important;
+                        }
+                    }
+
+                    .contact-form {
+                        margin-top: 4svh !important;
+                        height: 58svh !important;
+                        background-color: rgba(166, 163, 157, 0.22) !important;
+                        #g-recaptcha {
+                            position: absolute;
+                            bottom: 2svh !important;
+                            transform: scale(0.7) !important;
+                            background-color: rgba(166, 163, 157, 0.22) !important;
+                        }
+                        #contact-form {
+                            @include flex_row_center();
+                            flex-wrap: wrap;
+                            width: 100%;
+                            gap: 3.3svh 0;
+                            background-color: rgba(166, 163, 157, 0.22) !important;
+                            .form-group {
+                                @include flex_row_center();
+                                label,
+                                i {
+                                    display: none;
+                                }
+                                .form-control {
+                                    padding: 0 10px !important;
+                                }
+                                &:nth-child(1) {
+                                    @include input_nth_child_mobile('שם פרטי', 80%, 4svh, 1.3svh, -2.2svh, 1.4svh);
+                                }
+                                &:nth-child(2) {
+                                    @include input_nth_child_mobile('שם משפחה', 80%, 4svh, 1.3svh, -2.2svh, 1.4svh);
+                                }
+                                &:nth-child(3) {
+                                    @include input_nth_child_mobile('כתובת מייל', 80%, 4svh, 1.3svh, -2.2svh, 1.4svh);
+                                }
+                                &:nth-child(4) {
+                                    @include input_nth_child_mobile('טלפון נייד', 80%, 4svh, 1.3svh, -2.2svh, 1.4svh);
+                                }
+                            }
+                            .btn {
+                                @include submit_btn(20%, 3svh, 1.5svh, 0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxanium:wght@200..800&family=Rubik+Wet+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tiny5&display=swap');
-
+@import 'vars';
 @mixin start_config_main {
     margin: 0;
     padding: 0;
@@ -57,17 +57,40 @@
     right: #{$right}px;
 }
 
+@mixin before_after_head_mobile($text, $left, $right, $top, $bottom, $color, $size, $weight, $line-height, $width) {
+    content: $text;
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: $width;
+    color: $color !important;
+    font-size: $size !important;
+    font-weight: $weight !important;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    line-height: $line-height;
+}
+
 @mixin input_nth_child($text, $width, $height, $font-size, $top, $input-font-size) {
     width: #{$width}px;
     height: #{$height}px;
     box-shadow: 0 2.227px 23.381px rgba(103, 136, 213, 0.25) !important;
     border-radius: 2rem;
     background-color: #fff !important;
-    input{
+    input {
         text-transform: lowercase !important;
         font-size: #{$input-font-size}px !important;
         font-weight: 400 !important;
         color: #b7b7b7 !important;
+        padding: 0 15px !important;
+        &::placeholder{
+            text-transform: lowercase !important;
+            font-size: #{$input-font-size}px !important;
+            font-weight: 400 !important;
+            color: #b7b7b7 !important;
+        }
     }
     &:before {
         content: $text;
@@ -80,4 +103,135 @@
         top: #{$top}px;
         right: 10px;
     }
+}
+
+@mixin input_nth_child_mobile($text, $width, $height, $font-size, $top, $input-font-size) {
+    width: $width;
+    height: $height;
+    box-shadow: 0 2.227px 23.381px rgba(103, 136, 213, 0.25) !important;
+    border-radius: 2rem;
+    background-color: #fff !important;
+    input {
+        text-transform: lowercase !important;
+        font-size: $input-font-size !important;
+        font-weight: 400 !important;
+        color: #b7b7b7 !important;
+    }
+    &:before {
+        content: $text;
+        display: block;
+        position: absolute;
+        width: max-content;
+        color: #808080 !important;
+        font-size: $font-size!important;
+        font-weight: 500 !important;
+        top: $top;
+        right: 10px;
+    }
+}
+
+@mixin header_btn ($width, $height, $line-height, $font-size, $translate) {
+    position: relative !important;
+    width: $width !important;  // change
+    height: $height !important;  // change
+    background-color: $color-light-cyan !important;
+    border-radius: 2rem !important;
+    line-height: $line-height !important; // change
+    color: $color-white !important;
+    font-size: $font-size !important; // change
+    font-weight: 600 !important;
+    translate: $translate 0; // change
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: calc(100% + 4px) !important;
+        height: calc(100% + 4px) !important;
+        border-radius: 2rem !important;
+        border: 1px solid $color-light-cyan !important;
+        top: -2px;
+        left: -2px;
+    }
+}
+
+@mixin popup_wrapper ($width, $height, $display, $vertical, $horizontal) {
+    position: relative;
+    @include flex_column_center();
+    width: $width;
+    height: $height;
+    border-radius: 60px;
+    border: 1px solid #e2e0e0;
+    box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
+    background: rgb(100%, 100%, 100%, 0.5) url('/src/assets/ellipse.png') no-repeat $vertical $horizontal;
+    .close {
+        position: absolute;
+        @include flex_row_center();
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: $color-white;
+        right: -30px;
+        top: -30px;
+        box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
+    }
+    .exist_icon{
+        display: $display;
+        position: absolute;
+        top: -112px;
+        left: 55px;
+        right: 0;
+        margin: 0 auto;
+    }
+    #contentframe {
+        border: none;
+        outline: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparent;
+    }
+    .bottom_text {
+        position: absolute;
+        bottom: -75px;
+        @include flex_column_center();
+        .bottom_title {
+            text-align: center;
+            direction: rtl;
+            &.up {
+                color: $color-gray-warm;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                width: 465px;
+            }
+            &.middle {
+                color: $color-bright-orange;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                .number{
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}
+
+@mixin submit_btn($width, $height, $font-size, $bottom) {
+    position: absolute !important;
+    width: $width !important;
+    height: $height !important;
+    bottom: $bottom !important;
+    color: $color-white !important;
+    font-size: $font-size !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    background-color: $bright-orange !important;
+    text-align: center !important;
+    border-radius: 2rem !important;
+    letter-spacing: -1px !important;
+    line-height: 0 !important;
 }

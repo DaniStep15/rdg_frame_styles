@@ -3,7 +3,8 @@
 * {
     @include start_config_main();
 }
-html, body {
+html,
+body {
     height: 100svh;
 }
 
@@ -14,61 +15,11 @@ html, body {
     background: url('/src/assets/main_bg.png') center/cover no-repeat;
     .popup-wrapper {
         &.registration_page_source {
-            position: relative;
-            @include flex_column_center();
-            width: 714px;
-            height: 623px;
-            border-radius: 60px;
-            border: 1px solid #e2e0e0;
-            box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
-            background: rgb(100%, 100%, 100%, 0.5) url('/src/assets/ellipse.png') no-repeat -2px 531px;
-            .close {
-                position: absolute;
-                @include flex_row_center();
-                cursor: pointer;
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                background-color: $color-white;
-                right: -30px;
-                top: -30px;
-                box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
-            }
-            #contentframe {
-                border: none;
-                outline: none;
-                width: 100vw;
-                height: 100vh;
-                background-color: transparent;
-            }
-            .bottom_text {
-                position: absolute;
-                bottom: -90px;
-                @include flex_column_center();
-                .bottom_title {
-                    text-align: center;
-                    direction: rtl;
-                    &.up {
-                        color: $color-gray-warm;
-                        text-align: center;
-                        font-size: 14px;
-                        font-weight: 400;
-                        line-height: 20px;
-                        width: 465px;
-                    }
-                    &.middle {
-                        color: $color-bright-orange;
-                        font-size: 14px;
-                        font-weight: 400;
-                        line-height: 20px;
-                        .number{
-                            font-size: 14px;
-                            font-weight: 400;
-                            line-height: 20px;
-                        }
-                    }
-                }
-            }
+            @include popup_wrapper(714px, 623px, none, -2px, 531px);
+        }
+
+        &.login_page_email, &.login_page_identity {
+            @include popup_wrapper(525px, 435px, block, -95px, 350px);
         }
     }
 }
@@ -99,7 +50,7 @@ html, body {
                         &.middle {
                             font-size: 11px;
                             line-height: 16px;
-                            .number{
+                            .number {
                                 font-size: 10px;
                             }
                         }
@@ -143,7 +94,7 @@ html, body {
                         &.middle {
                             font-size: 1.2svh !important;
                             line-height: 1.6svh;
-                            .number{
+                            .number {
                                 font-size: 1.2svh !important;
                                 line-height: 1.6svh;
                             }

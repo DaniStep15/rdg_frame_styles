@@ -11,4 +11,4 @@ let config = {
     },
 }
 
-module.exports = config['mediwho']
+module.exports = config['index']

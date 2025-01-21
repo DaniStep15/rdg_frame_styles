@@ -23,14 +23,12 @@ html {
     padding: 17px 10px 17px 0 !important;
     margin-bottom: 25px !important;
     h4 {
-        color: transparent !important;
-        text-align: center !important;
-        font-size: 17px !important;
-        font-weight: 700 !important;
         width: 100% !important;
+        text-align: center !important;
+        @include titles_styles(transparent, 17px, normal, 700);
     }
     a {
-      @include header_btn (94px, 28px, 28px, 13px, 6px);
+        @include header_btn(94px, 28px, 28px, 13px, 6px);
     }
     &:before {
         @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 71, 18, '', $color-gray-warm, 17, 700);
@@ -49,9 +47,7 @@ html {
             @include flex_column_center();
             .panel-heading {
                 position: relative;
-                color: transparent !important;
-                font-size: 20px !important;
-                font-weight: bold !important;
+                @include titles_styles(transparent, 20px, normal, bold);
                 &:before {
                     @include before_after_head('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, '', $color-bright-orange, 20, bold);
                     margin: 0 auto !important;
@@ -64,11 +60,9 @@ html {
                 }
                 .alert {
                     position: absolute;
-                    color: $alert-red !important;
-                    font-size: 11px !important;
-                    font-weight: 600 !important;
                     text-align: center !important;
                     bottom: -25px;
+                    @include titles_styles($alert-red, 11px, normal, 600);
                 }
                 #contactSuccess {
                     color: $lime-green !important;
@@ -83,9 +77,7 @@ html {
                 #top_info {
                     .page-title {
                         text-align: center !important;
-                        color: $color-gray-warm !important;
-                        font-size: 16px !important;
-                        font-weight: 550 !important;
+                        @include titles_styles($color-gray-warm, 16px, normal, 550);
                     }
                     p {
                         position: absolute;
@@ -93,10 +85,8 @@ html {
                         left: 0;
                         right: 0;
                         bottom: 185px;
-                        color: #28ccde !important;
                         margin: 0 auto !important;
-                        font-size: 13px;
-                        font-weight: 600;
+                        @include titles_styles(#28ccde, 13px, normal, 600);
                     }
                 }
 
@@ -157,7 +147,7 @@ html {
             font-size: 14px !important;
         }
         a {
-          @include header_btn (75px, 21px, 21px, 10px, 6px);
+            @include header_btn(75px, 21px, 21px, 10px, 6px);
         }
         &:before {
             @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 30, 12, '', $color-gray-warm, 14, 700);
@@ -239,7 +229,7 @@ html {
             font-size: 0 !important;
         }
         a {
-          @include header_btn (7svh, 3svh, 2.9svh, 1.3svh, -5.5svh);
+            @include header_btn(7svh, 3svh, 2.9svh, 1.3svh, -5.5svh);
         }
         &:before {
             @include before_after_head_mobile('לקוח קיים? אם כבר נרשמתם', unset, 2svh, unset, unset, $color-gray-warm, 2.7vw, 700, 0px, max-content);
@@ -265,11 +255,9 @@ html {
                     @include flex_column_center();
                     .alert {
                         position: absolute;
-                        color: $alert-red !important;
-                        font-size: 1.3svh !important;
-                        font-weight: 600 !important;
-                        text-align: center !important;
                         bottom: -3svh !important;
+                        text-align: center !important;
+                        @include titles_styles($alert-red, 1.3svh, normal, 600);
                     }
                     #contactSuccess {
                         color: $lime-green !important;
@@ -284,9 +272,7 @@ html {
                     #top_info {
                         .page-title {
                             text-align: center !important;
-                            color: $color-gray-warm !important;
-                            font-size: 1.6svh !important;
-                            font-weight: 550 !important;
+                            @include titles_styles($color-gray-warm, 1.6svh, normal, 550);
                         }
                         p {
                             bottom: 27svh !important;

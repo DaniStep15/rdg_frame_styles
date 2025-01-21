@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html
+
+    lang="iw"
+    dir="rtl"
+
+>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <![endif]-->
+    <title>שליחת בדיקה בממשק Web</title>
+    <script src="/static3/bootstrap-5-2-3/js/bootstrap.bundle.min.js"></script>
+    <style nonce='b2b0b1a5-3da9-4f8f-81bf-cb52a94419bd'>
+        @import url("https://fonts.googleapis.com/earlyaccess/alefhebrew.css");
+    </style>
+    <link href="/static3/css/web_dcm_upload_frm.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static3/bootstrap-5-2-3/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="/static3/css/app-new-rtl.css">
+
+
+
+    <script nonce='b2b0b1a5-3da9-4f8f-81bf-cb52a94419bd'>
+        var script1Loaded=false;var script2Loaded=false;var script3Loaded=false;
+        var script4Loaded=false;var script5Loaded=false;var script6Loaded=false;
+        var script7Loaded=false;var script8Loaded=false;var script9Loaded=false;
+    </script>
+    <script nonce='b2b0b1a5-3da9-4f8f-81bf-cb52a94419bd'>
+        // request the browser to prevent the computer from sleeping
+        // currently only works on chromium 84+ browsers
+        let isSupported = false;
+
+        if ('wakeLock' in navigator) {
+            isSupported = true;
+            console.log('supported')
+        }
+        else
+        {
+            console.log('not supported')
+        }
+        if (isSupported) {
+            // create a reference for the wake lock
+            let wakeLock = null;
+
+            // create an async function to request a wake lock
+            const requestWakeLock = async () => {
+                try {
+                    wakeLock = await navigator.wakeLock.request('screen');
+                    console.log('wake lock active')
+                } catch (err) {
+                    // if wake lock request fails - usually system related, such as battery
+                    console.log('failed')
+                }
+            }
+            requestWakeLock()
+        }
+    </script>
+    <script src="/static3/js/jquery-3-5-1.min.js" onload="script1Loaded=true;"></script>
+    <!-- place_holder_for_jquery-migrate -->
+    <script src='/static3/js/jszip.min.js' onload="script2Loaded=true;"></script>
+    <script src='/static3/js/FileSaver.js' onload="script3Loaded=true;"></script>
+    <script src="/static3/js/bootbox-6-0-0.min.js" onload="script4Loaded=true;"></script>
+    <script src="/static3/js/bootbox-6-0-0.min.js" onload="script5Loaded=true;"></script>
+    <script src='/static3/js/iframeResizer.contentWindow.min.js' onload="script6Loaded=true;"></script>
+    <script src="/static3/js/crypto-js.min.js" onload="script7Loaded=true;"></script>
+    <script src="/static3/js/lib-typedarrays.min.js" onload="script8Loaded=true;"></script>
+    <script nonce='b2b0b1a5-3da9-4f8f-81bf-cb52a94419bd'>
+        function do_scroll_to_top(){
+            window.scrollTo(0,0);
+        }
+        var page_id=15;
+        var detailsSubmited = false;
+        var dispname="";
+        var cell="";
+        var email="";
+        var details="";
+        var disable_contact_entry = false;
+        var term_press_choose_file = "לחצו על כפתור Choose Study ובחרו את הכונן או התיקיה בה נמצאת הבדיקה";
+        var term_video_on_page = "ניתן להעזר בסירטון הקצר המוצג בעמוד";
+        var term_please_wait = "נא להמתין";
+        var term_dont_close_window = "נא לא לסגור חלון זה עד לסיום הפעולה";
+        var term_locating_image_files = "מאתר את קבצי התמונות";
+        var term_general_progress_status = "מצב התקדמות השליחה הכללי";
+        var term_scanned_so_far = "עד כה נסרקו";
+        var term_files = "קבצים";
+        var term_sending_images = "שולח תמונות";
+        var term_try = "נסיון";
+        var term_dealt_so_far = "עד כה טופלו";
+        var term_out_of = "מתוך";
+        var term_images = "תמונות";
+        var term_sent = "נשלחו";
+        var term_gigabyte = "גיגהבייט";
+        var term_megabyte = "מגהבייט";
+        var term_kilobyte = "קילובייט";
+        var term_unexpected_error = "התרחשה שגיאה לא צפויה. אנא המתן מעט ונסה שנית";
+        var term_no_medical_images = "לא נמצאו קבצי תמונות רפואיות. נא לבדוק שנבחר המיקום הנכון";
+        var term_chosen_folder_empty = "התיקיה שנבחרה ריקה. נא לבדוק שנבחר המיקום הנכון";
+        var term_upload_speed = "מהירות ההעלאה (upload) של חיבור האינטרנט שלך";
+        var term_megabit_per_second = "מגהביט לשניה";
+        var term_kilobit_per_second = "קילוביט לשניה";
+        var term_remaining_time_estimate = "הערכת הזמן הנותר";
+        var term_minutes = "דקות";
+        var term_seconds = "שניות";
+        var term_few_seconds = "שניות בודדות";
+        var term_operation_success = "הפעולה הסתיימה בהצלחה";
+        var term_operation_errors = "התרחשו שגיאות בהעברה. מומלץ לבדוק את חיבור האינטרנט ולשלוח את הבדיקה שוב";
+        var term_files_skipped = "לתשומת ליבך מספר קבצים לא נשלחו מפאת גודלם החריג";
+        var tos_approved = false;
+        var dm_approved = false;
+    </script>
+</head>
+<body class="bg-light">
+<div id="loading">
+    <div id="loading_header">
+        <h3 class="fs-4">טוען, נא להמתין...</h3>
+    </div>
+    <div id="loading_errors">
+        <h3 class="fs-4" id="loading_errors_header">לא ניתן היה לטעון את כל מרכיבי המערכת.</h3>
+        <h2 class="fs-4">יש לבדוק שהגלישה אינה מוגבלת ושהאתר אינו נחסם על ידי תוספות דפדפן כגון חוסם פרסומות.</h2>
+    </div>
+</div>
+<div class="container card border-0 shadow-sm pa-8">
+    <h1 id="page_header" class="fs-3 text-center mb-2 hideable">שליחת בדיקת דימות  ישירות מהמחשב</h1>
+
+    <h3 id="service_header" class="fs-4 text-center mb-2 hideable">הבדיקה נשלחת במסגרת הזמנת שירות: פענוח דרך MediWho</h3>
+
+    <div id="instruct">
+        <h2 class="fs-4 text-center mb-3" id="instruct_inner_heading">הוראות לשליחת הדיסק</h2>
+        <div class="row">
+            <div class="col-xl-10 col-12">
+                <div class="card bg-light border-0 px-6 py-4 mb-4">
+
+                    <div id="instruct_video" class="mb-1">לצפיה בסרטון הסבר לחצו:
+                        <a href="https://www.youtube.com/embed/zg7wWaACLTk?autoplay=1&modestbranding=1&rel=0" target="_blank">
+                            <img id="img_yt_play" src="https://www.pacssee.com/static3/images/youtube_play.jpg"/>
+                        </a>
+                    </div>
+
+                    <div class="stepper mb-4">
+                        <div class="step">
+                            <p class="mb-0">
+                                <span class="step-number mr-3">1</span><span class="step-title">אנא ודאו </span><span id="steady_connection" class="step-title text-lowercase">חיבור יציב לאינטרנט</span>
+                            </p>
+                        </div>
+                        <div class="step">
+                            <p class="mb-0">
+                                <span class="step-number mr-3">2</span><span id="close_to_router" class="step-title">במקרה של חיבור אלחוטי, המחשב ממוקם קרוב לנתב (ראוטר)</span>
+                            </p>
+                        </div>
+                        <div class="step">
+                            <p class="mb-0">
+                                <span class="step-number mr-3">3</span><span id="instruct_inner_p_3" class="step-title">אנא הכניסו כעת את דיסק הבדיקה לכונן הדיסקים ולחצו על המשך</span>
+                            </p>
+                            <div class="step-content fs-7 hideable">
+                                <p class="text-primary text-uppercase fw-semibold mb-0">חשוב!</p>
+                                <p id="instruct_inner_p_1" class="d-inline-block text-grey mb-0">שימו לב: המהירות בה תסתיים הפעולה תלויה בכמות התמונות על הדיסק ובמהירות החיבור שלכם לאינטרנט.</p>
+                                <p id="instruct_inner_p_2" class="d-inline-block text-grey mb-0">במידה ומדובר בבדיקה גדולה ובחיבור איטי, השליחה יכולה להמשך זמן רב. יש להתאזר בסבלנות ולהניח לפעולת השליחה להסתיים.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <p class="mb-0">
+                                <span class="step-number mr-3">4</span><span id="instruct_inner_p_4" class="step-title">במידה והתוכנה המותקנת על הדיסק מופעלת אוטומטית, יש לסגור אותה ולחזור למסך זה</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-2 col-12">
+                <div class="card bg-light border-0 m-1 p-4">
+                    <div class="text-center">
+                        <img src="https://www.pacssee.com/static3/images/cd-load-img.png" alt="Load CD" style="max-width: 100px; max-height: 100px"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cntdiv"> <!-- class = "text-end / text-center -->
+            <input id="btn_cnt" class="btn btn-md btn-primary text-capitalize" type="button" value="המשך"/>
+        </div>
+    </div>
+
+    <div class="row mt-8">
+        <div class="col-lg-8 d-flex flex-column justify-content-center">
+            <div id="tosdiv">
+                <div>
+                    <h4 id="tos_header">יש לאשר את תנאי השירות ולאחר מכן ללחוץ על המשך</h4>
+                    <input id="tos" type="checkbox" class="form-check-input mr-2 align-middle"/>
+                    <label for="tos" class="d-inline fw-semibold">
+                        <span id="tos_clause">הריני לאשר כי קראתי והבנתי את תנאי השימוש ותקנון השירותים באתר, כמו גם את מדיניות הפרטיות, אני מסכים להם ומתחייב לפעול בהתאם להם, ואני מודע לכך שאחריות הרופא היועץ ו/או מפעילי האתר ו/או מי מהם ו/או מטעמם כפופה לתנאים, התקנון והמדיניות המופיעים </span>
+                        <span id="toslnk">
+									<a href="https://www.pacssee.com/general/rdg-imaging/wildframe?frameurl=%2Fsite3%2Fdisplayclienttos" target="_blank">בקישור זה.</a>
+								</span>
+                    </label>
+                </div>
+                <div id="dmdiv">
+                    <input id="dm" type="checkbox" class="form-check-input my-0 ml-0 mr-2 align-middle"/>
+                    <label id="dm_label" for="dm" class="fw-semibold">אני מאשר קבלת דיוור ישיר</label>
+                </div>
+                <input id="btn_tos_cnt" class="btn btn-md btn-primary text-capitalize mt-4" type="button" value="המשך"/>
+            </div>
+            <div>
+                <p id="msg" class="text-body"></p>
+            </div>
+            <div id="choosediv">
+                <label for="choosefile" class="btn btn-md btn-primary mb-4">Choose study</label>
+                <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="10000000" />
+                <input class="d-none" id="choosefile" type="file" value="" webkitdirectory mozdirectory/>
+                <br/>
+                <span id="choosemsg" class="text-danger">נא לבחור את הכונן בו נמצאת הבדיקה בחלונית שנפתחה<br/>
+								ולאחר מכן להמתין לסיום הסריקה</span>
+            </div>
+            <div id="progress"></div>
+            <div id="uploadprogress"></div>
+            <div id="uploadretry"></div>
+            <div>
+                <span id="counter" class="fs-7 fw-bold"></span>
+                <span id="bytes"></span>
+                <br>
+                <span id="time"></span>
+            </div>
+            <div id="restartdiv">
+                <p id="msg_process" class="text-grey">לתשומת לבכם, בהתאם לגודל הבדיקה שנשלחה יכולות לחלוף בין מספר דקות ועד כשעה עד שהבדיקה תיקלט ותופיע במערכת. יש להמתין ואין צורך לשלוח את הבדיקה שוב.</p>
+                <input id = "btn_restart" class="btn btn-md btn-primary" type="button" value="שלח בדיקה נוספת"/>
+
+                <input id="btn_close_tab" class="btn btn-md btn-secondary" type="button" value="סגור חלון" onclick="close_parent();"/>
+
+
+            </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-end">
+            <div id="sidebardiv" class="text-md-end text-start">
+                <a id="sidelink" href="" target="_blank" onclick="return false;" style="cursor:default;">
+                    <img id="sideimg" src="https://www.pacssee.com/static3/images/choose.gif" alt=""/>
+                </a>
+            </div>
+            <div id="sidebardiv_clr"></div>
+        </div>
+    </div>
+    <div  id="contact_entry_disabled">
+        <div id="contactdiv" class="mt-15">
+            <p id="personal_details_header" class="text-uppercase text-grey mb-3">על מנת שניתן יהיה במידת הצורך ליצור עמכם קשר, אנא הזינו הפרטים הבאים:</p>
+            <div class="mb-6">
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input id="dispname" type="text" class="form-control" placeholder="שם מלא" value="יובל פרנס"/>
+                            <label for="dispname">שם מלא</label>
+                            <p id="dispname_fb_outer" class="mb-0"><span id="dispname_fb"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input id="email" type="text" class="form-control" placeholder="כתובת דוא&#34;ל" value="yuvalpa@mediwho.co.il"/>
+                            <label for="email">כתובת דוא&#34;ל</label>
+                            <p id="email_fb_outer" class="mb-0"><span id="email_fb"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input id="cell" type="text" class="form-control" placeholder="טלפון נייד" value="0549305781"/>
+                            <label for="cell">טלפון נייד</label>
+                            <p id="cell_fb_outer" class="mb-0"><span id="cell_fb"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input id="details" type="text" maxlength="500" class="form-control" placeholder="פרטים נוספים"/>
+                            <label for="details">פרטים נוספים</label>
+                            <p id="details_fb_outer" class="mb-0"><span id="details_fb"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input id="contactsubmit" type="button" class="btn btn-md btn-primary" value="שלח">
+        </div>
+        <div id="fb"></div>
+    </div>
+
+
+    <div id="phone_row" class="row hideable">
+        <img id="phone_img" src="https://www.pacssee.com/static3/images/phone.png"/>
+        <h3 id="help_heading"><strong>שאלות? מעדיפים לדבר עם נציג?</strong><br/>לסיוע בשליחת הדיסק התקשרו כעת 079-580-5511 שלוחה 537</h3>
+    </div>
+
+
+</div>
+<!-- loader up -->
+<script src='/static3/js/site/web_dcm_upload_frm.js' onload="script9Loaded=true;"></script>
+<script nonce='b2b0b1a5-3da9-4f8f-81bf-cb52a94419bd'>
+    physkey='ag5lfnJhZC1jb25zdWx0c3IUCxIHQXBwVXNlchiAgKCsyfekCgw';
+    orderkey='ag5lfnJhZC1jb25zdWx0c3ISCxIFT3JkZXIYgICg1oDzpgsM';
+    clientToken = '';
+    lang = 'heb';
+    acst = '1D3RNYPQMco1F_OCOVlv62GvKlQTO_1EyS3iuIVFiTQY1_iLP7YZO1HS4Bgnyyj-hqKlDfisKud_kUxlzVfw7oGmb-GQDMmAIg9uYxaXUGLehMdBMRBjn51K8piH7mGke_Wr47GiguozeeWGX-OwZqx31VXO2sWn-DvmIs7LIWv7ApcDncNP9zRsb_8IIJIXxF0x-27rTgXw5EQy4O3pZRRBkqdSTmQgoc3XWxlw0eU=';
+    originPhysKey = '';
+    pt1 = '';
+    pt2 = '';
+    pt3 = '';
+    hide_loading_div(0); // ** keep before $(document).ready in case jquery is not loaded. **
+
+    function do_validate(ctls){
+        var res = true;
+        var val_dic = {
+            "dispname":/^\D+\s\D+$/,
+            "cell":/^05[0-9]-?[0-9]{7}$/,
+            "email":/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            "details":/^[\s\S]{0,500}$/
+        };
+        var fb_dic = {
+            "dispname":"נא להכניס שם מלא",
+            "cell":"נא להכניס מספר טלפון נייד כולל קידומת",
+            "email":"נא להכניס כתובת אימייל חוקית",
+            "details":""
+        };
+        for (i=0;i<ctls.length;i++){
+            var ctl = ctls[i];
+            var r = val_dic[ctl];
+            var val = $("#"+ctl).val();
+            var valok = r.test(val);
+            if (!valok){
+                $("#"+ctl+":not(.badval)").addClass('badval');
+                $("#"+ctl+"_fb").text(fb_dic[ctl]);
+                res = false;
+            }else{
+                $("#"+ctl).removeClass('badval');
+                $("#"+ctl+"_fb").text("");
+            }
+        }
+        return res;
+    };
+
+    function sanitize(val){
+        return val.replace(/[\^\[\]{}<>;+]/gi, '');
+    }
+
+    //https://www.pacssee.com/static3/images/choose.gif
+
+    $(document).ready(function(){
+
+        $("#dispname,#cell,#email,#details,#contactsubmit").prop("disabled",true);
+        disable_contact_entry = true;
+
+
+        $("#contactsubmit").on('click', function(event) {
+            var ctls=["dispname","cell","email","details"];
+            res = do_validate(ctls);
+            if (res){
+                dispname = sanitize($('#dispname').val());
+                if (dispname) {createCookie("dispname",dispname,30);}
+                cell = sanitize($('#cell').val());
+                if (cell) {createCookie("cell",cell,30);}
+                email = sanitize($('#email').val());
+                if (email) {createCookie("email",email,30);}
+                details = sanitize($('#details').val());
+                $.ajax({
+                    url: "https://www.pacssee.com/site3/saveuploadclientdetails",
+                    type: "POST",
+                    data:{
+                        uploadkey: uploadKey,
+                        dispname: dispname,
+                        cell: cell,
+                        email: email,
+                        details: details,
+                        tosapproved: tos_approved,
+                        dmapproved: dm_approved
+                    },
+                    success: function(result){
+                        switch (result){
+                            case "ok":
+                                $("#fb").text("הפרטים נקלטו, תודה.");
+                                $("#fb").css("color","green");
+                                detailsSubmited = true;
+                                if (done){
+                                    $("#contactdiv").css("display","none");
+                                }else{
+                                    $("#contactdiv").html("<span>נא להמתין לסיום השליחה.</span>");
+                                };
+                                break;
+                            case "nm":
+                                $("#fb").text("קיימת אי התאמה בין הנתונים שהוזנו לנתונים הקיימים כבר במערכת. אנא בדוק את הפרטים שהזנת ונסה שנית. לידיעתך, הבדיקה תישלח בכל מקרה גם ללא הזנת פרטים.");
+                                $("#fb").css("color","red");
+                                break;
+                            default:
+                                $("#fb").text("ארעה תקלה, אנא נסה שנית.");
+                                $("#fb").css("color","red");
+                        };
+                    }
+                });
+            };
+        });
+
+        if (!$('#dispname').val()){$('#dispname').val(readCookie("dispname"))}
+        if (!$('#cell').val()){$('#cell').val(readCookie("cell"))}
+        if (!$('#email').val()){$('#email').val(readCookie("email"))}
+
+        $('#btn_tos_cnt').on('click', function(event) {
+            if($("#tos").is(':checked')){
+                tos_approved = true;
+
+                if($("#dm").is(':checked')){
+                    dm_approved = true;
+                }
+
+                $('#tosdiv').css('display','none');
+                $('#instruct').css('display','block');
+                $("#sideimg").attr("src","");
+
+            }else{
+                try{
+                    parent.do_scroll_to_top();
+                } catch(e){
+                    console.log("cannot scroll parent window");
+                };
+                bootbox.alert("ראשית יש לאשר את תנאי השירות ולאחר מכן ללחוץ על המשך");
+            };
+        });
+
+
+        $('#tosdiv').css('display','none');
+        $('#instruct').css('display','block');
+        $("#sideimg").attr("src","");
+
+
+    });
+
+    function createCookie(name,value,days) {
+        var expires;
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            expires = "; expires="+date.toGMTString();
+        }
+        else expires = "";
+        document.cookie = name+"="+value+expires+"; path=/site3/webdcmuploadpage";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
+        }
+        return "";
+    }
+
+    function hide_loading_div(retries){
+        if (script1Loaded && script2Loaded && script3Loaded && script4Loaded && script5Loaded && script6Loaded && script7Loaded && script8Loaded && script9Loaded){
+            $("#loading").css("display","none");
+            console.log("all scripts loaded.");
+            return;
+        }
+        if(retries==30){
+            document.getElementById("loading_errors").style.display = "block";
+            return;
+        }
+        retries+=1;
+        setTimeout(function(){hide_loading_div(retries);},500);
+    }
+
+    function rpt_ext_sys(result){
+        extWindow = window.opener || window.parent;
+        if (window != extWindow){
+            var obj = {result:result,upload_id:uploadKey};
+            extWindow.postMessage(obj,'*');
+        }
+    }
+</script>
+</body>
+</html>

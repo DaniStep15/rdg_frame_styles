@@ -1,0 +1,164 @@
+body{
+    font-family: "Alef Hebrew",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+#progress p ,#uploadprogress p
+{
+    display: block;
+    color: #000;
+}
+#progress p.success ,#uploadprogress p.success
+{
+    background: #088808 none 0 0 no-repeat;
+}
+#progress p.failure, #uploadprogress p.failure
+{
+    background: #F61515 none 0 0 no-repeat;
+}
+.narrow {
+    margin-bottom: 1px;
+}
+#time {
+    font-size: 120%;
+    font-weight: bold;
+}
+#uploadretry{
+    font-size: 80%;
+    color: red;
+}
+.badval{
+    border: 1px solid red;
+}
+.powered-by{
+    width:85px;
+    margin-bottom:5px;
+}
+@media (max-width: 530px){
+    .powered-by{
+        width: 100%;
+    }
+}
+@media (max-width: 1043px){
+    h1 {
+        font-size:20px;
+    }
+}
+
+#loading{
+    width:100%;height:100vh;position:fixed;background-color:aliceblue;z-index:100;
+}
+#loading_header{
+    padding:20px;width:100%;
+}
+#loading_errors{
+    padding:20px;width:100%;display:none;
+}
+#loading_errors_header{
+    color:red;font-weight:bold;
+}
+#service_header{
+    margin-top:0px;color:#22aadd;
+}
+#powered_by{
+    text-align:left;margin-top:10px;
+}
+#tos_header{
+    font-weight: bold;
+}
+#tos_clause{
+    line-height:1;
+}
+#toslnk{
+    cursor:pointer;color:blue;
+}
+#dm{
+    margin:5px;
+}
+#dm_label{
+    font-weight:bold;line-height:1;
+}
+#instruct{
+    display:none;
+}
+#instruct_video{
+    font-weight:bold;color:#28a6e5;float:left;margin:10px;margin-top:5px;
+}
+#img_yt_play{
+    height:20px;
+}
+#msg{
+    max-width: 300px;
+}
+#choosediv{
+    display:none;
+}
+#choosemsg{
+    display:none;
+}
+#restartdiv{
+    display:none;
+}
+#msg_process{
+    display:none;
+    max-width: 400px;
+}
+#btn_pf{
+    margin:7px;
+}
+#fb{
+    font-size:120%;
+}
+#contact_entry_disabled{
+    display:none;
+}
+#contactdiv{
+    display:none;
+}
+#dispname_fb_outer{
+    padding-right:3px;
+}
+#dispname_fb{
+    color:red;
+}
+#email_fb_outer{
+    padding-right:3px;
+}
+#email_fb{
+    color:red;
+}
+#cell_fb_outer{
+    padding-right:3px;
+}
+#cell_fb{
+    color:red;
+}
+#details_fb_outer{
+    padding-right:3px;
+}
+#details_fb{
+    color:red;
+}
+#contactsubmit_outer{
+    padding-top:3px;
+}
+#sidebardiv{
+    text-align:left;
+}
+#sideimg{
+    max-width:300px;
+}
+#sidebardiv_clr{
+    clear:both;
+}
+#phone_row{
+    background-color:#24aae0;padding:10px;
+}
+#phone_img{
+    width:70px;float:left;
+}
+#help_heading{
+    margin-top: 10px;text-align:center;
+}

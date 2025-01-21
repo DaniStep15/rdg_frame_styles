@@ -23,19 +23,19 @@ body {
     @include flex_row_center();
     width: 100%;
     height: 100%;
-    iframe {
-        border: none;
-        outline: none;
-        background-color: transparent;
-    }
     background: url('/src/assets/main_bg.png') center/cover no-repeat;
     .popup-wrapper {
         &.registration_page_source {
-            @include popup_wrapper(714px, 623px, none, -2px, 531px);
+            @include popup_wrapper(714px, 623px, -2px, 531px);
         }
 
         &.login_page_email, &.login_page_identity {
-            @include popup_wrapper(525px, 435px, block, -95px, 350px);
+            @include popup_wrapper(525px, 435px, -95px, 350px);
+        }
+
+        &.upload_page_first {
+            @include popup_wrapper(834px, 633px, -5px, 550px);
+            background-size: contain !important;
         }
     }
 }

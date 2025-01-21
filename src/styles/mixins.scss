@@ -13,8 +13,8 @@
 }
 
 @mixin start_config_rdg {
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: unset !important;
+    padding: unset !important;
     box-sizing: border-box !important;
     font-family: 'Open Sans', sans-serif !important;
     font-style: normal !important;
@@ -28,6 +28,7 @@
     max-width: unset !important;
     transition: unset !important;
     box-shadow: unset !important;
+    --bs-bg-opacity: unset !important;
 }
 
 @mixin flex_row_center {
@@ -85,7 +86,7 @@
         font-weight: 400 !important;
         color: #b7b7b7 !important;
         padding: 0 15px !important;
-        &::placeholder{
+        &::placeholder {
             text-transform: lowercase !important;
             font-size: #{$input-font-size}px !important;
             font-weight: 400 !important;
@@ -123,17 +124,17 @@
         position: absolute;
         width: max-content;
         color: #808080 !important;
-        font-size: $font-size!important;
+        font-size: $font-size !important;
         font-weight: 500 !important;
         top: $top;
         right: 10px;
     }
 }
 
-@mixin header_btn ($width, $height, $line-height, $font-size, $translate) {
+@mixin header_btn($width, $height, $line-height, $font-size, $translate) {
     position: relative !important;
-    width: $width !important;  // change
-    height: $height !important;  // change
+    width: $width !important; // change
+    height: $height !important; // change
     background-color: $color-light-cyan !important;
     border-radius: 2rem !important;
     line-height: $line-height !important; // change
@@ -154,7 +155,7 @@
     }
 }
 
-@mixin popup_wrapper ($width, $height, $display, $vertical, $horizontal) {
+@mixin popup_wrapper($width, $height, $vertical, $horizontal) {
     position: relative;
     @include flex_column_center();
     width: $width;
@@ -175,13 +176,17 @@
         top: -30px;
         box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
     }
-    .exist_icon{
-        display: $display;
+    .exist_icon {
+        display: none;
         position: absolute;
         top: -112px;
-        left: 55px;
-        right: 0;
         margin: 0 auto;
+        &.login {
+            left: 55px;
+            right: 0;
+        }
+        &.service {
+        }
     }
     #contentframe {
         border: none;
@@ -210,7 +215,7 @@
                 font-size: 14px;
                 font-weight: 400;
                 line-height: 20px;
-                .number{
+                .number {
                     font-size: 14px;
                     font-weight: 400;
                     line-height: 20px;
@@ -273,4 +278,23 @@
     position: absolute;
     bottom: $bottom !important;
     transform: scale($scale) !important;
+}
+
+@mixin steps_before_content($height) {
+    &:before {
+        content: '' !important;
+        position: absolute !important;
+        top: 31px !important;
+        right: 15px !important;
+        width: 1px !important;
+        height: $height !important;
+        border-right: 1px dashed $color-bright-orange !important;
+    }
+}
+
+@mixin titles_styles($color, $font-size, $line-height, $font-weight) {
+    color: $color !important;
+    font-size: $font-size !important;
+    font-weight: $font-weight !important;
+    line-height: $line-height !important;
 }

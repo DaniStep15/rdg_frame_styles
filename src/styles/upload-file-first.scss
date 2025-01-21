@@ -1,0 +1,216 @@
+@import 'mixins';
+@import 'vars';
+* {
+    @include start_config_rdg();
+}
+body,
+html {
+    height: 100%;
+}
+
+.container {
+    @include flex_column_center();
+    width: 100% !important;
+    height: 100% !important;
+    padding: unset !important;
+
+    #phone_row,
+    #service_header {
+        display: none !important;
+    }
+
+    #page_header {
+        margin-bottom: 2px !important;
+        @include titles_styles($color-bright-orange, 20px, normal, 700);
+        //translate: 0 20px !important;
+    }
+
+    #instruct {
+        &:before {
+            content: '';
+            position: absolute !important;
+            top: 31px !important;
+            right: 0 !important;
+            width: 100% !important;
+            height: 1px !important;
+            border-right: 1px dashed $color-bright-orange !important;
+        }
+        @include flex_column_center();
+        //translate: 0 20px !important;
+        #cntdiv {
+            width: 120px !important;
+            height: 32px !important;
+            border-radius: 1rem !important;
+            outline: 1px solid $color-bright-cyan !important;
+            margin: 10px auto 0 auto !important;
+            input {
+                width: 100% !important;
+                height: 100% !important;
+                text-align: center !important;
+                border-radius: 1rem !important;
+                @include titles_styles($color-bright-cyan, 12px, 0, bold);
+            }
+        }
+        #instruct_inner_heading {
+            margin-bottom: 25px !important;
+            @include titles_styles($color-bright-cyan, 15px, normal, 600);
+        }
+        .row {
+            @include flex_column_center();
+            .col-xl-2 {
+                display: none !important;
+            }
+            .col-12 {
+                @include flex_column_center();
+                .card {
+                    @include flex_column_center();
+                    padding: 0 75px 0 0 !important;
+                    margin-bottom: unset !important;
+                    #instruct_video {
+                        align-self: start !important;
+                        margin-bottom: 15px !important;
+                        @include titles_styles($color-bright-cyan, 14px, normal, 700);
+                    }
+                    .stepper {
+                        .step {
+                            .mb-0 {
+                                .step-number {
+                                    text-align: center !important;
+                                    width: 32.247px !important;
+                                    height: 32.247px !important;
+                                    border-radius: 50% !important;
+                                    border: 1px dashed $color-bright-orange !important;
+                                    @include titles_styles($color-bright-orange, 17px, 32px, 600);
+                                }
+                                .step-title {
+                                    @include titles_styles($color-gray-warm, 14px, normal, 600);
+                                }
+                            }
+                            .step-content {
+                                margin-right: 45px !important;
+                                .text-uppercase {
+                                    @include titles_styles($color-bright-orange, 14px, 22px, 700);
+                                }
+                                .d-inline-block {
+                                    @include titles_styles($color-gray-warm, 13px, 22px, 400);
+                                }
+                            }
+                            &:nth-child(1) {
+                                @include steps_before_content(30px);
+                            }
+                            &:nth-child(2) {
+                                @include steps_before_content(30px);
+                            }
+                            &:nth-child(3) {
+                                @include steps_before_content(66px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // upload section
+
+    .row.mt-8 {
+        width: 100% !important;
+        margin-top: 25px !important;
+        @include flex_row_center();
+        .col-lg-8,
+        .col-lg-4 {
+            @include flex_column_center();
+            width: 50% !important;
+            min-width: 50% !important;
+        }
+        .col-lg-8 {
+            div:has(#msg) {
+                #msg {
+                    br {
+                        display: none !important;
+                    }
+                    position: relative !important;
+                    text-align: right !important;
+                    @include titles_styles($color-gray-warm, 14px, 21px, 400);
+                    width: 260px !important;
+                    &:has(br) {
+                        @include titles_styles(transparent, 14px, 21px, 400);
+                        width: 260px !important;
+                        &:before {
+                            content: 'לחצו על כפתור העלאת קובץ ובחרו את הכונן או התיקייה בה נמצאת הבדיקה ניתן להיעזר בסרטון הקצר המוצג בעמוד';
+                            position: absolute !important;
+                            top: 0 !important;
+                            right: 0 !important;
+                            width: 100% !important;
+                            @include titles_styles($color-gray-warm, 14px, 21px, 400);
+                        }
+                    }
+                }
+            }
+
+            #choosediv {
+                position: relative !important;
+                margin-top: 16px !important;
+                width: 260px !important;
+                label {
+                    position: relative !important;
+                    width: 120px !important;
+                    height: 32px !important;
+                    border-radius: 1rem !important;
+                    outline: 1px solid $color-bright-cyan !important;
+                    text-align: center !important;
+                    @include titles_styles(transparent, 12px, 30px, bold);
+                    &:before {
+                        content: 'העלאת קובץ';
+                        width: max-content !important;
+                        position: absolute !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        margin: 0 auto !important;
+                        @include titles_styles($color-bright-cyan, 12px, 30px, bold);
+                        z-index: 1 !important;
+                    }
+                }
+                #choosemsg {
+                    @include titles_styles($color-gray-warm, 14px, 21px, 400);
+                    br {
+                        display: none !important;
+                    }
+                }
+            }
+            #restartdiv {
+                width: 330px !important;
+                #msg_process {
+                    text-align: center !important;
+                    margin-bottom: 15px !important;
+                    @include titles_styles($color-gray-warm, 13px, 20px, 400);
+                }
+                #btn_restart,
+                #btn_close_tab {
+                    position: relative !important;
+                    width: 120px !important;
+                    height: 32px !important;
+                    border-radius: 1rem !important;
+                    text-align: center !important;
+                    outline: 1px solid $color-bright-cyan !important;
+                    @include titles_styles($color-bright-cyan, 12px, 30px, bold);
+                }
+                #btn_restart {
+                    margin: 0 33px 0 20px !important;
+                }
+            }
+        }
+
+        .col-lg-4 {
+            align-items: start !important;
+            #sidebardiv {
+                #sidelink {
+                    #sideimg {
+                        width: 100% !important;
+                        max-width: 358px !important;
+                    }
+                }
+            }
+        }
+    }
+}

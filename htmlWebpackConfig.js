@@ -31,4 +31,4 @@ let config = {
     }
 }
 
-module.exports = config['upload_page_first']
+module.exports = config['registration_page_source']

@@ -7,7 +7,6 @@ body,
 html {
     height: 100%;
 }
-
 .container {
     @include flex_column_center();
     width: 100% !important;
@@ -93,7 +92,6 @@ html {
                 .contact-form {
                     margin-top: 45px !important;
                     height: 346px !important;
-                    //background-color: rgba(166, 163, 157, 0.22) !important;
                     p {
                         display: none;
                     }
@@ -107,7 +105,6 @@ html {
                         flex-wrap: wrap;
                         width: 550px;
                         gap: 40px 30px;
-                        //background-color: rgba(166, 163, 157, 0.22) !important;
                         .form-group {
                             @include flex_row_center();
                             label,
@@ -178,7 +175,7 @@ html {
                         }
                         p {
                             bottom: 155px;
-                            font-size: 11px;
+                            font-size: 11px !important;
                         }
                     }
                     .contact-form {
@@ -215,12 +212,13 @@ html {
         }
     }
 }
+
 // mobile
 @media screen and (max-width: $mobile) {
     .container > div:first-of-type {
-        width: 42svh !important;
-        height: 6svh !important;
-        min-height: 6svh !important;
+        width: 80% !important;
+        height: 5.6svh !important;
+        min-height: 5.6svh !important;
         border-radius: 15px !important;
         padding: unset !important;
         margin-bottom: 20px !important;
@@ -229,13 +227,13 @@ html {
             font-size: 0 !important;
         }
         a {
-            @include header_btn(7svh, 3svh, 2.9svh, 1.3svh, -5.5svh);
+            @include header_btn(8svh, 2svh, 1.9svh, 1.1svh, 0);
         }
         &:before {
-            @include before_after_head_mobile('לקוח קיים? אם כבר נרשמתם', unset, 2svh, unset, unset, $color-gray-warm, 2.7vw, 700, 0px, max-content);
+            @include before_after_head_mobile('לקוח קיים? אם כבר נרשמתם', unset, 8%, unset, unset, $color-gray-warm, 2.7vw, 700, 2svh, 33.1vw);
         }
         &:after {
-            @include before_after_head_mobile('כדי להתחבר', 2svh, unset, unset, unset, $color-gray-warm, 2.7vw, 700, 0px, max-content);
+            @include before_after_head_mobile('כדי להתחבר', 8%, unset, unset, unset, $color-gray-warm, 2.7vw, 700, 2svh, 14.3vw);
         }
     }
 
@@ -262,7 +260,7 @@ html {
                     #contactSuccess {
                         color: $lime-green !important;
                         overflow: hidden !important;
-                        width: 130px !important;
+                        width: 17svh !important;
                         height: 15px !important;
                         &:after,
                         &:before {
@@ -275,7 +273,7 @@ html {
                             @include titles_styles($color-gray-warm, 1.6svh, normal, 550);
                         }
                         p {
-                            bottom: 27svh !important;
+                            bottom: calc(58svh - 45%) !important;
                             font-size: 1.3svh !important;
                         }
                     }
@@ -283,19 +281,16 @@ html {
                     .contact-form {
                         margin-top: 4svh !important;
                         height: 58svh !important;
-                        background-color: rgba(166, 163, 157, 0.22) !important;
                         #g-recaptcha {
                             position: absolute;
                             bottom: 2svh !important;
                             transform: scale(0.7) !important;
-                            background-color: rgba(166, 163, 157, 0.22) !important;
                         }
                         #contact-form {
                             @include flex_row_center();
                             flex-wrap: wrap;
                             width: 100%;
                             gap: 3.3svh 0;
-                            background-color: rgba(166, 163, 157, 0.22) !important;
                             .form-group {
                                 @include flex_row_center();
                                 label,
@@ -306,16 +301,16 @@ html {
                                     padding: 0 10px !important;
                                 }
                                 &:nth-child(1) {
-                                    @include input_nth_child_mobile('שם פרטי', 80%, 4svh, 1.3svh, -2.2svh, 1.4svh);
+                                    @include input_nth_child_mobile('שם פרטי', 80%, 4.4svh, 1.4svh, -2.4svh, 1.4svh);
                                 }
                                 &:nth-child(2) {
-                                    @include input_nth_child_mobile('שם משפחה', 80%, 4svh, 1.3svh, -2.2svh, 1.4svh);
+                                    @include input_nth_child_mobile('שם משפחה', 80%, 4.4svh, 1.4svh, -2.4svh, 1.4svh);
                                 }
                                 &:nth-child(3) {
-                                    @include input_nth_child_mobile('כתובת מייל', 80%, 4svh, 1.3svh, -2.2svh, 1.4svh);
+                                    @include input_nth_child_mobile('כתובת מייל', 80%, 4.4svh, 1.4svh, -2.4svh, 1.4svh);
                                 }
                                 &:nth-child(4) {
-                                    @include input_nth_child_mobile('טלפון נייד', 80%, 4svh, 1.3svh, -2.2svh, 1.4svh);
+                                    @include input_nth_child_mobile('טלפון נייד', 80%, 4.4svh, 1.4svh, -2.4svh, 1.4svh);
                                 }
                             }
                             .btn {

@@ -124,6 +124,7 @@ html {
             min-width: 50% !important;
         }
         .col-lg-8 {
+            background-color: $color-bright-orange !important;
             div:has(#msg) {
                 #msg {
                     br {
@@ -179,11 +180,13 @@ html {
                 }
             }
             #restartdiv {
-                width: 330px !important;
+                align-self: center !important;
+                width: 260px !important;
                 #msg_process {
                     text-align: center !important;
                     margin-bottom: 15px !important;
                     @include titles_styles($color-gray-warm, 13px, 20px, 400);
+                    //width: 330px !important;
                 }
                 #btn_restart,
                 #btn_close_tab {

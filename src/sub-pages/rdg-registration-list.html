@@ -1,192 +1,188 @@
 <!DOCTYPE html>
 <html lang="heb">
-<head>
-    <meta charset="utf-8" />
-    <title>הרשמה</title>
-    <meta name="description" content="טופס הרשמה" />
-    <meta name="author" content="htmlcoder.me" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="images/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
-    <link href="/static3/bootstrap-3-4-1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/static3/css/fonts/font-awesome.css" rel="stylesheet" />
-    <link href="/static3/css/fonts/fontello.css" rel="stylesheet" />
-    <link href="/static3/css/style.css" rel="stylesheet" />
-    <link href="/static3/css/skins/light_blue.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/static3/bootstrap-3-4-1/css/bootstrap-rtl.min.css" />
-    <script src="/static3/js/jquery-3-5-1.min.js"></script>
-    <script src="/static3/bootstrap-3-4-1/js/bootstrap.min.js"></script>
-    <script src="/static3/js/modernizr.js"></script>
-    <script src="/static3/js/jquery.validate.js"></script>
-    <script type="text/javascript" src="/static3/js/iframeResizer.contentWindow.min.js"></script>
-    <script>
-        var valid_email_address = 'אנא הכנס כתובת מייל אמיתית.'
-        var enter_fname = 'אנא הכנס שם פרטי'
-        var fname_conditions = 'אורך השם הנדרש הוא לפחות שתי אותיות'
-        var lname = 'אנא הכנס שם משפחה'
-        var lname_conditions = 'אורך השם הנדרש הוא לפחות שתי אותיות'
-        var phone_num = 'אנא הכנס מספר טלפון נייד ובדוק נכונותו'
-        var phone_num_conditions = 'מספר הטלפון צריך להיות בן 10 ספרות, כולל קידומת וללא מקפים'
-        var cell_regex = /^[0-9]{10}$/
-    </script>
-    <script type="text/javascript" src="/static3/js/site/client_register.js"></script>
-    <style nonce="28720dcd-6717-440d-b2a4-084621aec35c">
-        body {
-            background-color: rgb(255, 255, 255);
-        }
-        .panel-body {
-            background-color: rgb(255, 255, 255);
-        }
-        .form-control {
-            background-color: rgb(233, 238, 238);
-        }
-    </style>
-    <script nonce="28720dcd-6717-440d-b2a4-084621aec35c">
-        var is_client = true
-    </script>
+    <head>
+        <meta charset="utf-8" />
+        <title>הרשמה</title>
+        <meta name="description" content="טופס הרשמה" />
+        <meta name="author" content="htmlcoder.me" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+        <link href="/static3/bootstrap-3-4-1/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/static3/css/fonts/font-awesome.css" rel="stylesheet" />
+        <link href="/static3/css/fonts/fontello.css" rel="stylesheet" />
+        <link href="/static3/css/style.css" rel="stylesheet" />
+        <link href="/static3/css/skins/light_blue.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/static3/bootstrap-3-4-1/css/bootstrap-rtl.min.css" />
+        <script src="/static3/js/jquery-3-5-1.min.js"></script>
+        <script src="/static3/bootstrap-3-4-1/js/bootstrap.min.js"></script>
+        <script src="/static3/js/modernizr.js"></script>
+        <script src="/static3/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="/static3/js/iframeResizer.contentWindow.min.js"></script>
+        <script>
+            var valid_email_address = 'אנא הכנס כתובת מייל אמיתית.'
+            var enter_fname = 'אנא הכנס שם פרטי'
+            var fname_conditions = 'אורך השם הנדרש הוא לפחות שתי אותיות'
+            var lname = 'אנא הכנס שם משפחה'
+            var lname_conditions = 'אורך השם הנדרש הוא לפחות שתי אותיות'
+            var phone_num = 'אנא הכנס מספר טלפון נייד ובדוק נכונותו'
+            var phone_num_conditions = 'מספר הטלפון צריך להיות בן 10 ספרות, כולל קידומת וללא מקפים'
+            var cell_regex = /^[0-9]{10}$/
+        </script>
+        <script type="text/javascript" src="/static3/js/site/client_register.js"></script>
+        <style nonce="28720dcd-6717-440d-b2a4-084621aec35c">
+            body {
+                background-color: rgb(255, 255, 255);
+            }
+            .panel-body {
+                background-color: rgb(255, 255, 255);
+            }
+            .form-control {
+                background-color: rgb(233, 238, 238);
+            }
+        </style>
+        <script nonce="28720dcd-6717-440d-b2a4-084621aec35c">
+            var is_client = true
+        </script>
 
-    <!-- Google Tag Manager -->
-    <script nonce="28720dcd-6717-440d-b2a4-084621aec35c">
-        ;(function(w, d, s, l, i) {
-            w[l] = w[l] || []
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : ''
-            j.async = true
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-            f.parentNode.insertBefore(j, f)
-        })(window, document, 'script', 'dataLayer', 'GTM-PGFB3PZQ')
-    </script>
-    <!-- End Google Tag Manager -->
+        <!-- Google Tag Manager -->
+        <script nonce="28720dcd-6717-440d-b2a4-084621aec35c">
+            ;(function(w, d, s, l, i) {
+                w[l] = w[l] || []
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : ''
+                j.async = true
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+                f.parentNode.insertBefore(j, f)
+            })(window, document, 'script', 'dataLayer', 'GTM-PGFB3PZQ')
+        </script>
+        <!-- End Google Tag Manager -->
 
-    <script nonce="28720dcd-6717-440d-b2a4-084621aec35c">
-        var page_id = 30
-    </script>
-    <style nonce="28720dcd-6717-440d-b2a4-084621aec35c">
-        @import url('https://fonts.googleapis.com/earlyaccess/alefhebrew.css');
-        body {
-            font-family: 'Alef Hebrew', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-        .panel-primary > .panel-heading {
-            color: #fff;
-            background-color: #a7aaaa;
-            border-color: #cdd1d1;
-        }
-        .panel-primary {
-            border-color: #a7aaaa;
-        }
-    </style>
-</head>
-<body>
-<div class="container" style="text-align: right;" dir="rtl">
-    <div style="border: 1px solid gray; background-color: #eee; border-radius: 5px; padding-right: 10px; margin-top: 5px; margin-bottom: 5px;">
-        <h4 style="color:#797979; font-size:170%; margin:5px;">
-            לקוח קיים?<br />
-            אם כבר נרשמתם
-            <a
-                class="btn btn-info btn-sm"
-                style="font-weight:bold; font-size:88%; border-radius:9px; padding-top:1px;"
-                href="/site3/clientlogin?phys=ag5lfnJhZC1jb25zdWx0c3IUCxIHQXBwVXNlchiAgKCsyfekCgw&reqservid=ag5lfnJhZC1jb25zdWx0c3IYCxILV29ya1NlcnZpY2UYgICgxuD2rQsM"
-                style="color:blue; text-decoration: underline; font-weight: bold;"
-            >
-                לחצו כאן
-            </a>
-            כדי להכנס.
-        </h4>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading" style="font-size:170%; font-weight: bold;">לקוח חדש - ברוכים הבאים! אנא הזינו את פרטיכם</div>
-                <div class="panel-body">
-                    <div id="top_info">
-                        <h2 class="page-title" style="margin:0;">פתיחת תיק דימות אישי - זה קל ופשוט!</h2>
+        <script nonce="28720dcd-6717-440d-b2a4-084621aec35c">
+            var page_id = 30
+        </script>
+        <style nonce="28720dcd-6717-440d-b2a4-084621aec35c">
+            @import url('https://fonts.googleapis.com/earlyaccess/alefhebrew.css');
+            body {
+                font-family: 'Alef Hebrew', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+            .panel-primary > .panel-heading {
+                color: #fff;
+                background-color: #a7aaaa;
+                border-color: #cdd1d1;
+            }
+            .panel-primary {
+                border-color: #a7aaaa;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" style="text-align: right;" dir="rtl">
+            <div style="border: 1px solid gray; background-color: #eee; border-radius: 5px; padding-right: 10px; margin-top: 5px; margin-bottom: 5px;">
+                <h4 style="color:#797979; font-size:170%; margin:5px;">
+                    לקוח קיים?<br />
+                    אם כבר נרשמתם
+                    <a
+                        class="btn btn-info btn-sm"
+                        style="font-weight:bold; font-size:88%; border-radius:9px; padding-top:1px;"
+                        href="/site3/clientlogin?phys=ag5lfnJhZC1jb25zdWx0c3IUCxIHQXBwVXNlchiAgKCsyfekCgw&reqservid=ag5lfnJhZC1jb25zdWx0c3IYCxILV29ya1NlcnZpY2UYgICgxuD2rQsM"
+                        style="color:blue; text-decoration: underline; font-weight: bold;"
+                    >
+                        לחצו כאן
+                    </a>
+                    כדי להכנס.
+                </h4>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" style="font-size:170%; font-weight: bold;">לקוח חדש - ברוכים הבאים! אנא הזינו את פרטיכם</div>
+                        <div class="panel-body">
+                            <div id="top_info">
+                                <h2 class="page-title" style="margin:0;">פתיחת תיק דימות אישי - זה קל ופשוט!</h2>
 
-                        <p style="color: red;">כתובת המייל והטלפון הנייד ישמשו להעברת הודעות אליך. אנא ודא/י שהם נכונים !</p>
-                    </div>
-                    <!--                            errors-->
-                    <div class="alert alert-success hidden" id="contactSuccess">
-                        <strong>החשבון שלך נוצר בהצלחה!</strong> אנא בדוק את תיבת המייל שלך ועקוב אחר ההוראות בהודעה שנשלחה אליך על מנת להפעיל את חשבונך.
-                    </div>
-                    <div class="alert alert-error hidden" id="contactError"><strong>ארעה תקלה!</strong> אנא נסה שנית מאוחר יותר.</div>
-                    <div class="alert alert-error hidden" id="contactExists"><strong>חשבון זה כבר קיים.</strong> אנא נסה להכנס לחשבונך באתר עם כתובת האימייל:</div>
-                    <div class="hidden" id="div_enter_with_email">
-                        <input type="button" class="btn btn-info" id="btn_already_exists" value="נא ללחוץ כאן לכניסה עם כתובת האימייל" />
-                    </div>
-                    <div class="alert alert-error hidden" id="requestTimeout"><strong>חלף זמן ארוך מדי.</strong> אנא נסו שנית.</div>
-                    <div class="alert alert-error hidden" id="captchaError">
-                        <strong>נא לסמן שאינך רובוט.</strong>
-                    </div>
-                    <!--                            errors-->
-                    <div class="contact-form">
-                        <form id="contact-form" role="form">
-                            <div class="form-group has-feedback">
-                                <label for="fname">שם פרטי*</label>
-                                <input type="text" class="form-control" id="fname" name="fname" placeholder="" />
-                                <i class="fa fa-user form-control-feedback"></i>
+                                <p style="color: red;">כתובת המייל והטלפון הנייד ישמשו להעברת הודעות אליך. אנא ודא/י שהם נכונים !</p>
                             </div>
-                            <div class="form-group has-feedback">
-                                <label for="lname">שם משפחה*</label>
-                                <input type="text" class="form-control" id="lname" name="lname" placeholder="" />
-                                <i class="fa fa-user form-control-feedback"></i>
+                            <!--                            errors-->
+                            <div class="alert alert-success " id="contactSuccess">
+                                <strong>החשבון שלך נוצר בהצלחה!</strong> אנא בדוק את תיבת המייל שלך ועקוב אחר ההוראות בהודעה שנשלחה אליך על מנת להפעיל את חשבונך.
                             </div>
-                            <div class="form-group has-feedback">
-                                <label for="email">Email*</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="" />
-                                <i class="fa fa-envelope form-control-feedback"></i>
+                            <div class="alert alert-error hidden" id="contactError"><strong>ארעה תקלה!</strong> אנא נסה שנית מאוחר יותר.</div>
+                            <div class="alert alert-error hidden" id="contactExists"><strong>חשבון זה כבר קיים.</strong> אנא נסה להכנס לחשבונך באתר עם כתובת האימייל:</div>
+                            <div class="hidden" id="div_enter_with_email">
+                                <input type="button" class="btn btn-info" id="btn_already_exists" value="נא ללחוץ כאן לכניסה עם כתובת האימייל" />
                             </div>
-                            <div class="form-group has-feedback">
-                                <label for="cell">טלפון נייד*</label>
-                                <input type="cell" class="form-control" id="cell" name="cell" placeholder="" />
-                                <i class="fa fa-mobile form-control-feedback"></i>
+                            <div class="alert alert-error hidden" id="requestTimeout"><strong>חלף זמן ארוך מדי.</strong> אנא נסו שנית.</div>
+                            <div class="alert alert-error hidden" id="captchaError">
+                                <strong>נא לסמן שאינך רובוט.</strong>
                             </div>
-                            <input id="token" type="hidden" value="X6SvwfNDFTefcvYlY32DM9m57Z32b2GNBBoUZ4s2Hzs=" />
-                            <input id="physkey" type="hidden" value="ag5lfnJhZC1jb25zdWx0c3IUCxIHQXBwVXNlchiAgKCsyfekCgw" />
-                            <input id="reqservid" type="hidden" value="ag5lfnJhZC1jb25zdWx0c3IYCxILV29ya1NlcnZpY2UYgICgxuD2rQsM" />
-                            <input id="ask" type="hidden" value="" />
-                            <div id="g-recaptcha"></div>
-                            <input type="submit" value="ש ל ח  !" class="btn btn-default" />
-                        </form>
-                        <p style="font-weight: bold;">הפרטים האישיים של לקוחותנו נשמרים במסד נתונים מאובטח ומוצפן.<br />לעולם לא נעביר או נמסור את פרטיך האישיים לצד שלישי כלשהוא.</p>
+                            <!--                            errors-->
+                            <div class="contact-form">
+                                <form id="contact-form" role="form">
+                                    <div class="form-group has-feedback">
+                                        <label for="fname">שם פרטי*</label>
+                                        <input type="text" class="form-control" id="fname" name="fname" placeholder="" />
+                                        <i class="fa fa-user form-control-feedback"></i>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="lname">שם משפחה*</label>
+                                        <input type="text" class="form-control" id="lname" name="lname" placeholder="" />
+                                        <i class="fa fa-user form-control-feedback"></i>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="email">Email*</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="" />
+                                        <i class="fa fa-envelope form-control-feedback"></i>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label for="cell">טלפון נייד*</label>
+                                        <input type="cell" class="form-control" id="cell" name="cell" placeholder="" />
+                                        <i class="fa fa-mobile form-control-feedback"></i>
+                                    </div>
+                                    <input id="token" type="hidden" value="X6SvwfNDFTefcvYlY32DM9m57Z32b2GNBBoUZ4s2Hzs=" />
+                                    <input id="physkey" type="hidden" value="ag5lfnJhZC1jb25zdWx0c3IUCxIHQXBwVXNlchiAgKCsyfekCgw" />
+                                    <input id="reqservid" type="hidden" value="ag5lfnJhZC1jb25zdWx0c3IYCxILV29ya1NlcnZpY2UYgICgxuD2rQsM" />
+                                    <input id="ask" type="hidden" value="" />
+                                    <div id="g-recaptcha"></div>
+                                    <input type="submit" value="ש ל ח  !" class="btn btn-default" />
+                                </form>
+                                <p style="font-weight: bold;">הפרטים האישיים של לקוחותנו נשמרים במסד נתונים מאובטח ומוצפן.<br />לעולם לא נעביר או נמסור את פרטיך האישיים לצד שלישי כלשהוא.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<script>
-    function shift_recaptcha() {
-        // shift the recaptcha challenge on small screens (Note: works only if not renderred inside an iframe)
-        var viewportWidth = $(window).width()
-        if (viewportWidth < 500) {
-            var $element = $('.g-recaptcha-bubble-arrow')
-            if ($element.length > 0) {
-                if ($element.css('display') !== 'none' && $element.css('visibility') !== 'hidden' && $element.css('opacity') > 0) {
-                    if ($element.parent().css('left') !== '0px') {
-                        $element.parent().css('left', '0px')
-                        $element[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
+        <script>
+            function shift_recaptcha() {
+                // shift the recaptcha challenge on small screens (Note: works only if not renderred inside an iframe)
+                var viewportWidth = $(window).width()
+                if (viewportWidth < 500) {
+                    var $element = $('.g-recaptcha-bubble-arrow')
+                    if ($element.length > 0) {
+                        if ($element.css('display') !== 'none' && $element.css('visibility') !== 'hidden' && $element.css('opacity') > 0) {
+                            if ($element.parent().css('left') !== '0px') {
+                                $element.parent().css('left', '0px')
+                                $element[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
+                            }
+                        }
                     }
                 }
+                setTimeout(function() {
+                    shift_recaptcha()
+                }, 1000)
             }
-        }
-        setTimeout(function() {
-            shift_recaptcha()
-        }, 1000)
-    }
-    var RConloadCallback = function() {
-        grecaptcha.render('g-recaptcha', {
-            sitekey: '6LdMOzYUAAAAACqXRQA4N6b5SaRe1IkQLqddBH_l',
-            size: 'compact'
-        })
-        shift_recaptcha()
-    }
-</script>
-<script src="https://www.google.com/recaptcha/api.js?onload=RConloadCallback&hl=iw" async defer></script>
-</body>
+            var RConloadCallback = function() {
+                grecaptcha.render('g-recaptcha', {
+                    sitekey: '6LdMOzYUAAAAACqXRQA4N6b5SaRe1IkQLqddBH_l',
+                    size: 'compact'
+                })
+                shift_recaptcha()
+            }
+        </script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=RConloadCallback&hl=iw" async defer></script>
+    </body>
 </html>
-
-
-
-

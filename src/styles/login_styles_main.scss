@@ -12,9 +12,10 @@ html {
     width: 100% !important;
     height: 100% !important;
     .page-title {
-        @include login_page_title(20px, 26px);
+        @include titles_styles($color-bright-orange, 20px, normal, 700);
     }
     .row {
+        @include flex_column_center();
         .col-md-6 {
             .panel {
                 height: 250px !important;
@@ -39,7 +40,7 @@ html {
                             @include login_captcha_position(4px, 0.8);
                         }
                         p {
-                            @include login_paragraph(14px);
+                            @include titles_styles($color-gray-warm, 14px, normal, 500);
                         }
                         .form-group {
                             margin-top: 39px !important;
@@ -59,8 +60,7 @@ html {
                     #step2 {
                         @include flex_column_center();
                         p {
-                            @include login_paragraph(14px);
-                            font-weight: 500 !important;
+                            @include titles_styles($color-gray-warm, 17px, normal, 500);
                             span {
                                 color: $color-light-cyan !important;
                                 font-weight: 500 !important;
@@ -91,6 +91,112 @@ html {
                         }
                         #btn_loginbyid {
                             @include login_type_title(12px, 21.657px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $small-screens) {
+    .container {
+        @include flex_column_center();
+        justify-content: start !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: $bg-test-white !important; // test
+        padding-top: 32svh !important;
+
+        .page-title {
+            @include titles_styles($color-bright-orange, 3svh, normal, 700);
+        }
+        .row {
+            .col-md-6 {
+                .panel {
+                    height: 250px !important;
+                    .panel-heading {
+                        display: none !important;
+                    }
+                    .panel-body {
+                        @include flex_column_center();
+                        margin-top: 2px !important;
+                        .alert {
+                            @include login_page_alert(11px, 98px);
+                            &#captchaError {
+                                top: 226px;
+                            }
+                        }
+                        div {
+                            @include flex_column_center();
+                        }
+                        #step1 {
+                            @include flex_column_center();
+                            #g-recaptcha {
+                                @include login_captcha_position(4px, 0.7);
+                            }
+                            p {
+                                @include titles_styles($color-gray-warm, 2svh, normal, 600);
+                            }
+                            .form-group {
+                                margin-top: 39px !important;
+                                @include input_nth_child_mobile('אימייל', 80vw, 4.8svh, 1.5svh, -2.8svh, 1.8svh);
+                                i,
+                                label {
+                                    display: none !important;
+                                }
+                                .form-control {
+                                    padding: 0 10px !important;
+                                }
+                            }
+                            #btn_send_email {
+                                @include submit_btn(20vw, 3svh, 1.5svh, -12%);
+                            }
+                        }
+                        #step2 {
+                            position: relative !important;
+                            @include flex_column_center();
+                            p {
+                                text-align: center !important;
+                                @include titles_styles($color-gray-warm, 1.6svh, normal, 600);
+                                font-weight: 500 !important;
+                                span {
+                                    color: $color-light-cyan !important;
+                                    font-weight: 500 !important;
+                                    display: block !important;
+                                    margin: 3px 0 0 0 !important;
+                                }
+                                strong > span {
+                                    color: $color-gray-warm !important;
+                                    text-transform: lowercase !important;
+                                    font-weight: 500 !important;
+                                    margin: unset !important;
+                                    display: inline !important;
+                                }
+                            }
+                            .form-group {
+                                position: relative !important;
+                                margin-top: 5rem !important;
+                                @include input_nth_child_mobile('קוד', 80vw, 4.8svh, 1.5svh, -2.8svh, 1.8svh);
+                                label {
+                                    display: none !important;
+                                }
+                            }
+                            #btn_send_otp {
+                                position: relative;
+                                @include submit_btn(20vw, 3svh, 1.5svh, 3%);
+                                top: calc(97%) !important;
+                            }
+                        }
+                        #other_btns {
+                            position: absolute !important;
+                            bottom: -23% !important;
+                            #btn_loginbystudy {
+                                display: none !important;
+                            }
+                            #btn_loginbyid {
+                                @include login_type_title(1.4svh, 21.657px);
+                            }
                         }
                     }
                 }

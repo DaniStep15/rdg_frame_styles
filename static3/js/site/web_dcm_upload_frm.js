@@ -104,7 +104,6 @@ $(a10_0x2230b8(0x245))['on'](a10_0x2230b8(0x233), function() {
         }
     }),
     $(a10_0x2230b8(0x202))['on']('change', function(_0x364ca9) {
-        console.log('change')
         var _0x422964 = a10_0x2230b8
 
         return compress_files()
@@ -113,13 +112,16 @@ $(a10_0x2230b8(0x245))['on'](a10_0x2230b8(0x233), function() {
         } catch (_0x1f71c7) {
             console['log'](_0x422964(0x223))
         }
+
         $('#choosediv')[_0x422964(0x271)](_0x422964(0x1fc), _0x422964(0x1e7)),
             displayProcessingGif(),
             show_msg(term_please_wait + _0x422964(0x25a) + term_dont_close_window + '!', '#116566', ![]),
             initProgress(term_locating_image_files)
+
         var _0x51daae = _0x364ca9[_0x422964(0x1f4)][_0x422964(0x267)] || _0x364ca9['dataTransfer'][_0x422964(0x267)],
             _0x1a5551 = _0x51daae[_0x422964(0x22d)]
-        if (_0x1a5551)
+
+        if (_0x1a5551) {
             for (var _0x230502 = 0x0, _0xa2c7c9; (_0xa2c7c9 = _0x51daae[_0x230502]); _0x230502++) {
                 var _0x10e0c7 = new FileReader()
                 _0x10e0c7[_0x422964(0x215)] = (function(_0x2bf2da) {
@@ -128,10 +130,14 @@ $(a10_0x2230b8(0x245))['on'](a10_0x2230b8(0x233), function() {
                             _0x3f53a7 = _0xdb33ca['target'][_0x33fd96(0x1ff)]
                         _0x3f53a7 == 'DICM' && (dcmFiles[_0x33fd96(0x1eb)](_0x2bf2da), (totalJobBytes += _0x2bf2da[_0x33fd96(0x1e9)]))
                         ;(fileCounter += 0x1), updateProgress(fileCounter, _0x1a5551)
+
                         if (_0x230502 == fileCounter) {
                             if (dcmFiles[_0x33fd96(0x22d)] !== 0x0) {
                                 ;(str1 = term_dealt_so_far + '\x20'), (str2 = '\x20' + term_images), initProgress(term_general_progress_status), (startTime = new Date()[_0x33fd96(0x23a)]())
                                 var _0x545e73 = get_upload_key()
+                                _0x545e73 = true
+                                console.log(_0x545e73, 'here, else')
+
                                 _0x545e73
                                     ? ($(_0x33fd96(0x211))[_0x33fd96(0x271)](_0x33fd96(0x1fc), _0x33fd96(0x255)), compress_files())
                                     : (show_msg(term_unexpected_error + '.', _0x33fd96(0x212), !![]),
@@ -140,25 +146,28 @@ $(a10_0x2230b8(0x245))['on'](a10_0x2230b8(0x233), function() {
                                       $(_0x33fd96(0x1f1))[_0x33fd96(0x271)](_0x33fd96(0x1fc), 'none'),
                                       $(_0x33fd96(0x224))[_0x33fd96(0x25e)](_0x33fd96(0x260), _0x33fd96(0x1f6)),
                                       init_vars())
-                            } else
+                            } else {
                                 show_msg(term_no_medical_images + '.', 'red', !![]),
                                     $(_0x33fd96(0x20b))[_0x33fd96(0x271)]('display', 'block'),
                                     $(_0x33fd96(0x26a))[_0x33fd96(0x270)](''),
                                     $('#choosemsg')[_0x33fd96(0x271)](_0x33fd96(0x1fc), _0x33fd96(0x1e7)),
                                     $(_0x33fd96(0x224))[_0x33fd96(0x25e)](_0x33fd96(0x260), _0x33fd96(0x1fd)),
                                     init_vars()
+                            }
                         }
                     }
                 })(_0xa2c7c9)
                 var _0x169a85 = _0xa2c7c9[_0x422964(0x1ef)](0x80, 0x84)
                 _0x10e0c7[_0x422964(0x273)](_0x169a85)
             }
-        else
+        } else {
+            console.log('here, else')
             show_msg(term_chosen_folder_empty + '.', 'red', !![]),
                 $(_0x422964(0x20b))[_0x422964(0x271)]('display', 'block'),
                 $(_0x422964(0x26a))[_0x422964(0x270)](''),
                 $(_0x422964(0x1f1))['css'](_0x422964(0x1fc), _0x422964(0x1e7)),
                 init_vars()
+        }
     })
 function compress_files() {
     console.log('here compress_files')
@@ -421,6 +430,16 @@ function linkSpeed(_0x525088, _0xcadb22) {
 function get_upload_key() {
     var _0x46a09e = a10_0x2230b8,
         _0x51dd8b
+
+    clientToken = 'R2tLJsIWnvU_hieV-CxtU65AQ0pmnslyyVRqcuI4I9urignKIMGGqQqmXlIrebk3PWBZw__CCWxKYWrSYCQdwVn6H0WlczoLFlRQlzVDqiQ='
+
+    console.log(physkey)
+    console.log(orderkey)
+    console.log(clientToken)
+    console.log(pt1)
+    console.log(pt2)
+    console.log(pt3)
+
     return (
         $[_0x46a09e(0x258)]({
             url: _0x46a09e(0x1e8) + physkey + _0x46a09e(0x240) + orderkey + '&ct=' + clientToken + _0x46a09e(0x24a) + pt1 + '&pt2=' + pt2 + _0x46a09e(0x235) + pt3,

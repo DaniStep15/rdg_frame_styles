@@ -13,9 +13,10 @@ html {
     width: 100% !important;
     height: 100% !important;
     .page-title {
-        @include login_page_title(20px, 26px);
+        @include titles_styles($color-bright-orange, 20px, normal, 700);
     }
     .row {
+        @include flex_column_center();
         .col-md-6 {
             .panel {
                 height: 250px !important;
@@ -25,7 +26,7 @@ html {
                 .panel-body {
                     @include flex_column_center();
                     p {
-                        @include login_paragraph(14px);
+                        @include titles_styles($color-gray-warm, 14px, normal, 600);
                     }
                     .alert {
                         @include login_page_alert(11px, 98px);
@@ -76,6 +77,78 @@ html {
                         }
                         #btn_sendcode {
                             @include submit_btn(105px, 27px, 12px, -30px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .container {
+        justify-content: start !important;
+        padding-top: 32svh !important;
+        .page-title {
+            @include titles_styles($color-bright-orange, 3svh, normal, 700);
+        }
+        .row {
+            .col-md-6 {
+                .panel {
+                    .panel-body {
+                        p {
+                            @include titles_styles($color-gray-warm, 1.8svh, normal, 600);
+                        }
+                        .alert {
+                            @include login_page_alert(11px, 98px);
+                            &#captchaError {
+                                top: 226px;
+                            }
+                            &#notFoundError {
+                                width: max-content !important;
+                                overflow: hidden !important;
+                                height: 17px !important;
+                            }
+                        }
+                        .contact-form {
+                            @include flex_column_center();
+                            .form-group {
+                                margin-top: 39px !important;
+                                @include input_nth_child_mobile('מספר זהות', 80vw, 4.8svh, 1.5svh, -2.8svh, 1.8svh);
+                                i,
+                                label {
+                                    display: none !important;
+                                }
+                            }
+                            #g-recaptcha {
+                                @include login_captcha_position(4px, 0.6);
+                            }
+                            #btn_sendpid {
+                                @include submit_btn(20vw, 3svh, 1.5svh, -12%);
+                            }
+
+                            #btn_loginbystudy {
+                                display: none !important;
+                            }
+                            #btn_loginbyemail {
+                                position: absolute !important;
+                                bottom: -60px !important;
+                                @include login_type_title(1.4svh, 21.657px);
+                            }
+                        }
+                    }
+                }
+                #step2 {
+                    .panel-body {
+                        .contact-form {
+                            @include flex_column_center();
+                            .form-group {
+                                margin-top: 39px !important;
+                                @include input_nth_child_mobile('קוד', 80vw, 4.8svh, 1.5svh, -2.8svh, 1.8svh);
+                            }
+                            #btn_sendcode {
+                                @include submit_btn(20vw, 3svh, 1.5svh, -12%);
+                            }
                         }
                     }
                 }

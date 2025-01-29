@@ -63,7 +63,7 @@
     display: block;
     position: absolute;
     text-align: center;
-    width: $width;
+    width: $width !important;
     color: $color !important;
     font-size: $size !important;
     font-weight: $weight !important;
@@ -75,8 +75,8 @@
 }
 
 @mixin input_nth_child($text, $width, $height, $font-size, $top, $input-font-size) {
-    width: #{$width}px;
-    height: #{$height}px;
+    width: #{$width}px !important;
+    height: #{$height}px !important;
     box-shadow: 0 2.227px 23.381px rgba(103, 136, 213, 0.25) !important;
     border-radius: 2rem;
     background-color: #fff !important;
@@ -110,7 +110,7 @@
     width: $width !important;
     height: $height !important;
     box-shadow: 0 2.227px 23.381px rgba(103, 136, 213, 0.25) !important;
-    border-radius: 2rem !important;
+    border-radius: 4rem !important;
     background-color: #fff !important;
     input {
         text-transform: lowercase !important;
@@ -149,8 +149,7 @@
     font-weight: 600 !important;
     translate: $translate 0; // change
     @media screen and (max-width: $mobile) {
-        translate: $translate 0; // change
-        margin: 0 33.1vw 0 14.3vw !important;
+        //margin: 0 33.1vw 0 14.3vw !important;
     }
     &:before {
         content: '';
@@ -227,14 +226,14 @@
                 text-align: center;
                 font-size: $t-f-s;
                 font-weight: 400;
-                line-height: $t-l-h; // $t-l-h
+                line-height: $t-l-h;
                 width: $t-c-w;
             }
             &.middle {
                 color: $color-bright-orange;
                 font-size: $t-f-s;
                 font-weight: 400;
-                line-height: $t-l-h; // $t-l-h
+                line-height: $t-l-h;
                 .number {
                     font-size: $t-f-s;
                     font-weight: 400;
@@ -243,35 +242,6 @@
             }
         }
     }
-
-    //.bottom_text {
-    //    position: absolute;
-    //    bottom: -75px;
-    //    @include flex_column_center();
-    //    .bottom_title {
-    //        text-align: center;
-    //        direction: rtl;
-    //        &.up {
-    //            color: $color-gray-warm;
-    //            text-align: center;
-    //            font-size: 14px;
-    //            font-weight: 400;
-    //            line-height: 20px;
-    //            width: 465px;
-    //        }
-    //        &.middle {
-    //            color: $color-bright-orange;
-    //            font-size: 14px;
-    //            font-weight: 400;
-    //            line-height: 20px;
-    //            .number {
-    //                font-size: 14px;
-    //                font-weight: 400;
-    //                line-height: 20px;
-    //            }
-    //        }
-    //    }
-    //}
 }
 
 @mixin submit_btn($width, $height, $font-size, $bottom) {
@@ -290,14 +260,6 @@
     line-height: 0 !important;
 }
 
-//@mixin login_page_title($font-size, $line-height) {
-//    color: $color-bright-orange;
-//    text-align: center !important;
-//    font-size: 20px !important;
-//    font-weight: 700 !important;
-//    line-height: 26px !important;
-//}
-
 @mixin login_page_alert($font-size, $top) {
     position: absolute !important;
     color: $alert-red !important;
@@ -306,13 +268,6 @@
     text-align: center !important;
     top: $top;
 }
-
-//@mixin login_paragraph($font-size) {
-//    color: $color-gray-warm !important;
-//    font-size: $font-size !important;
-//    font-weight: 600 !important;
-//    line-height: normal !important;
-//}
 
 @mixin login_type_title($font-size, $line-height) {
     color: $slate-gray !important;
@@ -345,4 +300,7 @@
     font-size: $font-size !important;
     font-weight: $font-weight !important;
     line-height: $line-height !important;
+}
+
+@mixin popup_wrapper_mobile() {
 }

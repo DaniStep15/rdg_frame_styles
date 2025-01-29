@@ -7,24 +7,50 @@ body,
 html {
     height: 100%;
 }
-
+#loading {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    #loading_header {
+        @include flex_column_center();
+        text-align: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        .fs-4 {
+            @include titles_styles($color-gray-warm, 20px, normal, 700);
+        }
+    }
+    #loading_errors {
+        @include flex_column_center();
+        width: 100% !important;
+        height: 100% !important;
+        h3 {
+            @include titles_styles($alert-red, 20px, normal, 700);
+        }
+        h2 {
+            @include titles_styles($color-gray-warm, 16px, normal, 700);
+        }
+    }
+}
 .container {
     @include flex_column_center();
     width: 100% !important;
     height: 100% !important;
     padding: unset !important;
-
     #phone_row,
     #service_header {
         display: none !important;
     }
-
     #page_header {
-        margin-bottom: 2px !important;
         @include titles_styles($color-bright-orange, 20px, normal, 700);
-        //translate: 0 20px !important;
+        position: absolute;
+        top: 110px;
+        @media screen and (max-width: $small-popup-upload) {
+            top: 70px;
+        }
     }
-
     #instruct {
         &:before {
             content: '';
@@ -36,7 +62,6 @@ html {
             border-right: 1px dashed $color-bright-orange !important;
         }
         @include flex_column_center();
-        //translate: 0 20px !important;
         #cntdiv {
             width: 120px !important;
             height: 32px !important;
@@ -54,6 +79,13 @@ html {
         #instruct_inner_heading {
             margin-bottom: 25px !important;
             @include titles_styles($color-bright-cyan, 15px, normal, 600);
+            height: 50px !important;
+            padding-top: 30px !important;
+            @media screen and (max-width: $small-popup-upload) {
+                height: 80px !important;
+                padding-top: 60px !important;
+                margin-bottom: 10px !important;
+            }
         }
         .row {
             @include flex_column_center();
@@ -112,11 +144,10 @@ html {
     }
 
     // upload section
-
     .row.mt-8 {
-        width: 100% !important;
-        margin-top: 25px !important;
         @include flex_row_center();
+        width: 100% !important;
+        position: absolute !important;
         .col-lg-8,
         .col-lg-4 {
             @include flex_column_center();
@@ -124,7 +155,6 @@ html {
             min-width: 50% !important;
         }
         .col-lg-8 {
-            background-color: $color-bright-orange !important;
             div:has(#msg) {
                 #msg {
                     br {
@@ -132,7 +162,7 @@ html {
                     }
                     position: relative !important;
                     text-align: right !important;
-                    @include titles_styles($color-gray-warm, 14px, 21px, 400);
+                    @include titles_styles($lime-green, 18px, 21px, 700);
                     width: 260px !important;
                     &:has(br) {
                         @include titles_styles(transparent, 14px, 21px, 400);
@@ -145,7 +175,18 @@ html {
                             width: 100% !important;
                             @include titles_styles($color-gray-warm, 14px, 21px, 400);
                         }
+                        &:after {
+                            content: 'העלאת קובץ';
+                            position: absolute !important;
+                            top: 0 !important;
+                            right: 5.46rem !important;
+                            width: 100% !important;
+                            @include titles_styles($color-bright-cyan, 14px, 21px, 400);
+                        }
                     }
+                }
+                #msg[style*='color: red'] {
+                    @include titles_styles($alert-red, 18px, 21px, 700);
                 }
             }
 
@@ -179,14 +220,27 @@ html {
                     }
                 }
             }
+            #progress,
+            #uploadprogress,
+            #uploadretry,
+            #counter,
+            #bytes,
+            #time {
+                display: none !important;
+                height: 0 !important;
+                width: 0 !important;
+                overflow: hidden !important;
+            }
             #restartdiv {
                 align-self: center !important;
                 width: 260px !important;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 #msg_process {
                     text-align: center !important;
                     margin-bottom: 15px !important;
                     @include titles_styles($color-gray-warm, 13px, 20px, 400);
-                    //width: 330px !important;
                 }
                 #btn_restart,
                 #btn_close_tab {
@@ -199,18 +253,213 @@ html {
                     @include titles_styles($color-bright-cyan, 12px, 30px, bold);
                 }
                 #btn_restart {
-                    margin: 0 33px 0 20px !important;
+                    margin: 0 0 0 10px !important;
                 }
             }
         }
-
         .col-lg-4 {
-            align-items: start !important;
+            align-items: center !important;
             #sidebardiv {
                 #sidelink {
                     #sideimg {
                         width: 100% !important;
-                        max-width: 358px !important;
+                        max-width: 300px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mobile
+@media screen and (max-width: $mobile) {
+    #loading {
+        #loading_header {
+            .fs-4 {
+                @include titles_styles($color-gray-warm, 2.4svh, normal, 700);
+            }
+        }
+        #loading_errors {
+            h3 {
+                @include titles_styles($alert-red, 2.4svh, normal, 700);
+            }
+            h2 {
+                @include titles_styles($color-gray-warm, 1.8svh, normal, 700);
+                text-align: center !important;
+            }
+        }
+    }
+
+    .container {
+        #page_header {
+            @include titles_styles($color-bright-orange, 2.4svh, normal, 700);
+            top: 35vh !important;
+        }
+        #instruct {
+            //# changed
+            #cntdiv {
+                @include flex_column_center();
+                width: 15vw !important;
+                height: 3svh !important;
+                margin: 0 auto 0 auto !important;
+                input {
+                    @include titles_styles($color-bright-cyan, 1.5svh, 0, bold);
+                }
+            }
+            //# changed
+            #instruct_inner_heading {
+                margin-bottom: 25px !important;
+                @include titles_styles($color-bright-cyan, 2svh, normal, 600);
+                height: 33svh !important;
+                padding-top: 30svh !important;
+            }
+            .row {
+                .col-12 {
+                    .card {
+                        padding: 0 1vw 0 0 !important;
+                        #instruct_video {
+                            @include titles_styles($color-bright-cyan, 1.5svh, normal, 700);
+                        }
+                        .stepper {
+                            .step {
+                                min-height: 5svh !important;
+                                .mb-0 {
+                                    @include flex_row_center();
+                                    justify-content: start;
+                                    .step-number {
+                                        width: 3svh !important;
+                                        height: 3svh !important;
+                                        @include titles_styles($color-bright-orange, 2svh, 3svh, 600);
+                                    }
+                                    .step-title {
+                                        @include titles_styles($color-gray-warm, 1.4svh, normal, 600);
+                                    }
+                                }
+                                .step-content {
+                                    margin-right: 4.8svh !important;
+                                    .text-uppercase {
+                                        @include titles_styles($color-bright-orange, 1.5svh, 22px, 700);
+                                    }
+                                    .d-inline-block {
+                                        @include titles_styles($color-gray-warm, 1.4svh, 22px, 400);
+                                    }
+                                }
+                                &:nth-child(1) {
+                                    @include steps_before_content(2svh);
+                                    &:before {
+                                        top: 3svh !important;
+                                        right: 1.5svh !important;
+                                    }
+                                }
+                                &:nth-child(2) {
+                                    @include steps_before_content(2svh);
+                                    &:before {
+                                        top: 3svh !important;
+                                        right: 1.5svh !important;
+                                    }
+                                }
+                                &:nth-child(3) {
+                                    @include steps_before_content(16.8svh);
+                                    &:before {
+                                        top: 3svh !important;
+                                        right: 1.5svh !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .row.mt-8 {
+            @include flex_column_center();
+            flex-direction: column-reverse !important;
+            gap: 10px !important;
+            top: 35vh !important;
+            .col-lg-8 {
+                div:has(#msg) {
+                    #msg {
+                        @include titles_styles($lime-green, 2.3svh, normal, 700);
+                        text-align: center !important;
+                        &:has(br) {
+                            @include titles_styles(transparent, 1.6svh, 2svh, 400);
+                            &:before {
+                                @include titles_styles($color-gray-warm, 1.6svh, 2svh, 400);
+                            }
+                            &:after {
+                                content: '';
+                            }
+                        }
+                    }
+                    #msg[style*='color: red'] {
+                        @include titles_styles($alert-red, 2.3svh, normal, 700);
+                    }
+                }
+
+                #choosediv {
+                    position: relative !important;
+                    margin-top: 16px !important;
+                    width: 260px !important;
+                    label {
+                        display: block !important;
+                        margin: 0 auto !important;
+                        width: 20vw !important;
+                        height: 3svh !important;
+                        @include titles_styles(transparent, 1.5svh, 2.8svh, bold);
+                        &:before {
+                            content: 'העלאת קובץ';
+                            width: max-content !important;
+                            position: absolute !important;
+                            left: 0 !important;
+                            right: 0 !important;
+                            margin: 0 auto !important;
+                            @include titles_styles($color-bright-cyan, 1.5svh, 2.8svh, bold);
+                            z-index: 1 !important;
+                        }
+                    }
+                    #choosemsg {
+                        @include titles_styles($color-gray-warm, 1.5svh, 2.8svh, 400);
+                        br {
+                            display: none !important;
+                        }
+                    }
+                }
+                #restartdiv {
+                    align-self: center !important;
+                    width: 260px !important;
+                    text-align: center !important;
+                    #msg_process {
+                        text-align: center !important;
+                        margin-bottom: 15px !important;
+                        @include titles_styles($color-gray-warm, 1.5svh, 2.8svh, 400);
+                    }
+                    #btn_restart,
+                    #btn_close_tab {
+                        position: relative !important;
+                        width: 20vw !important;
+                        height: 3svh !important;
+                        border-radius: 1rem !important;
+                        text-align: center !important;
+                        outline: 1px solid $color-bright-cyan !important;
+                        @include titles_styles($color-bright-cyan, 1.5svh, 2.8svh, bold);
+                    }
+                    #btn_restart {
+                        margin: 0 0 0 10px !important;
+                        width: 30vw !important;
+                    }
+                }
+            }
+
+            .col-lg-4 {
+                align-items: center !important;
+                display: none !important;
+                #sidebardiv {
+                    #sidelink {
+                        #sideimg {
+                            width: 100% !important;
+                            max-width: 39svh !important;
+                        }
                     }
                 }
             }

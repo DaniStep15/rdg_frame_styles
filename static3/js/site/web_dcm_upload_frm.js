@@ -106,7 +106,12 @@ $(a10_0x2230b8(0x245))['on'](a10_0x2230b8(0x233), function() {
     $(a10_0x2230b8(0x202))['on']('change', function(_0x364ca9) {
         var _0x422964 = a10_0x2230b8
 
+        // var _0x33fd96 = a10_0x4b43,
+        //     _0x3f53a7 = '_0xdb33ca'['target'][_0x33fd96(0x1ff)]
+        // return (str1 = term_dealt_so_far + '\x20'), (str2 = '\x20' + term_images), initProgress(term_general_progress_status), (startTime = new Date()[_0x33fd96(0x23a)]())
+
         return compress_files()
+
         try {
             window[_0x422964(0x268)][_0x422964(0x21c)]({ top: 0x0, left: 0x0, behavior: _0x422964(0x1f5) })
         } catch (_0x1f71c7) {
@@ -137,7 +142,6 @@ $(a10_0x2230b8(0x245))['on'](a10_0x2230b8(0x233), function() {
                                 var _0x545e73 = get_upload_key()
                                 _0x545e73 = true
                                 console.log(_0x545e73, 'here, else')
-
                                 _0x545e73
                                     ? ($(_0x33fd96(0x211))[_0x33fd96(0x271)](_0x33fd96(0x1fc), _0x33fd96(0x255)), compress_files())
                                     : (show_msg(term_unexpected_error + '.', _0x33fd96(0x212), !![]),
@@ -146,14 +150,16 @@ $(a10_0x2230b8(0x245))['on'](a10_0x2230b8(0x233), function() {
                                       $(_0x33fd96(0x1f1))[_0x33fd96(0x271)](_0x33fd96(0x1fc), 'none'),
                                       $(_0x33fd96(0x224))[_0x33fd96(0x25e)](_0x33fd96(0x260), _0x33fd96(0x1f6)),
                                       init_vars())
-                            } else {
-                                show_msg(term_no_medical_images + '.', 'red', !![]),
-                                    $(_0x33fd96(0x20b))[_0x33fd96(0x271)]('display', 'block'),
-                                    $(_0x33fd96(0x26a))[_0x33fd96(0x270)](''),
-                                    $('#choosemsg')[_0x33fd96(0x271)](_0x33fd96(0x1fc), _0x33fd96(0x1e7)),
-                                    $(_0x33fd96(0x224))[_0x33fd96(0x25e)](_0x33fd96(0x260), _0x33fd96(0x1fd)),
-                                    init_vars()
                             }
+                            return true
+                            // else {
+                            //     show_msg(term_no_medical_images + '.', 'red', !![]),
+                            //         $(_0x33fd96(0x20b))[_0x33fd96(0x271)]('display', 'block'),
+                            //         $(_0x33fd96(0x26a))[_0x33fd96(0x270)](''),
+                            //         $('#choosemsg')[_0x33fd96(0x271)](_0x33fd96(0x1fc), _0x33fd96(0x1e7)),
+                            //         $(_0x33fd96(0x224))[_0x33fd96(0x25e)](_0x33fd96(0x260), _0x33fd96(0x1fd)),
+                            //         init_vars()
+                            // }
                         }
                     }
                 })(_0xa2c7c9)
@@ -343,6 +349,7 @@ function show_msg(_0x58719e, _0x27da87, _0x113b02) {
     _0x113b02 && $(_0x28b27a(0x20f))[_0x28b27a(0x26d)](''), $(_0x28b27a(0x222))['html'](_0x58719e), _0x27da87 && $(_0x28b27a(0x222))[_0x28b27a(0x271)](_0x28b27a(0x253), _0x27da87)
 }
 function initProgress(_0x4d5330) {
+    console.log('here, initProgress')
     var _0x2e3e73 = a10_0x2230b8,
         _0x588724 = document[_0x2e3e73(0x250)]('progress')
     _0x588724[_0x2e3e73(0x20c)] = ''

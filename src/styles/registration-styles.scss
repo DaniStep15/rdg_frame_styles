@@ -6,6 +6,7 @@
 body,
 html {
     height: 100%;
+    @include flex_column_center();
 }
 .container {
     @include flex_column_center();
@@ -215,53 +216,77 @@ html {
 
 // mobile
 @media screen and (max-width: $mobile) {
+    .container {
+        height: 85svh !important;
+        justify-items: center !important;
+    }
     .container > div:first-of-type {
-        width: 80% !important;
-        height: 5.6svh !important;
-        min-height: 5.6svh !important;
+        @include flex_row_center();
+        gap: 0 2% !important;
+        width: 90% !important;
+        height: clamp(60px, 8svh, 8svh) !important;
+        min-height: clamp(60px, 8svh, 8svh) !important;
         border-radius: 15px !important;
         padding: unset !important;
-        margin-bottom: 20px !important;
-        @include flex_row_center();
+        margin-bottom: 3svh !important;
         h4 {
+            @include flex_row_center();
             font-size: 0 !important;
+            height: 100% !important;
+            width: 25% !important;
+            min-width: 25% !important;
+            a {
+                @include flex_row_center();
+                @include header_btn(100%, 45%, 100%, clamp(10px, 3.4vw, 20px), 0);
+                min-width: 100% !important;
+            }
         }
-        a {
-            @include header_btn(8svh, 2svh, 1.9svh, 1.1svh, 0);
-        }
+
         &:before {
-            @include before_after_head_mobile('לקוח קיים? אם כבר נרשמתם', unset, 8%, unset, unset, $color-gray-warm, 2.7vw, 700, 2svh, 33.1vw);
+            @include before_after_head_mobile('לקוח קיים? אם כבר נרשמתם', unset, 0, unset, unset, $color-gray-warm, clamp(10px, 3.4vw, 20px), 700, 0, fit-content);
+            position: relative !important;
         }
         &:after {
-            @include before_after_head_mobile('כדי להתחבר', 8%, unset, unset, unset, $color-gray-warm, 2.7vw, 700, 2svh, 14.3vw);
+            @include before_after_head_mobile('כדי להתחבר', 0, unset, unset, unset, $color-gray-warm, clamp(10px, 3.4vw, 20px), 700, 0, fit-content);
+            position: relative !important;
         }
     }
 
     .container > .row {
+        width: 100vw !important;
         .col-md-12 {
             .panel {
                 .panel-heading {
-                    font-size: 2.4svh !important;
-                    width: 28svh !important;
+                    font-size: 0 !important;
+                    width: 100% !important;
                     text-align: center !important;
-                    line-height: 23.565px !important;
+                    line-height: normal !important;
                     &:before {
-                        @include before_after_head_mobile('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, unset, $color-bright-orange, 2.4svh, bold, 23.565px, 27svh);
+                        @include before_after_head_mobile('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, unset, $color-bright-orange, clamp(16px, 5vw, 20px), bold, normal, max-content);
+                        position: relative !important;
                     }
                 }
                 .panel-body {
                     @include flex_column_center();
+                    width: 100% !important;
                     .alert {
                         position: absolute;
-                        bottom: -3svh !important;
+                        bottom: -2svh !important;
                         text-align: center !important;
-                        @include titles_styles($alert-red, 1.3svh, normal, 600);
+                        @include titles_styles($alert-red, 1.3svh, 0, 600);
                     }
                     #contactSuccess {
-                        color: $lime-green !important;
-                        overflow: hidden !important;
-                        width: 17svh !important;
-                        height: 15px !important;
+                        overflow: unset !important;
+                        width: unset !important;
+                        height: unset !important;
+                        color: transparent !important;
+                        font-size: 0 !important;
+                        bottom: -1.6svh !important;
+                        strong {
+                            color: $lime-green !important;
+                            @include titles_styles($lime-green, 1.3svh, 0, 600);
+                        }
+
                         &:after,
                         &:before {
                             content: '';
@@ -270,27 +295,27 @@ html {
                     #top_info {
                         .page-title {
                             text-align: center !important;
-                            @include titles_styles($color-gray-warm, 1.6svh, normal, 550);
+                            @include titles_styles($color-gray-warm, clamp(14px, 3.5vw, 16px), normal, 550);
+                            margin: 0.1svh 0 0.3svh 0 !important;
                         }
                         p {
-                            bottom: calc(58svh - 45%) !important;
-                            font-size: 1.3svh !important;
+                            bottom: unset !important;
+                            font-size: clamp(10px, 3.3vw, 12px) !important;
+                            width: 60% !important;
+                            text-align: center !important;
+                            position: relative !important;
+                            margin-bottom: 4.4svh !important;
                         }
                     }
 
                     .contact-form {
-                        margin-top: 4svh !important;
-                        height: 58svh !important;
-                        #g-recaptcha {
-                            position: absolute;
-                            bottom: 2svh !important;
-                            transform: scale(0.7) !important;
-                        }
+                        width: 100% !important;
+                        margin-top: unset !important;
+                        height: unset !important;
                         #contact-form {
-                            @include flex_row_center();
-                            flex-wrap: wrap;
+                            @include flex_column_center();
                             width: 100%;
-                            gap: 3.3svh 0;
+                            gap: 4.4svh 0 !important;
                             .form-group {
                                 @include flex_row_center();
                                 label,
@@ -301,20 +326,29 @@ html {
                                     padding: 0 10px !important;
                                 }
                                 &:nth-child(1) {
-                                    @include input_nth_child_mobile('שם פרטי', 80%, 4.4svh, 1.4svh, -2.4svh, 1.4svh);
+                                    @include input_nth_child_mobile('שם פרטי', 78%, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.8svh);
                                 }
                                 &:nth-child(2) {
-                                    @include input_nth_child_mobile('שם משפחה', 80%, 4.4svh, 1.4svh, -2.4svh, 1.4svh);
+                                    @include input_nth_child_mobile('שם משפחה', 78%, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.8svh);
                                 }
                                 &:nth-child(3) {
-                                    @include input_nth_child_mobile('כתובת מייל', 80%, 4.4svh, 1.4svh, -2.4svh, 1.4svh);
+                                    @include input_nth_child_mobile('כתובת מייל', 78%, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.8svh);
                                 }
                                 &:nth-child(4) {
-                                    @include input_nth_child_mobile('טלפון נייד', 80%, 4.4svh, 1.4svh, -2.4svh, 1.4svh);
+                                    @include input_nth_child_mobile('טלפון נייד', 78%, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.8svh);
                                 }
+                            }
+                            #g-recaptcha {
+                                @include flex_row_center();
+                                position: relative !important;
+                                bottom: unset !important;
+                                transform: scale(0.7) !important;
+                                margin: -30px 0 -35px 0 !important;
+                                background-color: $bg-test-white !important;
                             }
                             .btn {
                                 @include submit_btn(20%, 3svh, 1.5svh, 0);
+                                position: relative !important;
                             }
                         }
                     }

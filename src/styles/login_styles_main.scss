@@ -99,15 +99,13 @@ html {
     }
 }
 
-@media screen and (max-width: $small-screens) {
+@media screen and (max-width: $mobile) {
     .container {
         @include flex_column_center();
         justify-content: start !important;
         width: 100% !important;
         height: 100% !important;
-        background-color: $bg-test-white !important; // test
         padding-top: 32svh !important;
-
         .page-title {
             @include titles_styles($color-bright-orange, 3svh, normal, 700);
         }
@@ -123,6 +121,7 @@ html {
                         margin-top: 2px !important;
                         .alert {
                             @include login_page_alert(11px, 98px);
+                            @include titles_styles($alert-red, 1.3svh, normal, 600);
                             &#captchaError {
                                 top: 226px;
                             }

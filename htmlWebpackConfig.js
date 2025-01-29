@@ -31,4 +31,4 @@ let config = {
     }
 }
 
-module.exports = config['login_page_identity']
+module.exports = config['upload_page_first']

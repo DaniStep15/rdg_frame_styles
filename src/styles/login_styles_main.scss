@@ -25,9 +25,11 @@ html {
                 .panel-body {
                     margin-top: 2px !important;
                     .alert {
-                        @include login_page_alert(11px, 98px);
+                        @include login_page_alert(11px, 104px);
+                        top: unset !important;
+                        bottom: -23px;
                         &#captchaError {
-                            top: 226px;
+                            bottom: -23px;
                         }
                     }
                     @include flex_column_center();
@@ -37,7 +39,7 @@ html {
                     #step1 {
                         @include flex_column_center();
                         #g-recaptcha {
-                            @include login_captcha_position(4px, 0.8);
+                            @include login_captcha_position(8px, 0.8);
                         }
                         p {
                             @include titles_styles($color-gray-warm, 14px, normal, 500);
@@ -54,7 +56,7 @@ html {
                             }
                         }
                         #btn_send_email {
-                            @include submit_btn(105px, 27px, 12px, -30px);
+                            @include submit_btn(105px, 27px, 12px, -10px);
                         }
                     }
                     #step2 {
@@ -87,7 +89,7 @@ html {
                             }
                         }
                         #btn_send_otp {
-                            @include submit_btn(105px, 27px, 12px, -30px);
+                            @include submit_btn(105px, 27px, 12px, 0);
                         }
                     }
                     #other_btns {

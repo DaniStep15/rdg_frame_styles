@@ -151,8 +151,8 @@ html {
         .col-lg-8,
         .col-lg-4 {
             @include flex_column_center();
-            width: 50% !important;
-            min-width: 50% !important;
+            width: 40% !important;
+            min-width: 40% !important;
         }
         .col-lg-8 {
             div:has(#msg) {
@@ -238,7 +238,7 @@ html {
                 align-items: center;
                 justify-content: center;
                 #msg_process {
-                    text-align: center !important;
+                    text-align: right !important;
                     margin-bottom: 15px !important;
                     @include titles_styles($color-gray-warm, 13px, 20px, 400);
                 }
@@ -291,27 +291,21 @@ html {
     }
 
     .container {
+        @include flex_column_center();
+        width: 100% !important;
+        height: 100svh !important;
+        padding-top: 10svh !important;
         #page_header {
+            position: relative !important;
             @include titles_styles($color-bright-orange, 2.4svh, normal, 700);
-            top: 35vh !important;
+            margin-bottom: 2svh !important;
         }
         #instruct {
-            //# changed
             #cntdiv {
-                @include flex_column_center();
-                width: 15vw !important;
-                height: 3svh !important;
-                margin: 0 auto 0 auto !important;
-                input {
-                    @include titles_styles($color-bright-cyan, 1.5svh, 0, bold);
-                }
+                display: none !important;
             }
-            //# changed
             #instruct_inner_heading {
-                margin-bottom: 25px !important;
-                @include titles_styles($color-bright-cyan, 2svh, normal, 600);
-                height: 33svh !important;
-                padding-top: 30svh !important;
+                @include titles_styles($color-bright-cyan, clamp(14px, 3.5vw, 16px), normal, 550);
             }
             .row {
                 .col-12 {
@@ -326,17 +320,22 @@ html {
                                 .mb-0 {
                                     @include flex_row_center();
                                     justify-content: start;
+                                    gap: 2vw;
                                     .step-number {
+                                        @include flex_row_center();
                                         width: 3svh !important;
+                                        min-width: 3svh !important;
                                         height: 3svh !important;
-                                        @include titles_styles($color-bright-orange, 2svh, 3svh, 600);
+                                        @include titles_styles($color-bright-orange, 2svh, 0, 600);
+                                        margin-left: unset !important;
                                     }
                                     .step-title {
                                         @include titles_styles($color-gray-warm, 1.4svh, normal, 600);
                                     }
                                 }
                                 .step-content {
-                                    margin-right: 4.8svh !important;
+                                    margin: 0 calc(3svh + 2vw) calc(1svh) 0 !important;
+                                    width: 90vw !important;
                                     .text-uppercase {
                                         @include titles_styles($color-bright-orange, 1.5svh, 22px, 700);
                                     }
@@ -345,24 +344,35 @@ html {
                                     }
                                 }
                                 &:nth-child(1) {
+                                    .mb-0 {
+                                        flex-direction: row-reverse !important;
+                                        &:before {
+                                            content: 'לשליחת הדיסק יש להתחבר מהמחשב, אנא ודאו חיבור יציב לאינטרנט';
+                                            @include titles_styles($color-gray-warm, 1.4svh, normal, bold);
+                                        }
+                                        .step-title,
+                                        .steady_connection {
+                                            display: none !important;
+                                        }
+                                    }
                                     @include steps_before_content(2svh);
                                     &:before {
                                         top: 3svh !important;
-                                        right: 1.5svh !important;
+                                        right: calc(3svh / 2.1) !important;
                                     }
                                 }
                                 &:nth-child(2) {
                                     @include steps_before_content(2svh);
                                     &:before {
                                         top: 3svh !important;
-                                        right: 1.5svh !important;
+                                        right: calc(3svh / 2.1) !important;
                                     }
                                 }
                                 &:nth-child(3) {
-                                    @include steps_before_content(16.8svh);
+                                    @include steps_before_content(90%);
                                     &:before {
                                         top: 3svh !important;
-                                        right: 1.5svh !important;
+                                        right: calc(3svh / 2.1) !important;
                                     }
                                 }
                             }
@@ -371,98 +381,8 @@ html {
                 }
             }
         }
-
         .row.mt-8 {
-            @include flex_column_center();
-            flex-direction: column-reverse !important;
-            gap: 10px !important;
-            top: 35vh !important;
-            .col-lg-8 {
-                div:has(#msg) {
-                    #msg {
-                        @include titles_styles($lime-green, 2.3svh, normal, 700);
-                        text-align: center !important;
-                        &:has(br) {
-                            @include titles_styles(transparent, 1.6svh, 2svh, 400);
-                            &:before {
-                                @include titles_styles($color-gray-warm, 1.6svh, 2svh, 400);
-                            }
-                            &:after {
-                                content: '';
-                            }
-                        }
-                    }
-                    #msg[style*='color: red'] {
-                        @include titles_styles($alert-red, 2.3svh, normal, 700);
-                    }
-                }
-
-                #choosediv {
-                    position: relative !important;
-                    margin-top: 16px !important;
-                    width: 260px !important;
-                    label {
-                        display: block !important;
-                        margin: 0 auto !important;
-                        width: 20vw !important;
-                        height: 3svh !important;
-                        @include titles_styles(transparent, 1.5svh, 2.8svh, bold);
-                        &:before {
-                            content: 'העלאת קובץ';
-                            width: max-content !important;
-                            position: absolute !important;
-                            left: 0 !important;
-                            right: 0 !important;
-                            margin: 0 auto !important;
-                            @include titles_styles($color-bright-cyan, 1.5svh, 2.8svh, bold);
-                            z-index: 1 !important;
-                        }
-                    }
-                    #choosemsg {
-                        @include titles_styles($color-gray-warm, 1.5svh, 2.8svh, 400);
-                        br {
-                            display: none !important;
-                        }
-                    }
-                }
-                #restartdiv {
-                    align-self: center !important;
-                    width: 260px !important;
-                    text-align: center !important;
-                    #msg_process {
-                        text-align: center !important;
-                        margin-bottom: 15px !important;
-                        @include titles_styles($color-gray-warm, 1.5svh, 2.8svh, 400);
-                    }
-                    #btn_restart,
-                    #btn_close_tab {
-                        position: relative !important;
-                        width: 20vw !important;
-                        height: 3svh !important;
-                        border-radius: 1rem !important;
-                        text-align: center !important;
-                        outline: 1px solid $color-bright-cyan !important;
-                        @include titles_styles($color-bright-cyan, 1.5svh, 2.8svh, bold);
-                    }
-                    #btn_restart {
-                        margin: 0 0 0 10px !important;
-                        width: 30vw !important;
-                    }
-                }
-            }
-
-            .col-lg-4 {
-                align-items: center !important;
-                display: none !important;
-                #sidebardiv {
-                    #sidelink {
-                        #sideimg {
-                            width: 100% !important;
-                            max-width: 39svh !important;
-                        }
-                    }
-                }
-            }
+            display: none !important;
         }
     }
 }

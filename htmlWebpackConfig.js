@@ -31,4 +31,4 @@ let config = {
     }
 }
 
-module.exports = config['login_page_email']
+module.exports = config['login_page_identity']

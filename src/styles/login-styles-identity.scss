@@ -29,10 +29,7 @@ html {
                         @include titles_styles($color-gray-warm, 14px, normal, 600);
                     }
                     .alert {
-                        @include login_page_alert(11px, 98px);
-                        &#captchaError {
-                            top: 226px;
-                        }
+                        @include login_page_alert(11px, 104px);
                         &#notFoundError {
                             width: max-content !important;
                             overflow: hidden !important;
@@ -50,7 +47,7 @@ html {
                             }
                         }
                         #g-recaptcha {
-                            @include login_captcha_position(4px, 0.8);
+                            @include login_captcha_position(-10px, 0.8);
                         }
                         #btn_sendpid {
                             @include submit_btn(105px, 27px, 12px, -30px);
@@ -87,44 +84,60 @@ html {
 
 @media screen and (max-width: $mobile) {
     .container {
-        justify-content: start !important;
-        padding-top: 32svh !important;
+        width: 100% !important;
+        height: 100% !important;
         .page-title {
-            @include titles_styles($color-bright-orange, 3svh, normal, 700);
+            @include titles_styles($color-bright-orange, clamp(16px, 5vw, 20px), normal, 700);
         }
         .row {
             .col-md-6 {
                 .panel {
+                    height: unset !important;
                     .panel-body {
+                        @include flex_column_center();
+                        margin-top: 2px !important;
+                        position: relative !important;
                         p {
-                            @include titles_styles($color-gray-warm, 1.8svh, normal, 600);
+                            @include titles_styles($color-gray-warm, clamp(14px, 3.5vw, 16px), normal, 600);
+                            text-align: center !important;
                         }
                         .alert {
-                            @include login_page_alert(11px, 98px);
+                            @include titles_styles($alert-red, 1.2svh, normal, 600);
+                            top: unset !important;
+                            bottom: 3.8svh !important;
                             &#captchaError {
-                                top: 226px;
+                                top: unset !important;
+                                bottom: 3.8svh !important;
                             }
                             &#notFoundError {
                                 width: max-content !important;
                                 overflow: hidden !important;
-                                height: 17px !important;
+                                height: 15px !important;
                             }
                         }
                         .contact-form {
                             @include flex_column_center();
+                            br {
+                                display: none !important;
+                            }
                             .form-group {
-                                margin-top: 39px !important;
-                                @include input_nth_child_mobile('מספר זהות', 80vw, 4.8svh, 1.5svh, -2.8svh, 1.8svh);
+                                margin-top: 4.4svh !important;
+                                @include input_nth_child_mobile('מספר זהות', 78vw, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.8svh);
                                 i,
                                 label {
                                     display: none !important;
                                 }
                             }
                             #g-recaptcha {
-                                @include login_captcha_position(4px, 0.6);
+                                @include login_captcha_position(4px, 0.7);
+                                position: relative !important;
+                                translate: 0 0 !important;
+                                bottom: 0 !important;
+                                background-color: $bg-test-white !important;
                             }
                             #btn_sendpid {
-                                @include submit_btn(20vw, 3svh, 1.5svh, -12%);
+                                @include submit_btn(20vw, 3svh, 1.5svh, 0);
+                                position: relative !important;
                             }
 
                             #btn_loginbystudy {
@@ -132,7 +145,8 @@ html {
                             }
                             #btn_loginbyemail {
                                 position: absolute !important;
-                                bottom: -60px !important;
+                                bottom: -3.6svh !important;
+                                //height: 0 !important;
                                 @include login_type_title(1.4svh, 21.657px);
                             }
                         }
@@ -143,11 +157,12 @@ html {
                         .contact-form {
                             @include flex_column_center();
                             .form-group {
-                                margin-top: 39px !important;
-                                @include input_nth_child_mobile('קוד', 80vw, 4.8svh, 1.5svh, -2.8svh, 1.8svh);
+                                margin: 3.2svh 0 3.2svh 0 !important;
+                                @include input_nth_child_mobile('', 78vw, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.5svh);
                             }
                             #btn_sendcode {
-                                @include submit_btn(20vw, 3svh, 1.5svh, -12%);
+                                @include submit_btn(20vw, 3svh, 1.5svh, 0);
+                                position: relative !important;
                             }
                         }
                     }

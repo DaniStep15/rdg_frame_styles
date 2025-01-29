@@ -32,7 +32,7 @@ body {
 
         &.login_page_email,
         &.login_page_identity {
-            @include popup_wrapper(525px, 435px, 200vw, -95px, 350px, 44px, -30px, max-content, -75px, 14px, 465px, 20px);
+            @include popup_wrapper(525px, 435px, 200vw, -95px, 390px, 44px, -30px, max-content, -75px, 14px, 465px, 20px);
         }
 
         &.upload_page_first {

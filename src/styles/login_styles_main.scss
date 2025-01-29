@@ -129,7 +129,7 @@ html {
                         margin-top: 2px !important;
                         position: relative !important;
                         .alert {
-                            @include titles_styles($alert-red, 1.3svh, normal, 600);
+                            @include titles_styles($alert-red, 1.2svh, normal, 600);
                             top: unset !important;
                             bottom: 3.6svh !important;
                             &#captchaError {

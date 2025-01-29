@@ -61,20 +61,27 @@ html {
                         @include flex_column_center();
                         p {
                             @include titles_styles($color-gray-warm, 17px, normal, 500);
+                            text-align: center !important;
+                            br {
+                                height: 0 !important;
+                            }
                             span {
+                                display: block !important;
                                 color: $color-light-cyan !important;
                                 font-weight: 500 !important;
+                                margin: 0.5rem 0 0 0 !important;
                             }
                             strong > span {
                                 color: $color-gray-warm !important;
                                 text-transform: lowercase !important;
                                 font-weight: 500 !important;
+                                display: inline !important;
                             }
                         }
                         .form-group {
                             position: relative !important;
-                            margin-top: 5rem !important;
-                            @include input_nth_child('קוד', 468, 39, 13, -22, 13);
+                            margin-top: 2rem !important;
+                            @include input_nth_child('', 468, 39, 13, -22, 13);
                             label {
                                 display: none !important;
                             }
@@ -102,44 +109,57 @@ html {
 @media screen and (max-width: $mobile) {
     .container {
         @include flex_column_center();
-        justify-content: start !important;
+        //justify-content: start !important;
         width: 100% !important;
         height: 100% !important;
-        padding-top: 32svh !important;
+        //padding-top: 10svh !important;
+
         .page-title {
-            @include titles_styles($color-bright-orange, 3svh, normal, 700);
+            @include titles_styles($color-bright-orange, clamp(16px, 5vw, 20px), normal, 700);
         }
         .row {
             .col-md-6 {
                 .panel {
-                    height: 250px !important;
+                    height: unset !important;
                     .panel-heading {
                         display: none !important;
                     }
                     .panel-body {
                         @include flex_column_center();
                         margin-top: 2px !important;
+                        position: relative !important;
                         .alert {
-                            @include login_page_alert(11px, 98px);
                             @include titles_styles($alert-red, 1.3svh, normal, 600);
+                            top: unset !important;
+                            bottom: 3.6svh !important;
                             &#captchaError {
-                                top: 226px;
+                                top: unset !important;
                             }
                         }
                         div {
                             @include flex_column_center();
+                            br {
+                                display: none !important;
+                            }
                         }
                         #step1 {
                             @include flex_column_center();
+                            br {
+                                display: none !important;
+                            }
                             #g-recaptcha {
                                 @include login_captcha_position(4px, 0.7);
+                                position: relative !important;
+                                translate: 0 0 !important;
+                                bottom: 0 !important;
+                                background-color: $bg-test-white !important;
                             }
                             p {
-                                @include titles_styles($color-gray-warm, 2svh, normal, 600);
+                                @include titles_styles($color-gray-warm, clamp(14px, 3.5vw, 16px), normal, 600);
                             }
                             .form-group {
-                                margin-top: 39px !important;
-                                @include input_nth_child_mobile('אימייל', 80vw, 4.8svh, 1.5svh, -2.8svh, 1.8svh);
+                                margin-top: 4.4svh !important;
+                                @include input_nth_child_mobile('אימייל', 78vw, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.8svh);
                                 i,
                                 label {
                                     display: none !important;
@@ -149,47 +169,72 @@ html {
                                 }
                             }
                             #btn_send_email {
-                                @include submit_btn(20vw, 3svh, 1.5svh, -12%);
+                                @include submit_btn(20vw, 3svh, 1.5svh, 0);
+                                position: relative !important;
                             }
                         }
+                        // ############## step 2
                         #step2 {
                             position: relative !important;
                             @include flex_column_center();
                             p {
+                                @include flex_column_center();
                                 text-align: center !important;
-                                @include titles_styles($color-gray-warm, 1.6svh, normal, 600);
-                                font-weight: 500 !important;
-                                span {
-                                    color: $color-light-cyan !important;
-                                    font-weight: 500 !important;
+                                color: transparent !important;
+                                font-size: 0 !important;
+                                &:before {
+                                    content: 'המערכת שלחה לך קוד חד פעמי לכתובת האימייל, יש לבדוק את תיבת האימייל';
+                                    position: relative !important;
                                     display: block !important;
-                                    margin: 3px 0 0 0 !important;
+                                    @include titles_styles($color-gray-warm, 1.6svh, normal, 500);
+                                    width: 70vw !important;
+                                }
+                                span {
+                                    display: block !important;
+                                    margin: 1svh 0 2svh 0 !important;
+                                    @include titles_styles($color-light-cyan, 1.6svh, normal, 500);
+                                }
+                                strong {
+                                    @include flex_row_center();
+                                    gap: 0 5px !important;
+                                    &:before {
+                                        content: 'הקוד נשלח לכתובת' !important;
+                                        position: relative !important;
+                                        display: block !important;
+                                        width: max-content !important;
+                                        @include titles_styles($color-gray-warmer, 1.6svh, normal, 500);
+                                    }
                                 }
                                 strong > span {
-                                    color: $color-gray-warm !important;
+                                    color: $color-gray-warmer !important;
                                     text-transform: lowercase !important;
                                     font-weight: 500 !important;
                                     margin: unset !important;
                                     display: inline !important;
                                 }
+
+                                br {
+                                    display: none !important;
+                                }
                             }
                             .form-group {
                                 position: relative !important;
-                                margin-top: 5rem !important;
-                                @include input_nth_child_mobile('קוד', 80vw, 4.8svh, 1.5svh, -2.8svh, 1.8svh);
+                                @include input_nth_child_mobile('', 78vw, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.5svh);
+                                margin: 1.2svh 0 3svh 0 !important;
                                 label {
                                     display: none !important;
                                 }
                             }
                             #btn_send_otp {
-                                position: relative;
                                 @include submit_btn(20vw, 3svh, 1.5svh, 3%);
-                                top: calc(97%) !important;
+                                top: unset !important;
+                                position: relative !important;
                             }
                         }
                         #other_btns {
                             position: absolute !important;
-                            bottom: -23% !important;
+                            bottom: -2.6svh !important;
+                            height: 0 !important;
                             #btn_loginbystudy {
                                 display: none !important;
                             }

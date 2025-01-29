@@ -31,4 +31,4 @@ let config = {
     }
 }
 
-module.exports = config['registration_page_source']
+module.exports = config['login_page_email']

@@ -320,6 +320,7 @@ html {
                                 .mb-0 {
                                     @include flex_row_center();
                                     justify-content: start;
+                                    width: 90vw !important;
                                     gap: 2vw;
                                     .step-number {
                                         @include flex_row_center();
@@ -334,10 +335,10 @@ html {
                                     }
                                 }
                                 .step-content {
-                                    margin: 0 calc(3svh + 2vw) calc(1svh) 0 !important;
+                                    margin: calc(1svh) calc(3svh + 2vw) calc(1svh) 0 !important;
                                     width: 90vw !important;
                                     .text-uppercase {
-                                        @include titles_styles($color-bright-orange, 1.5svh, 22px, 700);
+                                        @include titles_styles($color-bright-orange, 1.5svh, 8px, 700);
                                     }
                                     .d-inline-block {
                                         @include titles_styles($color-gray-warm, 1.4svh, 22px, 400);
@@ -346,6 +347,7 @@ html {
                                 &:nth-child(1) {
                                     .mb-0 {
                                         flex-direction: row-reverse !important;
+                                        width: unset !important;
                                         &:before {
                                             content: 'לשליחת הדיסק יש להתחבר מהמחשב, אנא ודאו חיבור יציב לאינטרנט';
                                             @include titles_styles($color-gray-warm, 1.4svh, normal, bold);

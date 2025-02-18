@@ -1,18 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxanium:wght@200..800&family=Rubik+Wet+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tiny5&display=swap');
 @import 'vars';
-@mixin start_config_main {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif !important;
-    font-weight: 400;
-    font-size: 16px;
-    font-style: normal;
-    line-height: normal;
-    overscroll-behavior: none;
-}
 
 @mixin start_config_rdg {
+    // in use
     margin: unset !important;
     padding: unset !important;
     box-sizing: border-box !important;
@@ -32,30 +22,30 @@
 }
 
 @mixin flex_row_center {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 @mixin flex_column_center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 @mixin before_after_head($text, $left, $right, $top, $bottom, $color, $size, $weight) {
     content: $text;
-    display: block;
-    position: absolute;
-    width: max-content;
+    display: block !important;
+    position: absolute !important;
+    width: max-content !important;
     color: $color !important;
     font-size: #{$size}px !important;
     font-weight: $weight !important;
-    top: #{$top}px;
-    bottom: #{$bottom}px;
-    left: #{$left}px;
-    right: #{$right}px;
+    top: #{$top}px !important;
+    bottom: #{$bottom}px !important;
+    left: #{$left}px !important;
+    right: #{$right}px !important;
 }
 
 @mixin before_after_head_mobile($text, $left, $right, $top, $bottom, $color, $size, $weight, $line-height, $width) {
@@ -67,18 +57,18 @@
     color: $color !important;
     font-size: $size !important;
     font-weight: $weight !important;
-    top: $top;
-    bottom: $bottom;
-    left: $left;
-    right: $right;
-    line-height: $line-height;
+    top: $top !important;
+    bottom: $bottom !important;
+    left: $left !important;
+    right: $right !important;
+    line-height: $line-height !important;
 }
 
 @mixin input_nth_child($text, $width, $height, $font-size, $top, $input-font-size) {
     width: #{$width}px !important;
     height: #{$height}px !important;
     box-shadow: 0 2.227px 23.381px rgba(103, 136, 213, 0.25) !important;
-    border-radius: 2rem;
+    border-radius: 2rem !important;
     background-color: #fff !important;
     input {
         text-transform: lowercase !important;
@@ -95,14 +85,14 @@
     }
     &:before {
         content: $text;
-        display: block;
-        position: absolute;
-        width: max-content;
+        display: block !important;
+        position: absolute !important;
+        width: max-content !important;
         color: #808080 !important;
         font-size: #{$font-size}px !important;
         font-weight: 500 !important;
-        top: #{$top}px;
-        right: 10px;
+        top: #{$top}px !important;
+        right: 10px !important;
     }
 }
 
@@ -149,7 +139,7 @@
     color: $color-white !important;
     font-size: $font-size !important; // change
     font-weight: 600 !important;
-    translate: $translate 0; // change
+    translate: $translate 0 !important; // change
     @media screen and (max-width: $mobile) {
         //margin: 0 33.1vw 0 14.3vw !important;
     }
@@ -163,86 +153,6 @@
         border: 1px solid $color-light-cyan !important;
         top: -2px;
         left: -2px;
-    }
-}
-
-@mixin popup_wrapper($width, $height, $iframe-width, $bg-vertical, $bg-horizontal, $c-h-w, $c-t-r, $c-x-s, $b-t-b, $t-f-s, $t-c-w, $t-l-h) {
-    position: relative;
-    @include flex_column_center();
-    width: $width;
-    height: $height;
-    border-radius: 60px;
-    border: 1px solid #e2e0e0;
-    box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
-    background: rgb(100%, 100%, 100%, 0.5) url('/src/assets/ellipse.png') no-repeat $bg-vertical $bg-horizontal;
-    .close {
-        position: absolute;
-        @include flex_row_center();
-        cursor: pointer;
-        width: $c-h-w;
-        height: $c-h-w;
-        border-radius: 50%;
-        background-color: $color-white;
-        right: $c-t-r;
-        top: $c-t-r;
-        box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
-        img {
-            width: $c-x-s;
-        }
-    }
-    .exist_icon {
-        display: none;
-        position: absolute;
-        top: -112px;
-        margin: 0 auto;
-        &.login {
-            left: 55px;
-            right: 0;
-        }
-        &.service {
-        }
-    }
-    .iframe-wrapper {
-        @include flex_column_center();
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        #contentframe {
-            border: none;
-            outline: none;
-            width: $iframe-width !important;
-            height: 100vh;
-            background-color: transparent;
-        }
-    }
-
-    .bottom_text {
-        position: absolute;
-        bottom: $b-t-b;
-        @include flex_column_center();
-        .bottom_title {
-            text-align: center;
-            direction: rtl;
-            &.up {
-                color: $color-gray-warm;
-                text-align: center;
-                font-size: $t-f-s;
-                font-weight: 400;
-                line-height: $t-l-h;
-                width: $t-c-w;
-            }
-            &.middle {
-                color: $color-bright-orange;
-                font-size: $t-f-s;
-                font-weight: 400;
-                line-height: $t-l-h;
-                .number {
-                    font-size: $t-f-s;
-                    font-weight: 400;
-                    line-height: 20px;
-                }
-            }
-        }
     }
 }
 
@@ -290,7 +200,7 @@
         content: '' !important;
         position: absolute !important;
         top: 31px !important;
-        right: 15px !important;
+        right: 16px !important;
         width: 1px !important;
         height: $height !important;
         border-right: 1px dashed $color-bright-orange !important;
@@ -304,5 +214,110 @@
     line-height: $line-height !important;
 }
 
-@mixin popup_wrapper_mobile() {
+@mixin bottom_yellow_image($height) {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: $height;
+        background: #ffe99c;
+        border-radius: 50% 50% 0 0;
+        z-index: 1 !important;
+    }
 }
+
+//@mixin start_config_main { // in use
+//    margin: 0 !important;
+//    padding: 0 !important;
+//    box-sizing: border-box !important;
+//    font-family: 'Open Sans', sans-serif !important;
+//    font-weight: 400 !important;
+//    font-size: 16px !important;
+//    font-style: normal !important;
+//    line-height: normal !important;
+//    overscroll-behavior: none !important;
+//}
+//@mixin popup_wrapper_mobile() {
+//}
+
+//@mixin popup_wrapper($width, $height, $iframe-width, $bg-vertical, $bg-horizontal, $c-h-w, $c-t-r, $c-x-s, $b-t-b, $t-f-s, $t-c-w, $t-l-h) {
+//    position: relative;
+//    @include flex_column_center();
+//    width: $width;
+//    height: $height;
+//    border-radius: 60px;
+//    border: 1px solid #e2e0e0;
+//    box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
+//    background: rgb(100%, 100%, 100%, 0.5) url('/src/assets/ellipse.png') no-repeat $bg-vertical $bg-horizontal;
+//    .close {
+//        position: absolute;
+//        @include flex_row_center();
+//        cursor: pointer;
+//        width: $c-h-w;
+//        height: $c-h-w;
+//        border-radius: 50%;
+//        background-color: $color-white;
+//        right: $c-t-r;
+//        top: $c-t-r;
+//        box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
+//        img {
+//            width: $c-x-s;
+//        }
+//    }
+//    .exist_icon {
+//        display: none;
+//        position: absolute;
+//        top: -112px;
+//        margin: 0 auto;
+//        &.login {
+//            left: 55px;
+//            right: 0;
+//        }
+//        &.service {
+//        }
+//    }
+//    .iframe-wrapper {
+//        @include flex_column_center();
+//        width: 100%;
+//        height: 100%;
+//        overflow: hidden;
+//        #contentframe {
+//            border: none;
+//            outline: none;
+//            width: $iframe-width !important;
+//            height: 100vh;
+//            background-color: transparent;
+//        }
+//    }
+//
+//    .bottom_text {
+//        position: absolute;
+//        bottom: $b-t-b;
+//        @include flex_column_center();
+//        .bottom_title {
+//            text-align: center;
+//            direction: rtl;
+//            &.up {
+//                color: $color-gray-warm;
+//                text-align: center;
+//                font-size: $t-f-s;
+//                font-weight: 400;
+//                line-height: $t-l-h;
+//                width: $t-c-w;
+//            }
+//            &.middle {
+//                color: $color-bright-orange;
+//                font-size: $t-f-s;
+//                font-weight: 400;
+//                line-height: $t-l-h;
+//                .number {
+//                    font-size: $t-f-s;
+//                    font-weight: 400;
+//                    line-height: 20px;
+//                }
+//            }
+//        }
+//    }
+//}

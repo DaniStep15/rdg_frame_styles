@@ -3,15 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const config = require('./htmlWebpackConfig')
-const main_config = require('./htmlMainLocation')
+const main_config = require('./src/location_switcher')
 
 module.exports = env => {
     return {
         mode: env.mode || 'development',
         entry: {
-            main: { import: path.resolve(__dirname, './src/index.js') },
-            iframe: { import: path.resolve(__dirname, './src/iframe.js') }
+            main: { import: path.resolve(__dirname, './src/index.js') }
         },
         output: {
             path: path.resolve(__dirname, './build'),
@@ -38,7 +36,6 @@ module.exports = env => {
                 patterns: [{ from: 'static3', to: 'static3' }]
             }),
             new HtmlWebpackPlugin(main_config),
-            new HtmlWebpackPlugin(config),
             new webpack.ProgressPlugin(),
             new MiniCssExtractPlugin({
                 filename: 'css/[name].css',

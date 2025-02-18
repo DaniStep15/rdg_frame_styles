@@ -5,8 +5,11 @@
 }
 body,
 html {
-    height: 100%;
+    @include flex_column_center();
+    height: 100% !important;
+    width: 100% !important;
 }
+
 #loading {
     position: absolute !important;
     top: 0 !important;
@@ -36,20 +39,22 @@ html {
 }
 .container {
     @include flex_column_center();
-    width: 100% !important;
-    height: 100% !important;
+    width: 834px !important;
+    height: 633px !important;
     padding: unset !important;
+    border-radius: 60px !important;
+    border: 1px solid #e2e0e0 !important;
+    box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
+    background: rgb(100%, 100%, 100%, 0.5) !important;
+    overflow: hidden !important;
+    @include bottom_yellow_image(60px);
     #phone_row,
     #service_header {
         display: none !important;
     }
     #page_header {
         @include titles_styles($color-bright-orange, 20px, normal, 700);
-        position: absolute;
-        top: 110px;
-        @media screen and (max-width: $small-popup-upload) {
-            top: 70px;
-        }
+        margin: unset !important;
     }
     #instruct {
         &:before {
@@ -63,11 +68,14 @@ html {
         }
         @include flex_column_center();
         #cntdiv {
+            @include flex_column_center();
             width: 120px !important;
             height: 32px !important;
+            min-height: 32px !important;
             border-radius: 1rem !important;
             outline: 1px solid $color-bright-cyan !important;
             margin: 10px auto 0 auto !important;
+            z-index: 2 !important;
             input {
                 width: 100% !important;
                 height: 100% !important;
@@ -79,19 +87,10 @@ html {
         #instruct_inner_heading {
             margin-bottom: 25px !important;
             @include titles_styles($color-bright-cyan, 15px, normal, 600);
-            height: 50px !important;
-            padding-top: 30px !important;
-            @media screen and (max-width: $small-popup-upload) {
-                height: 80px !important;
-                padding-top: 60px !important;
-                margin-bottom: 10px !important;
-            }
         }
         .row {
             @include flex_column_center();
-            .col-xl-2 {
-                display: none !important;
-            }
+
             .col-12 {
                 @include flex_column_center();
                 .card {
@@ -134,11 +133,16 @@ html {
                                 @include steps_before_content(30px);
                             }
                             &:nth-child(3) {
-                                @include steps_before_content(66px);
+                                @include steps_before_content(90px);
                             }
                         }
                     }
                 }
+            }
+            .col-xl-2 {
+                display: none !important;
+                flex: unset !important;
+                width: 0 !important;
             }
         }
     }
@@ -234,9 +238,9 @@ html {
             #restartdiv {
                 align-self: center !important;
                 width: 260px !important;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
                 #msg_process {
                     text-align: right !important;
                     margin-bottom: 15px !important;
@@ -294,11 +298,16 @@ html {
         @include flex_column_center();
         width: 100% !important;
         height: 100svh !important;
-        padding-top: 10svh !important;
+
+        border-radius: 0 !important;
+        border: 0 !important;
+        box-shadow: unset !important;
+        overflow: hidden !important;
+        @include bottom_yellow_image(60px);
         #page_header {
             position: relative !important;
             @include titles_styles($color-bright-orange, 2.4svh, normal, 700);
-            margin-bottom: 2svh !important;
+            //margin-bottom: 2svh !important;
         }
         #instruct {
             #cntdiv {
@@ -319,9 +328,9 @@ html {
                                 min-height: 5svh !important;
                                 .mb-0 {
                                     @include flex_row_center();
-                                    justify-content: start;
-                                    width: 90vw !important;
-                                    gap: 2vw;
+                                    justify-content: start !important;
+                                    width: 86vw !important;
+                                    gap: 2vw !important;
                                     .step-number {
                                         @include flex_row_center();
                                         width: 3svh !important;

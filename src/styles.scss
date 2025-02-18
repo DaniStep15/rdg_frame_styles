@@ -1,0 +1,225 @@
+//@import 'styles/registration-styles';
+@import 'styles/upload-file-first';
+@import 'styles/login_styles_main';
+
+//@import 'mixins';
+//@import 'vars';
+//* {
+//    //@include start_config_main();
+//}
+//html,
+//body {
+//    //height: 100svh;
+//}
+//
+//// use on localhost MediWho
+//.container-for-mediwho {
+//    //@include flex_row_center();
+//    //width: 100vw;
+//    //height: 100svh;
+//    //overflow: hidden;
+//    iframe {
+//        //@include flex_row_center();
+//        //border: none;
+//        //outline: none;
+//        //background-color: transparent;
+//    }
+//}
+//
+//.container {
+//    //@include flex_row_center();
+//    //width: 100%;
+//    //height: 100svh;
+//    //background: url('/src/assets/main_bg.png') center/cover no-repeat;
+//    //.popup-wrapper {
+//    //    &.registration_page_source {
+//    //        @include popup_wrapper(714px, 623px, 100%, -2px, 531px, 44px, -30px, max-content, -75px, 14px, 465px, 20px);
+//    //    }
+//    //
+//    //    &.login_page_email,
+//    //    &.login_page_identity {
+//    //        @include popup_wrapper(525px, 435px, 200vw, -95px, 390px, 44px, -30px, max-content, -75px, 14px, 465px, 20px);
+//    //    }
+//    //
+//    //    &.upload_page_first {
+//    //        @include popup_wrapper(834px, 633px, 100%, -5px, 550px, 44px, -30px, max-content, -75px, 14px, 465px, 20px);
+//    //        background-size: contain !important;
+//    //    }
+//    //}
+//}
+//
+//@media screen and (max-width: $very-small-screens) {
+//    //.container {
+//    //    .popup-wrapper {
+//    //        &.registration_page_source {
+//    //            @include popup_wrapper($small-popup, 504px, 100%, 43%, 115%, 35px, -20px, 11px, -70px, 11px, 342px, 16px);
+//    //        }
+//    //        &.upload_page_first {
+//    //            @include popup_wrapper($small-popup-upload, 504px, 100%, 43%, 120%, 35px, -20px, 11px, -70px, 11px, 342px, 16px);
+//    //        }
+//    //    }
+//    //}
+//}
+//
+//@media screen and (max-width: $mobile) {
+//    //.container {
+//    //    .popup-wrapper {
+//    //        &.registration_page_source {
+//    //            width: $mobile-popup;
+//    //            height: 100%;
+//    //            border-radius: unset;
+//    //            border: unset;
+//    //            box-shadow: unset;
+//    //            background: none;
+//    //            .close {
+//    //                width: 4.7svh;
+//    //                height: 4.7svh;
+//    //                right: 0;
+//    //                left: 0;
+//    //                top: 3svh;
+//    //                margin: 0 auto;
+//    //                img {
+//    //                    width: 1.4svh;
+//    //                }
+//    //            }
+//    //            .bottom_text {
+//    //                bottom: 0.3rem;
+//    //                .bottom_title {
+//    //                    &.up {
+//    //                        font-size: 1.2svh !important;
+//    //                        line-height: 1.6svh;
+//    //                        width: 38svh;
+//    //                    }
+//    //                    &.middle {
+//    //                        font-size: 1.2svh !important;
+//    //                        line-height: 1.6svh;
+//    //                        .number {
+//    //                            font-size: 1svh !important;
+//    //                            line-height: 1svh !important;
+//    //                        }
+//    //                    }
+//    //                }
+//    //            }
+//    //        }
+//    //        &.login_page_email,
+//    //        &.login_page_identity {
+//    //            width: 100% !important;
+//    //            height: 100%;
+//    //            border-radius: unset;
+//    //            border: unset;
+//    //            box-shadow: unset;
+//    //            background: rgb(100%, 100%, 100%, 0.5) url('/src/assets/ellipse.png') no-repeat 50% 92svh;
+//    //            .close {
+//    //                width: 4.7svh;
+//    //                height: 4.7svh;
+//    //                right: 0;
+//    //                left: 0;
+//    //                top: 3svh;
+//    //                margin: 0 auto;
+//    //                img {
+//    //                    width: 1.4svh;
+//    //                }
+//    //            }
+//    //            .iframe-wrapper {
+//    //                #contentframe {
+//    //                    border: none;
+//    //                    outline: none;
+//    //                    width: 100vw !important;
+//    //                    height: 100vh;
+//    //                    background-color: transparent;
+//    //                }
+//    //            }
+//    //            .exist_icon {
+//    //                &.login {
+//    //                    top: 10vh;
+//    //                    width: 20svh;
+//    //                    left: 9.2%;
+//    //                    right: 0;
+//    //                }
+//    //                &.service {
+//    //                }
+//    //            }
+//    //
+//    //            .bottom_text {
+//    //                bottom: 5px;
+//    //                .bottom_title {
+//    //                    &.up {
+//    //                        font-size: 1.2svh !important;
+//    //                        line-height: 1.6svh;
+//    //                        width: 38svh;
+//    //                    }
+//    //                    &.middle {
+//    //                        font-size: 1.2svh !important;
+//    //                        line-height: 1.6svh;
+//    //                        .number {
+//    //                            font-size: 1svh !important;
+//    //                            line-height: 1svh !important;
+//    //                        }
+//    //                    }
+//    //                }
+//    //            }
+//    //        }
+//    //        &.upload_page_first {
+//    //            width: 100% !important;
+//    //            height: 100%;
+//    //            border-radius: unset;
+//    //            border: unset;
+//    //            box-shadow: unset;
+//    //            background: rgb(100%, 100%, 100%, 0.5) url('/src/assets/ellipse.png') no-repeat 50% 90.6svh;
+//    //            .close {
+//    //                width: 4.7svh;
+//    //                height: 4.7svh;
+//    //                right: 0;
+//    //                left: 0;
+//    //                top: 3svh;
+//    //                margin: 0 auto;
+//    //                img {
+//    //                    width: 1.4svh;
+//    //                }
+//    //            }
+//    //            .iframe-wrapper {
+//    //                #contentframe {
+//    //                    border: none;
+//    //                    outline: none;
+//    //                    width: 100vw !important;
+//    //                    height: 100vh;
+//    //                    background-color: transparent;
+//    //                }
+//    //            }
+//    //            .exist_icon {
+//    //                &.login {
+//    //                    top: 10vh;
+//    //                    width: 20svh;
+//    //                    left: 9.2%;
+//    //                    right: 0;
+//    //                }
+//    //                &.service {
+//    //                    top: 10vh;
+//    //                    width: 20svh;
+//    //                    left: 1%;
+//    //                    right: 0;
+//    //                }
+//    //            }
+//    //
+//    //            .bottom_text {
+//    //                bottom: 0;
+//    //                .bottom_title {
+//    //                    &.up {
+//    //                        font-size: 1.2svh !important;
+//    //                        line-height: 1.6svh;
+//    //                        width: 38svh;
+//    //                    }
+//    //                    &.middle {
+//    //                        font-size: 1.2svh !important;
+//    //                        line-height: 1.6svh;
+//    //                        .number {
+//    //                            font-size: 1svh !important;
+//    //                            line-height: 1svh !important;
+//    //                        }
+//    //                    }
+//    //                }
+//    //            }
+//    //        }
+//    //    }
+//    //}
+//}

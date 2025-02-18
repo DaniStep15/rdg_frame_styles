@@ -54,7 +54,9 @@ html {
     }
     #page_header {
         @include titles_styles($color-bright-orange, 20px, normal, 700);
+        position: absolute !important;
         margin: unset !important;
+        top: 75px !important;
     }
     #instruct {
         &:before {
@@ -306,6 +308,7 @@ html {
         @include bottom_yellow_image(60px);
         #page_header {
             position: relative !important;
+            top: unset !important;
             @include titles_styles($color-bright-orange, 2.4svh, normal, 700);
             //margin-bottom: 2svh !important;
         }

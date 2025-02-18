@@ -13,7 +13,7 @@ module.exports = env => {
         },
         output: {
             path: path.resolve(__dirname, './build'),
-            filename: '[name].bundle.js',
+            filename: '[name].js',
             assetModuleFilename: 'images/[hash][ext][query]',
             clean: true,
             publicPath: '/'
@@ -73,7 +73,7 @@ module.exports = env => {
             ]
         },
         resolve: {
-            extensions: ['', '.js', '.jsx']
+            extensions: ['.js', '.jsx']
         },
         devServer: {
             port: 5050,

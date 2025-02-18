@@ -22,13 +22,13 @@
 }
 
 @mixin flex_row_center {
-    display: flex !important;
+    display: flex;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
 }
 @mixin flex_column_center {
-    display: flex !important;
+    display: flex;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;

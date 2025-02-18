@@ -12,7 +12,11 @@ let config = {
     login_mail: {
         template: './src/sub-pages/rdg-login-page.html',
         chunks: ['main']
+    },
+    login_identity: {
+        template: './src/sub-pages/rdg-login-page-identity.html',
+        chunks: ['main']
     }
 }
 
-module.exports = config['login_mail']
+module.exports = config['registration']

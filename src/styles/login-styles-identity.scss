@@ -12,12 +12,11 @@ html {
 // prettier-ignore
 .container .row .col-md-6 .panel .panel-heading,
 .container .row .col-md-6 .panel .panel-body br,
-.container .row .col-md-6 .panel .panel-body .contact-form .form-group > i, label,
+.container .row .col-md-6 .panel .panel-body .contact-form .form-group label,
+.container .row .col-md-6 .panel .panel-body .contact-form .form-group i,
 .container .row .col-md-6 .panel .panel-body .contact-form #btn_loginbystudy{
     display: none !important;
 }
-
-//#btn_loginbystudy
 
 .container {
     @include flex_column_center();
@@ -28,7 +27,7 @@ html {
     border-radius: 60px !important;
     border: 1px solid #e2e0e0 !important;
     box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
-    background: rgb(100%, 100%, 100%, 0.5) !important;
+    background: white !important;
     overflow: hidden !important;
     @include bottom_yellow_image(55px);
     .page-title {

@@ -21,7 +21,10 @@ html {
     background: rgb(100%, 100%, 100%, 0.5) !important;
     overflow: hidden !important;
     @include bottom_yellow_image(80px);
-    div:has(h4 > .btn) {
+    // work locally
+    //div:has(h4 > .btn) {
+    //.class-name
+    > div:first-of-type {
         position: relative !important;
         width: 551px !important;
         height: 65px !important;
@@ -48,8 +51,15 @@ html {
             display: none !important;
         }
     }
-
     .row {
+        position: unset !important;
+        width: unset !important;
+        height: unset !important;
+        background-color: unset !important;
+        border-radius: unset !important;
+        border: unset !important;
+        padding: unset !important;
+        margin-bottom: unset !important;
         .col-md-12 {
             .panel {
                 @include flex_column_center();

@@ -14,8 +14,9 @@ html {
 .container .row .col-md-6 .panel .panel-heading,
 .container .row .col-md-6 .panel .panel-body div br,
 .container .row .col-md-6 .panel .panel-body #other_btns #btn_loginbystudy,
-.container .row .col-md-6 .panel .panel-body div #step1 .form-group > i,
-label { display: none !important; }
+.container .row .col-md-6 .panel .panel-body div #step1 .form-group label,
+.container .row .col-md-6 .panel .panel-body div #step1 .form-group i,
+ { display: none !important; }
 
 .container {
     @include flex_column_center();
@@ -26,7 +27,7 @@ label { display: none !important; }
     border-radius: 60px !important;
     border: 1px solid #e2e0e0 !important;
     box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
-    background: rgb(100%, 100%, 100%, 0.5) !important;
+    background: white !important;
     overflow: hidden !important;
     @include bottom_yellow_image(55px);
     .page-title {

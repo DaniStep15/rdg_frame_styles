@@ -1,7 +1,13 @@
-@import 'styles/registration-styles';
-//@import 'styles/upload-file-first';
+//@import 'styles/registration-styles';
+@import 'styles/upload-file-first';
 //@import 'styles/login_styles_main';
 //@import 'styles/login-styles-identity';
+
+// TODO: Z-INDEX FOR BTNS, CHECK ALL STEPS
+//     : SET MIN-HEIGHT FOR CONTAINER
+//     : CHECK WHY STYLES ISN'T WORK
+//     : upload steps => remove texts and img
+//     : then use clamp set max-size for all elems()
 
 //@import 'mixins';
 //@import 'vars';

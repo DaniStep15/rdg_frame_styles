@@ -172,6 +172,21 @@
     line-height: 0 !important;
 }
 
+///////// new styles
+@mixin submit_btn_($width, $height, $font-size) {
+    width: $width !important;
+    height: $height !important;
+    color: $color-white !important;
+    font-size: $font-size !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    background-color: $bright-orange !important;
+    text-align: center !important;
+    border-radius: 2rem !important;
+    letter-spacing: -1px !important;
+    line-height: 0 !important;
+}
+
 @mixin login_page_alert($font-size, $top) {
     position: absolute !important;
     color: $alert-red !important;
@@ -190,8 +205,8 @@
 }
 
 @mixin login_captcha_position($bottom, $scale) {
-    position: absolute;
-    bottom: $bottom !important;
+    //position: absolute;
+    //bottom: $bottom !important;
     transform: scale($scale) !important;
 }
 

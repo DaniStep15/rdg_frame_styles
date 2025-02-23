@@ -18,14 +18,11 @@
         <link href="/static3/css/fonts/fontello.css" rel="stylesheet" />
         <link href="/static3/css/style.css" rel="stylesheet" />
         <link href="/static3/css/skins/light_blue.css" rel="stylesheet" />
-
         <link rel="stylesheet" href="/static3/bootstrap-3-4-1/css/bootstrap-rtl.min.css" />
-
         <link rel="stylesheet" href="/static3/css/site.css" />
         <script nonce="373bd3c0-e18b-4a58-a352-d2f5866d553c">
             var is_client = true
         </script>
-
         <!-- Google Tag Manager -->
         <script nonce="373bd3c0-e18b-4a58-a352-d2f5866d553c">
             ;(function(w, d, s, l, i) {
@@ -40,7 +37,6 @@
             })(window, document, 'script', 'dataLayer', 'GTM-PGFB3PZQ')
         </script>
         <!-- End Google Tag Manager -->
-
         <script nonce="373bd3c0-e18b-4a58-a352-d2f5866d553c">
             var page_id = 36
         </script>
@@ -64,13 +60,10 @@
 
     <body>
         <div class="container">
-            <!-- page-title start -->
-            <!-- ================ -->
             <h1 class="page-title">כניסה לבדיקות שלך</h1>
-            <!-- page-title end -->
             <div class="row">
                 <div class="col-md-6">
-                    <div id="step1" class="panel panel-primary ">
+                    <div id="step1" class="panel panel-primary hidden">
                         <div class="panel-heading">ברוכים הבאים</div>
                         <div class="panel-body">
                             <p>יש להזין את מספר תעודת הזהות:</p>
@@ -87,7 +80,7 @@
                             <div class="alert alert-error hidden" id="tokenLimitError">
                                 <strong>יותר מדי נסיונות כניסה לחשבון זה</strong>
                             </div>
-                            <div class="alert alert-error hidden" id="captchaError">
+                            <div class="alert alert-error " id="captchaError">
                                 <strong>נא לסמן שאינך רובוט.</strong>
                             </div>
 
@@ -106,7 +99,7 @@
                         </div>
                     </div>
 
-                    <div id="step2" class="panel panel-primary hidden">
+                    <div id="step2" class="panel panel-primary ">
                         <div class="panel-heading">ברוכים הבאים</div>
                         <div class="panel-body">
                             <p id="step2msg">המערכת שלחה קוד אימות למספר הטלפון הנייד השמור במערכת.</p>

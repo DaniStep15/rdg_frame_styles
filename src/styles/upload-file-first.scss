@@ -41,6 +41,7 @@ html {
     @include flex_column_center();
     width: 834px !important;
     height: 633px !important;
+    min-height: 633px !important;
     padding: unset !important;
     border-radius: 60px !important;
     border: 1px solid #e2e0e0 !important;
@@ -59,6 +60,8 @@ html {
         top: 75px !important;
     }
     #instruct {
+        background-color: white !important;
+        z-index: 10 !important;
         &:before {
             content: '';
             position: absolute !important;
@@ -161,6 +164,9 @@ html {
             min-width: 40% !important;
         }
         .col-lg-8 {
+            #tosdiv {
+                display: none !important;
+            }
             div:has(#msg) {
                 #msg {
                     br {

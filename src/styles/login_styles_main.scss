@@ -9,17 +9,26 @@ html {
     height: 100% !important;
     width: 100% !important;
 }
+
+// prettier-ignore
+.container .row .col-md-6 .panel .panel-heading,
+.container .row .col-md-6 .panel .panel-body div br,
+.container .row .col-md-6 .panel .panel-body #other_btns #btn_loginbystudy,
+.container .row .col-md-6 .panel .panel-body div #step1 .form-group > i,
+label { display: none !important; }
+
 .container {
     @include flex_column_center();
     position: relative !important;
-    height: 435px !important;
-    width: 525px !important;
+    height: 455px !important;
+    min-height: 455px !important;
+    width: 480px !important;
     border-radius: 60px !important;
     border: 1px solid #e2e0e0 !important;
     box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
     background: rgb(100%, 100%, 100%, 0.5) !important;
     overflow: hidden !important;
-    @include bottom_yellow_image(40px);
+    @include bottom_yellow_image(55px);
     .page-title {
         @include titles_styles($color-bright-orange, 20px, normal, 700);
     }
@@ -27,86 +36,77 @@ html {
         @include flex_column_center();
         .col-md-6 {
             .panel {
-                height: 250px !important;
-                .panel-heading {
-                    display: none !important;
-                }
                 .panel-body {
-                    margin-top: 2px !important;
+                    @include flex_column_center();
                     .alert {
                         @include login_page_alert(11px, 104px);
-                        top: unset !important;
-                        bottom: -23px;
+                        width: max-content !important;
+                        top: 100px !important;
                         &#captchaError {
-                            bottom: -23px;
+                            top: unset !important;
+                            bottom: 32px !important;
                         }
                     }
-                    @include flex_column_center();
                     div {
                         @include flex_column_center();
-                    }
-                    #step1 {
-                        @include flex_column_center();
-                        #g-recaptcha {
-                            @include login_captcha_position(8px, 0.8);
-                        }
-                        p {
-                            @include titles_styles($color-gray-warm, 14px, normal, 500);
-                        }
-                        .form-group {
-                            margin-top: 39px !important;
-                            @include input_nth_child('אימייל', 468, 39, 13, -22, 15);
-                            i,
-                            label {
-                                display: none !important;
+                        #step1 {
+                            p {
+                                @include titles_styles($color-gray-warm, 14px, normal, 500);
                             }
-                            .form-control {
-                                padding: 0 10px !important;
+                            #g-recaptcha {
+                                height: 144px !important;
+                                transform: scale(0.8) !important;
+                                margin: 12px 0 5px 0 !important;
                             }
-                        }
-                        #btn_send_email {
-                            @include submit_btn(105px, 27px, 12px, -10px);
-                        }
-                    }
-                    #step2 {
-                        @include flex_column_center();
-                        p {
-                            @include titles_styles($color-gray-warm, 17px, normal, 500);
-                            text-align: center !important;
-                            br {
-                                height: 0 !important;
+                            .form-group {
+                                margin-top: 39px !important;
+                                @include input_nth_child('אימייל', 340, 39, 13, -22, 15);
+                                .form-control {
+                                    padding: 0 15px !important;
+                                }
                             }
-                            span {
-                                display: block !important;
-                                color: $color-light-cyan !important;
-                                font-weight: 500 !important;
-                                margin: 0.5rem 0 0 0 !important;
-                            }
-                            strong > span {
-                                color: $color-gray-warm !important;
-                                text-transform: lowercase !important;
-                                font-weight: 500 !important;
-                                display: inline !important;
+                            #btn_send_email {
+                                @include submit_btn_(105px, 27px, 12px);
                             }
                         }
-                        .form-group {
-                            position: relative !important;
-                            margin-top: 2rem !important;
-                            @include input_nth_child('', 468, 39, 13, -22, 13);
-                            label {
-                                display: none !important;
+
+                        /////////////
+                        #step2 {
+                            @include flex_column_center();
+                            p {
+                                @include titles_styles($color-gray-warm, 15px, normal, 500);
+                                text-align: center !important;
+                                width: 400px !important;
+                                br:first-of-type {
+                                    display: block !important;
+                                }
+                                span {
+                                    display: block !important;
+                                    color: $color-light-cyan !important;
+                                    font-weight: 500 !important;
+                                    margin: 0.5rem 0 0 0 !important;
+                                }
+                                strong > span {
+                                    display: inline !important;
+                                    text-transform: lowercase !important;
+                                    color: $color-gray-warm !important;
+                                    font-weight: 500 !important;
+                                }
                             }
-                        }
-                        #btn_send_otp {
-                            @include submit_btn(105px, 27px, 12px, 0);
+                            .form-group {
+                                position: relative !important;
+                                margin: 3rem 0 3rem 0 !important;
+                                @include input_nth_child('', 340, 39, 13, -22, 13);
+                            }
+                            #btn_send_otp {
+                                @include submit_btn_(105px, 27px, 12px);
+                            }
                         }
                     }
                     #other_btns {
                         position: absolute !important;
-                        bottom: -60px !important;
-                        #btn_loginbystudy {
-                            display: none !important;
-                        }
+                        bottom: -53px !important;
+                        z-index: 10 !important;
                         #btn_loginbyid {
                             @include login_type_title(12px, 21.657px);
                         }
@@ -120,129 +120,89 @@ html {
 @media screen and (max-width: $mobile) {
     .container {
         @include flex_column_center();
-        //justify-content: start !important;
         width: 100% !important;
         height: 100% !important;
         border-radius: 0 !important;
         border: 0 !important;
         padding: 0;
-        //padding-top: 10svh !important;
-
         .page-title {
             @include titles_styles($color-bright-orange, clamp(16px, 5vw, 20px), normal, 700);
         }
         .row {
             .col-md-6 {
                 .panel {
-                    height: unset !important;
-                    .panel-heading {
-                        display: none !important;
-                    }
                     .panel-body {
-                        @include flex_column_center();
-                        margin-top: 2px !important;
-                        position: relative !important;
                         .alert {
-                            @include titles_styles($alert-red, 1.2svh, normal, 600);
-                            top: unset !important;
-                            bottom: 3.6svh !important;
+                            @include titles_styles($alert-red, clamp(8px, 1.2svh, 10px), normal, 600);
+                            top: 100px !important;
                             &#captchaError {
                                 top: unset !important;
+                                bottom: 34px !important;
                             }
                         }
                         div {
                             @include flex_column_center();
-                            br {
-                                display: none !important;
-                            }
-                        }
-                        #step1 {
-                            @include flex_column_center();
-                            br {
-                                display: none !important;
-                            }
-                            #g-recaptcha {
-                                @include login_captcha_position(4px, 0.7);
-                                position: relative !important;
-                                translate: 0 0 !important;
-                                bottom: 0 !important;
-                                background-color: $bg-test-white !important;
-                            }
-                            p {
-                                @include titles_styles($color-gray-warm, clamp(14px, 3.5vw, 16px), normal, 600);
-                            }
-                            .form-group {
-                                margin-top: 4.4svh !important;
-                                @include input_nth_child_mobile('אימייל', 78vw, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.8svh);
-                                i,
-                                label {
-                                    display: none !important;
-                                }
-                                .form-control {
-                                    padding: 0 10px !important;
-                                }
-                            }
-                            #btn_send_email {
-                                @include submit_btn(20vw, 3svh, 1.5svh, 0);
-                                position: relative !important;
-                            }
-                        }
-                        // ############## step 2
-                        #step2 {
-                            position: relative !important;
-                            @include flex_column_center();
-                            p {
-                                @include flex_column_center();
-                                text-align: center !important;
-                                color: transparent !important;
-                                font-size: 0 !important;
-                                &:before {
-                                    content: 'המערכת שלחה לך קוד חד פעמי לכתובת האימייל, יש לבדוק את תיבת האימייל';
-                                    position: relative !important;
-                                    display: block !important;
-                                    @include titles_styles($color-gray-warm, 1.6svh, normal, 500);
-                                    width: 70vw !important;
-                                }
-                                span {
-                                    display: block !important;
-                                    margin: 1svh 0 2svh 0 !important;
-                                    @include titles_styles($color-light-cyan, 1.6svh, normal, 500);
-                                }
-                                strong {
-                                    @include flex_row_center();
-                                    gap: 0 5px !important;
-                                    &:before {
-                                        content: 'הקוד נשלח לכתובת' !important;
-                                        position: relative !important;
-                                        display: block !important;
-                                        width: max-content !important;
-                                        @include titles_styles($color-gray-warmer, 1.6svh, normal, 500);
-                                    }
-                                }
-                                strong > span {
-                                    color: $color-gray-warmer !important;
-                                    text-transform: lowercase !important;
-                                    font-weight: 500 !important;
-                                    margin: unset !important;
-                                    display: inline !important;
+
+                            #step1 {
+                                p {
+                                    @include titles_styles($color-gray-warm, clamp(14px, 3.5vw, 16px), normal, 600);
                                 }
 
-                                br {
-                                    display: none !important;
+                                .form-group {
+                                    @include input_nth_child_mobile('אימייל', 78vw, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.5svh);
+                                }
+
+                                #btn_send_email {
+                                    @include submit_btn_(80px, 25px, 10px);
                                 }
                             }
-                            .form-group {
-                                position: relative !important;
-                                @include input_nth_child_mobile('', 78vw, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.5svh);
-                                margin: 1.2svh 0 3svh 0 !important;
-                                label {
-                                    display: none !important;
+
+                            // ############## step 2
+                            #step2 {
+                                p {
+                                    @include flex_column_center();
+                                    text-align: center !important;
+                                    color: transparent !important;
+                                    font-size: 0 !important;
+                                    &:before {
+                                        content: 'המערכת שלחה לך קוד חד פעמי לכתובת האימייל, יש לבדוק את תיבת האימייל';
+                                        position: relative !important;
+                                        display: block !important;
+                                        @include titles_styles($color-gray-warm, 1.6svh, normal, 500);
+                                        width: 70vw !important;
+                                    }
+                                    span {
+                                        display: block !important;
+                                        @include titles_styles($color-light-cyan, 1.6svh, normal, 500);
+                                    }
+
+                                    strong {
+                                        @include flex_row_center();
+                                        gap: 0 5px !important;
+
+                                        &:before {
+                                            content: 'הקוד נשלח לכתובת' !important;
+                                            position: relative !important;
+                                            display: block !important;
+                                            width: max-content !important;
+                                            @include titles_styles($color-gray-warmer, 1.6svh, normal, 500);
+                                        }
+                                    }
+
+                                    strong > span {
+                                        color: $color-gray-warmer !important;
+                                        text-transform: lowercase !important;
+                                        font-weight: 500 !important;
+                                        margin: unset !important;
+                                        display: inline !important;
+                                    }
                                 }
-                            }
-                            #btn_send_otp {
-                                @include submit_btn(20vw, 3svh, 1.5svh, 3%);
-                                top: unset !important;
-                                position: relative !important;
+                                .form-group {
+                                    @include input_nth_child_mobile('', 78vw, clamp(25px, 5svh, 38px), clamp(10px, 1.7svh, 12px), -2.7svh, 1.5svh);
+                                }
+                                #btn_send_otp {
+                                    @include submit_btn_(80px, 25px, 10px);
+                                }
                             }
                         }
                         #other_btns {

@@ -19,4 +19,4 @@ let config = {
     }
 }
 
-module.exports = config['registration']
+module.exports = config['upload']

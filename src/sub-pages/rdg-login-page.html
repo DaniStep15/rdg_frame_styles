@@ -18,11 +18,8 @@
         <link href="static3/css/fonts/fontello.css" rel="stylesheet" />
         <link href="static3/css/style.css" rel="stylesheet" />
         <link href="static3/css/skins/light_blue.css" rel="stylesheet" />
-
         <link rel="stylesheet" href="static3/bootstrap-3-4-1/css/bootstrap-rtl.min.css" />
-
         <link rel="stylesheet" href="static3/css/site.css" />
-
         <script nonce="ce8bcbd7-49e6-458c-b532-c90380ac61cb">
             var is_client = true
         </script>
@@ -63,19 +60,20 @@
     <body>
         <div class="container">
             <h1 class="page-title">כניסה לתיק הדימות האישי שלך</h1>
+            <!--            -->
             <div class="row">
                 <div class="col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">לקוח קיים</div>
                         <div class="panel-body">
-                            <div class="alert alert-error " id="emailError">
+                            <div class="alert alert-error hidden" id="emailError">
                                 <strong>האימייל שהוזן שגוי.</strong>
                             </div>
                             <div class="alert alert-error hidden" id="codeError">
                                 <strong
                                     >הקוד שהוקש שגוי.<br />
                                     החשבון ינעל בעוד
-                                    <span id="tries"></span>&nbsp;נסיונות.</strong
+                                    <span id="tries">2</span>&nbsp;נסיונות.</strong
                                 >
                             </div>
                             <div class="alert alert-error hidden" id="expireError">
@@ -91,7 +89,7 @@
                                 <strong>נא לסמן שאינך רובוט.</strong>
                             </div>
                             <div>
-                                <div id="step1">
+                                <div id="step1" class="hidden">
                                     <p style="font-size:130%;font-weight:bold;">אנא הכנס את כתובת המייל איתה נרשמת:</p>
                                     <div class="form-group has-feedback">
                                         <label for="email">Email*</label>
@@ -102,7 +100,7 @@
                                     <div id="g-recaptcha"></div>
                                     <input type="button" id="btn_send_email" value="ש ל ח !" class="btn btn-default " /><br />
                                 </div>
-                                <div id="step2" class="hidden">
+                                <div id="step2">
                                     <p style="font-size:130%;font-weight:bold;">
                                         המערכת שלחה לך קוד חד פעמי לכתובת האימייל.<br />
                                         יש לבדוק את תיבת האימייל.<br />

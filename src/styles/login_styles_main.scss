@@ -16,7 +16,13 @@ html {
 .container .row .col-md-6 .panel .panel-body #other_btns #btn_loginbystudy,
 .container .row .col-md-6 .panel .panel-body div #step1 .form-group label,
 .container .row .col-md-6 .panel .panel-body div #step1 .form-group i,
+.container .row .col-md-6 .panel .panel-body div #step2 .form-group label,
+.container .row .col-md-6 .panel .panel-body div #step2 .form-group i,
  { display: none !important; }
+
+body {
+    @include bottom_titles_rdg(515px);
+}
 
 .container {
     @include flex_column_center();
@@ -40,12 +46,11 @@ html {
                 .panel-body {
                     @include flex_column_center();
                     .alert {
-                        @include login_page_alert(11px, 104px);
+                        @include login_page_alert(11px, unset);
                         width: max-content !important;
-                        top: 100px !important;
+                        bottom: 34px !important;
                         &#captchaError {
-                            top: unset !important;
-                            bottom: 32px !important;
+                            bottom: 34px !important;
                         }
                     }
                     div {
@@ -126,8 +131,9 @@ html {
         border-radius: 0 !important;
         border: 0 !important;
         padding: 0;
+        @include bottom_yellow_image(7.8svh);
         .page-title {
-            @include titles_styles($color-bright-orange, clamp(16px, 5vw, 20px), normal, 700);
+            @include titles_styles($color-bright-orange, clamp(16px, 4.8vw, 18px), normal, 700);
         }
         .row {
             .col-md-6 {
@@ -135,10 +141,10 @@ html {
                     .panel-body {
                         .alert {
                             @include titles_styles($alert-red, clamp(8px, 1.2svh, 10px), normal, 600);
-                            top: 100px !important;
+                            bottom: 32px !important;
                             &#captchaError {
                                 top: unset !important;
-                                bottom: 34px !important;
+                                bottom: 32px !important;
                             }
                         }
                         div {
@@ -146,7 +152,7 @@ html {
 
                             #step1 {
                                 p {
-                                    @include titles_styles($color-gray-warm, clamp(14px, 3.5vw, 16px), normal, 600);
+                                    @include titles_styles($color-gray-warm, clamp(12px, 3vw, 14px), normal, 600);
                                 }
 
                                 .form-group {
@@ -175,6 +181,7 @@ html {
                                     span {
                                         display: block !important;
                                         @include titles_styles($color-light-cyan, 1.6svh, normal, 500);
+                                        margin: unset !important;
                                     }
 
                                     strong {

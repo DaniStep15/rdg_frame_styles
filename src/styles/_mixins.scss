@@ -243,6 +243,45 @@
     }
 }
 
+@mixin bottom_titles_rdg($translate_top) {
+    &:after {
+        position: relative !important;
+        content: 'הפרטים האישיים של לקוחותנו נשמרים במסד נתונים מאובטח ומוצפן של RDG. לעולם לא נעביר או נמסור את פרטיך האישיים לצד שלישי כלשהו.';
+        width: 450px !important;
+        color: #656362 !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: normal !important;
+        height: 0 !important;
+        text-align: center !important;
+        margin-top: 10px !important;
+        @media screen and (max-width: $mobile) {
+            position: absolute !important;
+            width: 38svh !important;
+            font-size: 1.2svh !important;
+            bottom: 5.8svh !important;
+            z-index: 10 !important;
+        }
+    }
+    &:before {
+        content: 'השירות ניתן ע”י RDG רופאים מומחים ברדיולוגיה, שותפות רשומה מס’ 540332210';
+        color: #ffa800 !important;
+        font-size: 14px !important;
+        height: 0 !important;
+        font-weight: 400 !important;
+        line-height: 0 !important;
+        text-align: center !important;
+        translate: 0 $translate_top !important;
+        @media screen and (max-width: $mobile) {
+            position: absolute !important;
+            font-size: 1.2svh !important;
+            bottom: 1.4svh !important;
+            z-index: 20 !important;
+            translate: unset !important;
+        }
+    }
+}
+
 //@mixin start_config_main { // in use
 //    margin: 0 !important;
 //    padding: 0 !important;

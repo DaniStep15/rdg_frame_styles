@@ -10,6 +10,10 @@ html {
     width: 100% !important;
 }
 
+body {
+    @include bottom_titles_rdg(693px);
+}
+
 #loading {
     position: absolute !important;
     top: 0 !important;
@@ -306,31 +310,29 @@ html {
         @include flex_column_center();
         width: 100% !important;
         height: 100svh !important;
-
         border-radius: 0 !important;
         border: 0 !important;
         box-shadow: unset !important;
         overflow: hidden !important;
-        @include bottom_yellow_image(60px);
+        @include bottom_yellow_image(7.8svh);
         #page_header {
             position: relative !important;
             top: unset !important;
-            @include titles_styles($color-bright-orange, 2.4svh, normal, 700);
-            //margin-bottom: 2svh !important;
+            @include titles_styles($color-bright-orange, clamp(16px, 4.8vw, 18px), normal, 700);
         }
         #instruct {
             #cntdiv {
                 display: none !important;
             }
             #instruct_inner_heading {
-                @include titles_styles($color-bright-cyan, clamp(14px, 3.5vw, 16px), normal, 550);
+                @include titles_styles($color-bright-cyan, clamp(12px, 3.5vw, 14px), normal, 550);
             }
             .row {
                 .col-12 {
                     .card {
                         padding: 0 1vw 0 0 !important;
                         #instruct_video {
-                            @include titles_styles($color-bright-cyan, 1.5svh, normal, 700);
+                            @include titles_styles($color-bright-cyan, clamp(12px, 3vw, 14px), normal, 700);
                         }
                         .stepper {
                             .step {

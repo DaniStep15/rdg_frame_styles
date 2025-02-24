@@ -18,6 +18,10 @@ html {
     display: none !important;
 }
 
+body {
+    @include bottom_titles_rdg(515px);
+}
+
 .container {
     @include flex_column_center();
     position: relative !important;
@@ -30,6 +34,7 @@ html {
     background: white !important;
     overflow: hidden !important;
     @include bottom_yellow_image(55px);
+
     .page-title {
         @include titles_styles($color-bright-orange, 20px, normal, 700);
     }
@@ -119,8 +124,9 @@ html {
         border-radius: 0 !important;
         border: 0 !important;
         padding: 0;
+        @include bottom_yellow_image(7.8svh);
         .page-title {
-            @include titles_styles($color-bright-orange, clamp(16px, 5vw, 20px), normal, 700);
+            @include titles_styles($color-bright-orange, clamp(16px, 4.8vw, 18px), normal, 700);
         }
         .row {
             .col-md-6 {
@@ -131,15 +137,22 @@ html {
                         margin-top: 2px !important;
                         position: relative !important;
                         p {
-                            @include titles_styles($color-gray-warm, clamp(14px, 3.5vw, 16px), normal, 600);
+                            @include titles_styles($color-gray-warm, clamp(12px, 3vw, 14px), normal, 600);
                             text-align: center !important;
+                            width: 90vw !important;
                         }
                         .alert {
                             @include titles_styles($alert-red, clamp(8px, 1.2svh, 10px), normal, 600);
-                            top: 100px !important;
+                            top: 35% !important;
+                            bottom: 59% !important;
                             &#captchaError {
                                 top: unset !important;
                                 bottom: 32px !important;
+                            }
+                            &#notFoundError {
+                                &::after {
+                                    @include login_page_alert(clamp(8px, 1.2svh, 10px), unset);
+                                }
                             }
                         }
                         .contact-form {
@@ -151,6 +164,7 @@ html {
                             }
                             #btn_loginbyemail {
                                 @include login_type_title(1.3svh, 21.657px);
+                                bottom: -40px !important;
                             }
                         }
                     }
@@ -158,7 +172,8 @@ html {
                 #step2 {
                     .panel-body {
                         .alert {
-                            top: 95px !important;
+                            top: 65% !important;
+                            bottom: 25% !important;
                         }
                         .contact-form {
                             .form-group {

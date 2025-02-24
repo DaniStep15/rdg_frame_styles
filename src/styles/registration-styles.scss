@@ -9,6 +9,9 @@ html {
     height: 100% !important;
     width: 100% !important;
 }
+body {
+    @include bottom_titles_rdg(683px);
+}
 .container {
     @include flex_column_center();
     position: relative !important;
@@ -18,7 +21,7 @@ html {
     border-radius: 60px !important;
     border: 1px solid #e2e0e0 !important;
     box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
-    background: rgb(100%, 100%, 100%, 0.5) !important;
+    background: white !important;
     overflow: hidden !important;
     @include bottom_yellow_image(80px);
     // work locally
@@ -164,7 +167,7 @@ html {
         border-radius: 0 !important;
         border: 0 !important;
         padding: 0;
-        @include bottom_yellow_image(50px);
+        @include bottom_yellow_image(7.8svh);
         div:has(h4 > .btn) {
             @include flex_row_center();
             gap: 0 2% !important;
@@ -215,7 +218,7 @@ html {
                         width: 100% !important;
                         .alert {
                             position: absolute;
-                            bottom: -2.2svh !important;
+                            bottom: 3.2svh !important;
                             text-align: center !important;
                             @include titles_styles($alert-red, 1.3svh, 0, 600);
                             z-index: 10;
@@ -226,7 +229,7 @@ html {
                             height: unset !important;
                             color: transparent !important;
                             font-size: 0 !important;
-                            bottom: -2.2svh !important;
+                            bottom: 3.8svh !important;
                             z-index: 10;
                             strong {
                                 color: $lime-green !important;

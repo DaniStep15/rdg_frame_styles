@@ -27,33 +27,6 @@ body {
     // work locally
     //div:has(h4 > .btn) {
     //.class-name
-    > div:first-of-type {
-        position: relative !important;
-        width: 551px !important;
-        height: 65px !important;
-        background-color: #f9fbfd !important;
-        border-radius: 49px !important;
-        border: 1px solid #e1e1e1 !important;
-        padding: 17px 10px 17px 0 !important;
-        margin-bottom: 25px !important;
-        h4 {
-            width: 100% !important;
-            text-align: center !important;
-            @include titles_styles(transparent, 17px, normal, 700);
-        }
-        a {
-            @include header_btn(94px, 28px, 28px, 13px, 6px);
-        }
-        &:before {
-            @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 71, 18, '', $color-gray-warm, 17, 700);
-        }
-        &:after {
-            @include before_after_head('כדי להתחבר', 61, '', 18, '', $color-gray-warm, 17, 700);
-        }
-        br {
-            display: none !important;
-        }
-    }
     .row {
         position: unset !important;
         width: unset !important;
@@ -157,6 +130,46 @@ body {
             }
         }
     }
+
+    > div:first-of-type,
+    > div:not([class]),
+    > div:only-child,
+    > div:has(h4),
+    > div:empty,
+    > div:not(:last-child),
+    > div:nth-of-type(odd) {
+        position: relative !important;
+        width: 551px !important;
+        height: 65px !important;
+        background-color: #f9fbfd !important;
+        border-radius: 49px !important;
+        border: 1px solid #e1e1e1 !important;
+        padding: 17px 10px 17px 0 !important;
+        margin-bottom: 25px !important;
+        .existing_client {
+            display: none !important;
+        }
+        .already_registered {
+            @include flex_row_center();
+            justify-content: space-between !important;
+            width: 100% !important;
+            text-align: center !important;
+            padding: 0 5rem !important;
+            @include titles_styles(transparent, 0px, 0, 700);
+            a {
+                @include header_btn(94px, 28px, 28px, 13px, 6px);
+            }
+            &:before {
+                @include before_after_head('לקוח קיים? אם כבר נרשמתם', '', 71, 18, '', $color-gray-warm, 17, 700);
+            }
+            &:after {
+                @include before_after_head('כדי להתחבר', 61, '', 18, '', $color-gray-warm, 17, 700);
+            }
+        }
+        br {
+            display: none !important;
+        }
+    }
 }
 
 // mobile
@@ -168,37 +181,6 @@ body {
         border: 0 !important;
         padding: 0;
         @include bottom_yellow_image(7.8svh);
-        div:has(h4 > .btn) {
-            @include flex_row_center();
-            gap: 0 2% !important;
-            width: 90% !important;
-            height: clamp(60px, 8svh, 8svh) !important;
-            min-height: clamp(60px, 8svh, 8svh) !important;
-            border-radius: 15px !important;
-            padding: unset !important;
-            margin-bottom: 3svh !important;
-            h4 {
-                @include flex_row_center();
-                font-size: 0 !important;
-                height: 100% !important;
-                width: 25% !important;
-                min-width: 25% !important;
-                a {
-                    @include flex_row_center();
-                    @include header_btn(100%, 45%, 100%, clamp(10px, 3.4vw, 20px), 0);
-                    min-width: 100% !important;
-                }
-            }
-
-            &:before {
-                @include before_after_head_mobile('לקוח קיים? אם כבר נרשמתם', unset, unset, unset, unset, $color-gray-warm, clamp(10px, 3.4vw, 20px), 700, 0, fit-content);
-                position: relative !important;
-            }
-            &:after {
-                @include before_after_head_mobile('כדי להתחבר', unset, unset, unset, unset, $color-gray-warm, clamp(10px, 3.4vw, 20px), 700, 0, fit-content);
-                position: relative !important;
-            }
-        }
         .row {
             width: 100% !important;
             .col-md-12 {
@@ -301,6 +283,42 @@ body {
                             }
                         }
                     }
+                }
+            }
+        }
+        > div:first-of-type,
+        > div:not([class]),
+        > div:only-child,
+        > div:has(h4),
+        > div:empty,
+        > div:not(:last-child),
+        > div:nth-of-type(odd) {
+            @include flex_row_center();
+            gap: 0 2% !important;
+            width: 90% !important;
+            height: clamp(60px, 8svh, 8svh) !important;
+            min-height: clamp(60px, 8svh, 8svh) !important;
+            border-radius: 15px !important;
+            padding: unset !important;
+            margin-bottom: 3svh !important;
+            .existing_client {
+                display: none !important;
+            }
+            .already_registered {
+                @include flex_row_center();
+                justify-content: space-between !important;
+                width: 100% !important;
+                text-align: center !important;
+                padding: 0 1rem !important;
+                @include titles_styles(transparent, 0px, 0, 700);
+                .already_registered_btn {
+                    @include header_btn(20%, clamp(10px, 5vw, 24px), clamp(10px, 5vw, 24px), clamp(10px, 3.2vw, 18px), 0);
+                }
+                &:before {
+                    @include before_after_head_mobile('לקוח קיים? אם כבר נרשמתם', unset, unset, unset, unset, $color-gray-warm, clamp(10px, 3.4vw, 20px), 700, 0, max-content);
+                }
+                &:after {
+                    @include before_after_head_mobile('כדי להתחבר', unset, unset, unset, unset, $color-gray-warm, clamp(10px, 3.4vw, 20px), 700, 0, max-content);
                 }
             }
         }

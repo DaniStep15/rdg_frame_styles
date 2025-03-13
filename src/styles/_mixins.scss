@@ -37,30 +37,30 @@
 @mixin before_after_head($text, $left, $right, $top, $bottom, $color, $size, $weight) {
     content: $text;
     display: block !important;
-    position: absolute !important;
     width: max-content !important;
     color: $color !important;
     font-size: #{$size}px !important;
     font-weight: $weight !important;
-    top: #{$top}px !important;
-    bottom: #{$bottom}px !important;
-    left: #{$left}px !important;
-    right: #{$right}px !important;
+    //position: absolute !important;
+    //top: #{$top}px !important;
+    //bottom: #{$bottom}px !important;
+    //left: #{$left}px !important;
+    //right: #{$right}px !important;
 }
 
 @mixin before_after_head_mobile($text, $left, $right, $top, $bottom, $color, $size, $weight, $line-height, $width) {
     content: $text;
     display: block;
-    position: absolute;
+    //position: absolute;
     text-align: center;
     width: $width !important;
     color: $color !important;
     font-size: $size !important;
     font-weight: $weight !important;
-    top: $top !important;
-    bottom: $bottom !important;
-    left: $left !important;
-    right: $right !important;
+    //top: $top !important;
+    //bottom: $bottom !important;
+    //left: $left !important;
+    //right: $right !important;
     line-height: $line-height !important;
 }
 
@@ -139,7 +139,7 @@
     color: $color-white !important;
     font-size: $font-size !important; // change
     font-weight: 600 !important;
-    translate: $translate 0 !important; // change
+    //translate: $translate 0 !important; // change
     @media screen and (max-width: $mobile) {
         //margin: 0 33.1vw 0 14.3vw !important;
     }

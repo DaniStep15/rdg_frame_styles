@@ -19,4 +19,4 @@ let config = {
     }
 }
 
-module.exports = config['upload']
+module.exports = config['login_identity']

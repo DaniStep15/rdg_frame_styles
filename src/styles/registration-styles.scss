@@ -1,5 +1,5 @@
-@import 'mixins';
-@import 'vars';
+@import '../mixin-vars/mixins';
+@import '../mixin-vars/vars';
 // prettier-ignore
 * { @include start_config_rdg(); }
 

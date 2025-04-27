@@ -1,22 +1,22 @@
 'use strict'
-
+const path = require('path')
 let config = {
     registration: {
-        template: './src/sub-pages/rdg-registration-list.html',
-        chunks: ['main']
+        htmlfile: { template: './src/sub-pages/rdg-registration-list.html', chunks: ['main'] },
+        key: 'registration'
     },
     upload: {
-        template: './src/sub-pages/rdg-upload-first.html',
-        chunks: ['main']
+        htmlfile: { template: './src/sub-pages/rdg-upload-first.html', chunks: ['main'] },
+        key: 'upload'
     },
     login_mail: {
-        template: './src/sub-pages/rdg-login-page.html',
-        chunks: ['main']
+        htmlfile: { template: './src/sub-pages/rdg-login-page.html', chunks: ['main'] },
+        key: 'login_mail'
     },
     login_identity: {
-        template: './src/sub-pages/rdg-login-page-identity.html',
-        chunks: ['main']
+        htmlfile: { template: './src/sub-pages/rdg-login-page-identity.html', chunks: ['main'] },
+        key: 'login_identity'
     }
 }
 
-module.exports = config['registration']
+module.exports = config['login_identity']

@@ -3,14 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const main_config = require('./src/location_switcher')
+const { key, htmlfile } = require('./src/location_switcher')
+
+const entrypoint = {
+    registration: { main: { import: path.resolve(__dirname, './src/js-by-page/registration.js') } },
+    upload: { main: { import: path.resolve(__dirname, './src/js-by-page/upload.js') } },
+    login_mail: { main: { import: path.resolve(__dirname, './src/js-by-page/email.js') } },
+    login_identity: { main: { import: path.resolve(__dirname, './src/js-by-page/identity.js') } }
+}
 
 module.exports = env => {
     return {
         mode: env.mode || 'development',
-        entry: {
-            main: { import: path.resolve(__dirname, './src/index.js') }
-        },
+        entry: entrypoint[key],
         output: {
             path: path.resolve(__dirname, './build'),
             filename: '[name].js',
@@ -35,7 +40,7 @@ module.exports = env => {
             new CopyWebpackPlugin({
                 patterns: [{ from: 'static3', to: 'static3' }]
             }),
-            new HtmlWebpackPlugin(main_config),
+            new HtmlWebpackPlugin(htmlfile),
             new webpack.ProgressPlugin(),
             new MiniCssExtractPlugin({
                 filename: 'css/[name].css',

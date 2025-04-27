@@ -41,9 +41,10 @@ body {
                 @include flex_column_center();
                 .panel-heading {
                     position: relative !important;
-                    @include titles_styles(transparent, 20px, normal, bold);
+                    @include titles_styles(transparent, 20px, 0px, bold);
                     &:before {
                         @include before_after_head('לקוח חדש ברוכים הבאים, הזינו את פרטיכם', 0, 0, 0, '', $color-bright-orange, 20, bold);
+                        line-height: normal !important;
                         margin: 0 auto !important;
                     }
                 }

@@ -253,23 +253,32 @@ body {
                 flex-direction: column !important;
                 align-items: center !important;
                 justify-content: center !important;
+                &:after {
+                    position: absolute !important;
+                    content: 'שלח בדיקה קודמת';
+                    width: fit-content !important;
+                    right: 131px !important;
+                    @include titles_styles($color-bright-cyan, 12px, 30px, bold);
+                    z-index: 1 !important;
+                }
                 #msg_process {
                     text-align: right !important;
                     margin-bottom: 15px !important;
                     @include titles_styles($color-gray-warm, 13px, 20px, 400);
                 }
-                #btn_restart,
-                #btn_close_tab {
+                #btn_restart {
                     position: relative !important;
+                    margin: 0 0 0 10px !important;
                     width: 120px !important;
                     height: 32px !important;
                     border-radius: 1rem !important;
                     text-align: center !important;
                     outline: 1px solid $color-bright-cyan !important;
-                    @include titles_styles($color-bright-cyan, 12px, 30px, bold);
+                    @include titles_styles(transparent, 12px, 30px, bold);
+                    z-index: 2 !important;
                 }
-                #btn_restart {
-                    margin: 0 0 0 10px !important;
+                #btn_close_tab {
+                    display: none !important;
                 }
             }
         }

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="heb">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+
+        <title>שליחת הבדיקה</title>
+
+        <meta name="description" content="service order step" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+        <link href="/static3/bootstrap-3-4-1/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/static3/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="/static3/fonts/fontello/css/fontello.css" rel="stylesheet" />
+        <link href="/static3/css/style.css" rel="stylesheet" />
+        <link href="/static3/css/skins/light_blue.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/static3/bootstrap-3-4-1/css/bootstrap-rtl.min.css" />
+        <link rel="stylesheet" href="/static3/css/site.css" />
+        <script src="/static3/js/jquery-3-5-1.min.js"></script>
+        <!-- place_holder_for_jquery-migrate -->
+        <script src="/static3/bootstrap-3-4-1/js/bootstrap.min.js"></script>
+        <script src="/static3/js/modernizr.js"></script>
+        <script src="/static3/js/jquery.validate.js"></script>
+        <script src="/static3/js/bootbox-6-0-0.min.js"></script>
+        <script type="text/javascript" src="/static3/js/iframeResizer.contentWindow.min.js"></script>
+        <style nonce="0a8b07f6-d0cc-485d-9a56-ed83fd8edf58">
+            @import url('https://fonts.googleapis.com/earlyaccess/alefhebrew.css');
+            body {
+                font-family: 'Alef Hebrew', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+
+            table {
+                border-spacing: 5px;
+                border-collapse: separate;
+            }
+            p {
+                font-size: 120%;
+            }
+
+            .narrow {
+                margin: 3px;
+            }
+            .narrow_top {
+                margin-top: 3px;
+                margin-right: 3px;
+                margin-bottom: 10px;
+            }
+            .col-xs-8 {
+                border-right: 1px solid grey;
+                padding-right: 20px;
+            }
+            .callcenter_div {
+                cursor: pointer;
+            }
+            .callcenter_bb {
+                font-size: 140%;
+            }
+            .font120 {
+                font-size: 120%;
+            }
+            @media (max-width: 550px) {
+                .resp_h {
+                    font-size: 90%;
+                    padding-left: 3px;
+                }
+            }
+        </style>
+        <script nonce="0a8b07f6-d0cc-485d-9a56-ed83fd8edf58">
+            var is_client = true
+
+            var client_email = 'daniladan689@gmail.com' // for G tag
+        </script>
+
+        <!-- Google Tag Manager -->
+        <script nonce="0a8b07f6-d0cc-485d-9a56-ed83fd8edf58">
+            ;(function(w, d, s, l, i) {
+                w[l] = w[l] || []
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : ''
+                j.async = true
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+                f.parentNode.insertBefore(j, f)
+            })(window, document, 'script', 'dataLayer', 'GTM-PGFB3PZQ')
+        </script>
+        <!-- End Google Tag Manager -->
+
+        <script nonce="0a8b07f6-d0cc-485d-9a56-ed83fd8edf58">
+            var page_id = 79
+            var at_least_one_done = false
+            function check_if_one_done() {
+                if (at_least_one_done) {
+                    $('#btn_cnt').css('display', 'inline')
+                } else {
+                    setTimeout(function() {
+                        check_if_one_done()
+                    }, 5000)
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container site" style="text-align: right;" dir="rtl">
+            <div class="row" style="background-color: rgb(75, 81, 87); color: white;">
+                <div class="col-xs-12" style="text-align: right;">
+                    <span style="font-size: 150%;">test mediwho gmail - </span>
+                    <span class="narrow" style="font-size: 140%"> חוות דעת Hub One</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6" style="background: url('https://qa.pacssee.com/static3/images/progress/selected.png'); background-size: cover; background-position-y: center; height: 70px;">
+                    <div style="position: absolute; margin-top:5%; text-align: center;">
+                        <h5 class="resp_h" style="color: white; text-transform: none !important; margin-right: 20px; margin-left: 20px;">שליחת הבדיקה ומסמכים נלוים</h5>
+                    </div>
+                </div>
+
+                <div
+                    class="col-xs-6"
+                    style="background: url('https://qa.pacssee.com/static3/images/progress/last_non_selected.png'); background-size: cover; background-position-y: center; height: 70px;"
+                >
+                    <div style="position: absolute; margin-top:5%; text-align: center;">
+                        <h5 class="resp_h" style="color: white; text-transform: none !important; margin-right: 20px; margin-left: 20px;">תוצאות הבדיקה וייעוץ</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="background-color: rgb(70, 192, 178); color: white; ">
+                <div style="margin-right: 5px; margin-left: 5px;">
+                    <span>מיקומך בתהליך ההזמנה: </span>
+                    <span class="narrow_top" style="font-size: 120%"> &gt;&gt; שליחת הבדיקה</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <p style="font-weight:bold;font-size:150%;margin-bottom:5px;">כעת עליכם להעביר אלינו את הבדיקה לעיון הרופא המומחה.</p>
+                    <p style="margin-bottom:5px;">ניתן לשלוח את הבדיקה <b>ישירות מהמחשב</b> (נדרש דפדפן Chrome, Firefox או Edge).</p>
+                    <p style="margin-bottom:5px;"><strong>לאחר קבלת הבדיקה וקליטתה במערכת תקבלו הודעת אימייל ו SMS ותוכלו להתקדם הלאה.</strong></p>
+                    <p style="color:red;margin-bottom:5px;">
+                        <strong>שימו לב, יש לשלוח את הבדיקות הקשורות להזמנה זו <u>אך ורק מהעמוד הזה</u> ולא ישירות דרך אתר הרופא.</strong>
+                    </p>
+                    <p style="font-size:100%;margin-bottom:5px;">
+                        יתכן שיחלוף זמן מה (מספר דקות עד כשעה, תלוי בגודל הבדיקה) מרגע סיום השליחה ועד שהבדיקה תתקבל ותופיע במערכת. יש להמתין לקבלת ההודעה מן המערכת על קליטת הבדיקה. אנא שימו לב -
+                        במידה וראיתם סימן וי (V) ירוק בסוף תהליך השליחה - הבדיקה עברה בהצלחה. יש להמתין לקליטת הבדיקה וקבלת ההודעה מהמערכת ואין צורך לשלוח הבדיקה שוב.
+                    </p>
+                    <a
+                        href="/site3/webdcmuploadpage?pk=ahFzfnFhLXJhZC1jb25zdWx0c3IUCxIHQXBwVXNlchiAgMDlgaTmCgw&orderkey=ahFzfnFhLXJhZC1jb25zdWx0c3ISCxIFT3JkZXIYgIDA47mh4woM&acst=lcBbqPg3L4i5SMBRr1U5c3Fznxkb-GLzsZgu5gN1q7tLMKYknK4Gc3GVQ2vLloz8VY4CSAF2hvIG47wlhjUli5g9yEE5n7wUQf-1ffPwKR4QbQ89r8iZ8nhCFEtHv3k39BTpPK7VqTjRUinNHCOLo8AtaHak0XxAT9vuxPSTwypLRjeT4OOvPC16gmT8KCwlhRUVzAxzVSIToOprCtAJMoYvnz-OuOpYFBN1NFg4HPo%3D&lang=heb"
+                        target="_blank"
+                        style="font-size: 130%;"
+                        class="btn btn-info btn-xl"
+                    >
+                        לחצו כאן לפתיחת עמוד השליחה
+                    </a>
+
+                    <div>
+                        <input id="btn_cnt" class="btn btn-default btn-sm" type="button" style="font-size:120%;margin-right:20px;display:none;" value="המשך " />
+                    </div>
+
+                    <!-- display if there is ever an international call center -->
+
+                    <div class="row" style="background-color: #46c0b2; padding: 10px;">
+                        <img src="https://qa.pacssee.com/static3/images/phone.png" style="width:70px; float: left;" />
+                        <h3 class="callcenter_div" style="margin-top: 10px; text-align: center;">
+                            <strong>שאלות? מעדיפים לדבר עם נציג?</strong><br />לסיוע וליווי השימוש באתר התקשרו כעת 03-12345678 שלוחה 198
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div style="border-right: 2px solid gray; padding:5px;">
+                        <div id="comp_order_upload_status" class="row">
+                            <div class="col-sm-12">
+                                <h2>מצב העלאת הבדיקות</h2>
+                                <h5>השאירו את העמוד פתוח - המידע המוצג יתעדכן אוטומטית אחת לדקה</h5>
+                                <div id="comp_tbl" class="table-responsive">
+                                    <table class="table">
+                                        <tr>
+                                            <th>מס&#39;</th>
+                                            <th>עדכון אחרון</th>
+                                            <th>מצב</th>
+                                        </tr>
+
+                                        <!--                                        <tr>-->
+                                        <!--                                            <td>1</td>-->
+                                        <!--                                            <td>2025-05-07</td>-->
+                                        <!--                                            <td><span style="font-weight:bold;color:green;">בתהליך</span></td>-->
+                                        <!--                                        </tr>-->
+
+                                        <td colspan="3"><h4 style="color:orange;font-weight:bold;">עדיין לא נשלחו בדיקות. שלחו את הבדיקה כעת באמצעות לחיצה על הכפתור</h4></td>
+
+                                        <!--                                        <tr>-->
+                                        <!--                                            <td>1</td>-->
+                                        <!--                                            <td>2025-05-07</td>-->
+                                        <!--                                            <td><span style="font-weight:bold;color:green;">הסתיים בהצלחה</span></td>-->
+                                        <!--                                        </tr>-->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+        </div>
+        <hr />
+
+        <script nonce="0a8b07f6-d0cc-485d-9a56-ed83fd8edf58">
+            $(document).ready(function() {
+                $('.callcenter_div').on('click', function(event) {
+                    if (typeof parent.do_scroll_to_top === 'function') {
+                        parent.do_scroll_to_top()
+                    }
+                    bootbox.alert({
+                        message: 'בכל שאלה או צורך בעזרה ניתן להתקשר בין השעות 08-20:<br/>' + 'טלפון המזכירות: 03-12345678<br/>' + 'שלוחה: 198<br/>' + 'הנך נמצא בעמוד מספר: ' + page_id,
+                        size: 'large',
+                        className: 'callcenter_bb',
+                        backdrop: true,
+                        buttons: {
+                            ok: {
+                                label: 'סגירה',
+                                className: 'btn-success'
+                            }
+                        }
+                    })
+                })
+
+                $('#btn_back').on('click', function(event) {
+                    window.location =
+                        '/site3/clientmainscreen?t=Mu4fGSUgyjDkMPBUv0qatfdX_VMCH4HZxKUU2ypagG4lSQTTPUFMcgEqxTrVmICBN7e0XxMaWpdYCWWdZMIGUnQFC7cP6ejXRPXkpxORIyN_MHeggd--MvZ3ST0fooJx&physkey=ahFzfnFhLXJhZC1jb25zdWx0c3IUCxIHQXBwVXNlchiAgMDlgaTmCgw'
+                })
+                $('#btn_cnt').on('click', function(event) {
+                    window.location =
+                        '/site3/order?t=Mu4fGSUgyjDkMPBUv0qatfdX_VMCH4HZxKUU2ypagG4lSQTTPUFMcgEqxTrVmICBN7e0XxMaWpdYCWWdZMIGUnQFC7cP6ejXRPXkpxORIyN_MHeggd--MvZ3ST0fooJx&o=pre~ahFzfnFhLXJhZC1jb25zdWx0c3ISCxIFT3JkZXIYgIDA47mh4woM'
+                })
+            })
+
+            function comp_get_order_uploads_status(counter) {
+                var ok = 'ahFzfnFhLXJhZC1jb25zdWx0c3ISCxIFT3JkZXIYgIDA47mh4woM'
+                var ct = 'Mu4fGSUgyjDkMPBUv0qatfdX_VMCH4HZxKUU2ypagG4lSQTTPUFMcgEqxTrVmICBN7e0XxMaWpdYCWWdZMIGUnQFC7cP6ejXRPXkpxORIyN_MHeggd--MvZ3ST0fooJx'
+                var av = ''
+                counter += 1
+                $.ajax({
+                    url: 'https://qa.pacssee.com/components3/orderuploadsstatus',
+                    type: 'POST',
+                    data: { ct: ct, ok: ok, av: av },
+                    error: function(result) {
+                        console.log(result)
+                    },
+                    success: function(result) {
+                        results = result.split('~')
+                        $('#comp_order_upload_status')
+                            .parent()
+                            .html(results[1])
+
+                        at_least_one_done = results[0] == '1' ? true : false
+                    }
+                })
+
+                if (counter < 300) {
+                    setTimeout(function() {
+                        comp_get_order_uploads_status(counter)
+                    }, 30000)
+                }
+            }
+
+            comp_get_order_uploads_status(0)
+            check_if_one_done()
+
+            if (typeof parent.do_scroll_to_top === 'function') {
+                parent.do_scroll_to_top()
+            }
+        </script>
+    </body>
+</html>

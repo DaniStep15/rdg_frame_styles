@@ -229,43 +229,46 @@
     line-height: $line-height !important;
 }
 
-@mixin bottom_yellow_image($height) {
+@mixin bottom_yellow_image($height, $width, $bottom) {
     &::after {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
+        bottom: $bottom;
+        width: $width;
         height: $height;
         background: #ffe99c;
-        border-radius: 50% 50% 0 0;
+        border-radius: 100%;
         z-index: 1 !important;
+        @media screen and (max-width: $mobile) {
+            bottom: unset !important;
+            top: $bottom !important;
+        }
     }
 }
 
 @mixin bottom_titles_rdg($translate_top) {
-    &:after {
-        position: relative !important;
-        content: 'הפרטים האישיים של לקוחותנו נשמרים במסד נתונים מאובטח ומוצפן של RDG. לעולם לא נעביר או נמסור את פרטיך האישיים לצד שלישי כלשהו.';
-        width: 450px !important;
-        color: #656362 !important;
-        font-size: 14px !important;
-        font-weight: 400 !important;
-        line-height: normal !important;
-        height: 0 !important;
-        text-align: center !important;
-        margin-top: 10px !important;
-        @media screen and (max-width: $mobile) {
-            position: absolute !important;
-            width: 38svh !important;
-            font-size: 1.2svh !important;
-            bottom: 5.8svh !important;
-            z-index: 10 !important;
-        }
-    }
+    //&:after {
+    //    position: relative !important;
+    //    content: 'הפרטים האישיים של לקוחותנו נשמרים במסד נתונים מאובטח ומוצפן של RDG. לעולם לא נעביר או נמסור את פרטיך האישיים לצד שלישי כלשהו.';
+    //    width: 450px !important;
+    //    color: #656362 !important;
+    //    font-size: 14px !important;
+    //    font-weight: 400 !important;
+    //    line-height: normal !important;
+    //    height: 0 !important;
+    //    text-align: center !important;
+    //    margin-top: 10px !important;
+    //    @media screen and (max-width: $mobile) {
+    //        position: absolute !important;
+    //        width: 38svh !important;
+    //        font-size: 1.2svh !important;
+    //        bottom: 5.8svh !important;
+    //        z-index: 10 !important;
+    //    }
+    //}
     &:before {
         content: 'השירות ניתן ע”י RDG רופאים מומחים ברדיולוגיה, שותפות רשומה מס’ 540332210';
-        color: #ffa800 !important;
+        color: #656362 !important;
         font-size: 14px !important;
         height: 0 !important;
         font-weight: 400 !important;

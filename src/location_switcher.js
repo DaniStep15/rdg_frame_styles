@@ -16,7 +16,15 @@ let config = {
     login_identity: {
         htmlfile: { template: './src/sub-pages/rdg-login-page-identity.html', chunks: ['main'] },
         key: 'login_identity'
+    },
+    exist_service: {
+        htmlfile: { template: './src/sub-pages/rdg-exist-service.html', chunks: ['main'] },
+        key: 'exist_service'
+    },
+    order_description: {
+        htmlfile: { template: './src/sub-pages/rdg-order-description.html', chunks: ['main'] },
+        key: 'order_description'
     }
 }
 
-module.exports = config['login_identity']
+module.exports = config['order_description']

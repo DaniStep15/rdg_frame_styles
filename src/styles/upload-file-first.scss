@@ -11,7 +11,8 @@ html {
 }
 
 body {
-    @include bottom_titles_rdg(693px);
+    @include bottom_titles_rdg(663px);
+    background: radial-gradient(301.69% 164.03% at -23.02% 16.96%, rgba(255, 238, 213, 0.4) 13.66%, #fffbee 28.39%, rgba(223, 224, 209, 0.4) 85.75%, #fff5e0 100%) !important;
 }
 
 #loading {
@@ -47,12 +48,12 @@ body {
     height: 633px !important;
     min-height: 633px !important;
     padding: unset !important;
-    border-radius: 60px !important;
+    border-radius: 40px !important;
     border: 1px solid #e2e0e0 !important;
     box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
     background: white !important;
     overflow: hidden !important;
-    @include bottom_yellow_image(60px);
+    @include bottom_yellow_image(1000px, 1700px, -930px);
     #phone_row,
     #service_header {
         display: none !important;
@@ -323,7 +324,7 @@ body {
         border: 0 !important;
         box-shadow: unset !important;
         overflow: hidden !important;
-        @include bottom_yellow_image(7.8svh);
+        @include bottom_yellow_image(250vw, 250vw, 92svh);
         #page_header {
             position: relative !important;
             top: unset !important;

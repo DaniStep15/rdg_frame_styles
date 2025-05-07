@@ -9,7 +9,9 @@ const entrypoint = {
     registration: { main: { import: path.resolve(__dirname, './src/js-by-page/registration.js') } },
     upload: { main: { import: path.resolve(__dirname, './src/js-by-page/upload.js') } },
     login_mail: { main: { import: path.resolve(__dirname, './src/js-by-page/email.js') } },
-    login_identity: { main: { import: path.resolve(__dirname, './src/js-by-page/identity.js') } }
+    login_identity: { main: { import: path.resolve(__dirname, './src/js-by-page/identity.js') } },
+    exist_service: { main: { import: path.resolve(__dirname, './src/js-by-page/exist-service.js') } },
+    order_description: { main: { import: path.resolve(__dirname, './src/js-by-page/order-description.js') } }
 }
 
 module.exports = env => {

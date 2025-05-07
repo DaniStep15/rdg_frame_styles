@@ -10,7 +10,8 @@ html {
     width: 100% !important;
 }
 body {
-    @include bottom_titles_rdg(683px);
+    @include bottom_titles_rdg(653px);
+    background: radial-gradient(301.69% 164.03% at -23.02% 16.96%, rgba(255, 238, 213, 0.4) 13.66%, #fffbee 28.39%, rgba(223, 224, 209, 0.4) 85.75%, #fff5e0 100%) !important;
 }
 .container {
     @include flex_column_center();
@@ -18,12 +19,13 @@ body {
     height: 623px !important;
     min-height: 623px !important;
     width: 714px !important;
-    border-radius: 60px !important;
+    border-radius: 40px !important;
     border: 1px solid #e2e0e0 !important;
     box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
     background: white !important;
     overflow: hidden !important;
-    @include bottom_yellow_image(80px);
+    @include bottom_yellow_image(288px, 727px, -195px);
+
     // work locally
     //div:has(h4 > .btn) {
     //.class-name
@@ -190,7 +192,7 @@ body {
         border-radius: 0 !important;
         border: 0 !important;
         padding: 0;
-        @include bottom_yellow_image(7.8svh);
+        @include bottom_yellow_image(250vw, 250vw, 94svh);
         .row {
             width: 100% !important;
             .col-md-12 {

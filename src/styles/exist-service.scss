@@ -1,0 +1,129 @@
+@import '../mixin-vars/mixins';
+@import '../mixin-vars/vars';
+* {
+    @include start_config_rdg();
+}
+body,
+html {
+    @include flex_column_center();
+    height: 100% !important;
+    width: 100% !important;
+}
+
+body {
+    @include bottom_titles_rdg(485px);
+    background: radial-gradient(301.69% 164.03% at -23.02% 16.96%, rgba(255, 238, 213, 0.4) 13.66%, #fffbee 28.39%, rgba(223, 224, 209, 0.4) 85.75%, #fff5e0 100%) !important;
+}
+.container {
+    @include flex_column_center();
+    position: relative !important;
+    height: 455px !important;
+    min-height: 455px !important;
+    width: 550px !important;
+    border-radius: 40px !important;
+    border: 1px solid #e2e0e0 !important;
+    box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
+    background: white !important;
+    overflow: hidden !important;
+    @include bottom_yellow_image(326px, 711px, -270px);
+
+    .row {
+        @include flex_column_center();
+        .col-xs-12 {
+            @include flex_row_center();
+            gap: 4px !important;
+            margin-bottom: 60px !important;
+            span {
+                @include titles_styles($color-bright-orange, 20px, 20px, 700);
+            }
+        }
+
+        .col-sm-8 {
+            position: relative !important;
+            @include flex_column_center();
+            gap: 10px !important;
+            .row {
+                display: none !important;
+            }
+            p br {
+                display: none !important;
+            }
+            p {
+                &:nth-child(1) {
+                    width: max-content !important;
+                    text-align: center !important;
+                    @include titles_styles(#ff0d12, 18px, 20px, 700);
+                }
+                &:nth-child(2) {
+                    text-align: center !important;
+                    @include titles_styles($color-gray-warm, 13px, 20px, 400);
+                }
+
+                &:nth-child(4) {
+                    display: none !important;
+                }
+            }
+            #btn_cont_order {
+                margin-top: 10px !important;
+                outline: 1px solid $color-bright-cyan !important;
+                border-radius: 2rem !important;
+                width: 124px !important;
+                height: 32px !important;
+                font-size: 0 !important;
+                line-height: 0 !important;
+                z-index: 2 !important;
+            }
+            &:after {
+                content: 'המשך תהליך';
+                position: absolute !important;
+                bottom: 8px !important;
+                z-index: 1 !important;
+                @include titles_styles($color-bright-cyan, 12px, normal, 700);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .container {
+        @include flex_column_center();
+        width: 100% !important;
+        height: 100svh !important;
+        border-radius: 0 !important;
+        border: 0 !important;
+        box-shadow: unset !important;
+        overflow: hidden !important;
+        @include bottom_yellow_image(250vw, 250vw, 94svh);
+        .row {
+            .col-xs-12 {
+                margin-bottom: 60px !important;
+                span {
+                    @include titles_styles($color-bright-orange, clamp(16px, 4.8vw, 18px), normal, 700);
+                }
+            }
+            .col-sm-8 {
+                p {
+                    &:nth-child(1) {
+                        @include titles_styles(#ff0d12, clamp(16px, 4.8vw, 18px), normal, 700);
+                    }
+                    &:nth-child(2) {
+                        @include titles_styles($color-gray-warm, clamp(8px, 1.2svh, 10px), normal, 400);
+                        width: 70vw !important;
+                    }
+                }
+                #btn_cont_order {
+                    margin-top: 20px !important;
+                    width: 100px !important;
+                    height: 25px !important;
+                }
+                &:after {
+                    content: 'המשך תהליך';
+                    position: absolute !important;
+                    bottom: 6px !important;
+                    z-index: 1 !important;
+                    @include titles_styles($color-bright-cyan, 10px, normal, 700);
+                }
+            }
+        }
+    }
+}

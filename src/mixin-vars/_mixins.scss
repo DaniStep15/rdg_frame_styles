@@ -277,9 +277,12 @@
         translate: 0 $translate_top !important;
         @media screen and (max-width: $mobile) {
             position: absolute !important;
-            font-size: 1.2svh !important;
-            bottom: 1.4svh !important;
+            font-size: 12px !important;
+            width: 245px !important;
+            top: 94svh !important;
             z-index: 20 !important;
+            font-weight: 600 !important;
+            line-height: normal !important;
             translate: unset !important;
         }
     }

@@ -201,3 +201,168 @@ body {
         }
     }
 }
+
+@media screen and (max-width: $mobile) {
+    .container {
+        padding-top: 2rem !important;
+        @include flex_column_center();
+        justify-content: flex-start !important;
+        width: 100% !important;
+        height: 100svh !important;
+        border-radius: 0 !important;
+        border: 0 !important;
+        box-shadow: unset !important;
+        overflow: hidden !important;
+        @include bottom_yellow_image(250vw, 250vw, 90svh);
+        .row {
+            &:nth-child(1) {
+                .col-xs-12 {
+                    @include flex_row_center();
+                    gap: 4px !important;
+                    margin-bottom: 0 !important;
+                    span {
+                        @include titles_styles($color-bright-orange, clamp(14px, 4vw, 16px), normal, 700);
+                        width: max-content !important;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                @include flex_column_center();
+                justify-content: unset !important;
+                gap: 10px !important;
+                width: 100vw !important;
+                height: 83svh !important;
+                overflow-y: auto !important;
+                .col-sm-8 {
+                    @include flex_column_center();
+                    height: max-content !important;
+                    align-items: center !important;
+                    min-height: unset !important;
+                    &:after {
+                        width: 80vw !important;
+                        height: 1px;
+                        border-top: 1px dashed #cec9c9;
+                        left: unset !important;
+                        top: unset !important;
+                        bottom: -24px !important;
+                    }
+                    p {
+                        &:nth-child(1) {
+                            @include titles_styles($color-gray-warm, clamp(10px, 2.2svh, 13px), normal, 700);
+                            margin-bottom: 10px !important;
+                            width: 85vw !important;
+                        }
+                        &:nth-child(2) {
+                            width: 85vw !important;
+                            //align-self: start !important;
+                            @include titles_styles($color-gray-warm, clamp(10px, 2svh, 12px), normal, 400);
+                            b {
+                                @include titles_styles($color-gray-warm, clamp(10px, 2svh, 12px), normal, 700);
+                            }
+                        }
+                        &:nth-child(3) {
+                            @include titles_styles($color-gray-warm, 0px, normal, 400);
+                            margin-bottom: 10px !important;
+                            width: 85vw !important;
+                            //align-self: start !important;
+                            &:after {
+                                content: 'לאחר קבלת הבדיקה וקליטתה במערכת תקבלו SMS ותוכלו להתקדם הלאה';
+                                width: 85vw !important;
+                                @include titles_styles($color-gray-warm, clamp(10px, 2svh, 12px), normal, 700);
+                            }
+                        }
+                        &:nth-child(4) {
+                            width: 85vw !important;
+                            @include titles_styles(#ff0d12, clamp(10px, 2svh, 12px), normal, 700);
+                            margin-bottom: 10px !important;
+                            &:after {
+                                display: none !important;
+                            }
+                        }
+                        &:nth-child(5) {
+                            @include titles_styles($color-gray-warm, 0px, normal, 400);
+                            margin-bottom: 20px !important;
+                            &:before {
+                                display: flex !important;
+                                content: 'יתכן שיחלוף זמן מה(מספר דקות עד כשעה, תלוי בגודל הבדיקה) מרגע סיום השליחה ועד שהבדיקה תתקבל ותופיע במערכת.';
+                                width: 85vw !important;
+                                @include titles_styles($color-gray-warm, clamp(10px, 2svh, 12px), normal, 400);
+                            }
+                            &:after {
+                                width: 85vw !important;
+                                display: flex !important;
+                                content: 'יש להמתין לקבלת ההודעה מן המערכת על קליטת הבדיקה. אנא שימו לב- במידה וראיתם סימן וי ׁׂ(V) ירוק בסוף תהליך השליחה הבדיקה עברה בהצלחה. יש להמתין לקליטת הבדיקה וקבלת ההודעה מהמערכת ואין צורך לשלוח את הבדיקה שוב.';
+                                @include titles_styles($color-gray-warm, clamp(10px, 2svh, 12px), normal, 400);
+                            }
+                        }
+                    }
+                    .btn {
+                        width: 125px !important;
+                        height: 25px !important;
+                        min-height: 25px !important;
+                        &:after {
+                            bottom: 6px !important;
+                            @include titles_styles($color-bright-cyan, 10px, normal, 700);
+                        }
+                    }
+                }
+                .col-sm-4 {
+                    width: 85vw !important;
+                    margin-top: 30px !important;
+                    height: max-content !important;
+                    min-height: unset !important;
+
+                    #comp_order_upload_status {
+                        .col-sm-12 {
+                            @include flex_column_center();
+                            h2 {
+                                @include titles_styles($color-gray-warm, 14px, normal, 700);
+                                margin-bottom: 10px !important;
+                                text-align: center !important;
+                            }
+                            h5 {
+                                width: 268px !important;
+                                @include titles_styles($color-gray-warm, 12px, normal, 500);
+                                margin-bottom: 10px !important;
+                                text-align: center !important;
+                            }
+                            #comp_tbl {
+                                .table {
+                                    width: 85vw !important;
+                                    tr > th {
+                                        width: 85vw !important;
+                                        @include titles_styles($color-bright-cyan, 12px, normal, 700);
+                                        padding-bottom: 7px !important;
+                                        border-bottom: 1px solid #cec9c9 !important;
+                                    }
+                                    tr > td {
+                                        width: 85vw !important;
+                                        padding-top: 5px !important;
+                                        &:nth-child(1) {
+                                            @include titles_styles($color-gray-warm, 12px, normal, 600);
+                                        }
+                                        &:nth-child(2) {
+                                            @include titles_styles($color-gray-warm, 12px, normal, 600);
+                                        }
+                                        &:nth-child(3) {
+                                            @include titles_styles(#92d223, 12px, normal, 600);
+                                        }
+                                    }
+                                    td > h4 {
+                                        position: relative !important;
+                                        @include titles_styles($color-bright-orange, 12px, normal, 700);
+                                        padding-top: 5px !important;
+                                        width: 85vw !important;
+                                    }
+                                    td {
+                                        white-space: unset !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

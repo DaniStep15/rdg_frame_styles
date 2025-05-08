@@ -324,7 +324,7 @@ body {
         border: 0 !important;
         box-shadow: unset !important;
         overflow: hidden !important;
-        @include bottom_yellow_image(250vw, 250vw, 92svh);
+        @include bottom_yellow_image(250vw, 250vw, 90svh);
         #page_header {
             position: relative !important;
             top: unset !important;

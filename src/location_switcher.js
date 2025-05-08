@@ -27,4 +27,4 @@ let config = {
     }
 }
 
-module.exports = config['order_description']
+module.exports = config['exist_service']

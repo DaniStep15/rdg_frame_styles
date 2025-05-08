@@ -40,6 +40,8 @@ body {
 
     .page-title {
         @include titles_styles($color-bright-orange, 20px, normal, 700);
+        position: relative !important;
+        @include login_polygon(-56px, -248px);
     }
     .row {
         @include flex_column_center();
@@ -133,10 +135,11 @@ body {
         border-radius: 0 !important;
         border: 0 !important;
         padding: 0;
-        @include bottom_yellow_image(250vw, 250vw, 94svh);
+        @include bottom_yellow_image(250vw, 250vw, 90svh);
 
         .page-title {
             @include titles_styles($color-bright-orange, clamp(16px, 4.8vw, 18px), normal, 700);
+            @include login_polygon(-75px, -15vw);
         }
         .row {
             .col-md-6 {

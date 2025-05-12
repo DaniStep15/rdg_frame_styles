@@ -165,7 +165,7 @@
     font-size: $font-size !important;
     font-style: normal !important;
     font-weight: 600 !important;
-    background-color: $bright-orange !important;
+    background-color: $color-bright-orange !important;
     text-align: center !important;
     border-radius: 2rem !important;
     letter-spacing: -1px !important;
@@ -180,7 +180,7 @@
     font-size: $font-size !important;
     font-style: normal !important;
     font-weight: 600 !important;
-    background-color: $bright-orange !important;
+    background-color: $color-bright-orange !important;
     text-align: center !important;
     border-radius: 2rem !important;
     letter-spacing: -1px !important;
@@ -254,7 +254,7 @@
         width: 92px;
         height: 73px;
         inset: 0;
-        background: #ffa800;
+        background: $color-bright-orange;
         border-radius: 5px;
         box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1);
         clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
@@ -309,97 +309,3 @@
         }
     }
 }
-
-//@mixin start_config_main { // in use
-//    margin: 0 !important;
-//    padding: 0 !important;
-//    box-sizing: border-box !important;
-//    font-family: 'Open Sans', sans-serif !important;
-//    font-weight: 400 !important;
-//    font-size: 16px !important;
-//    font-style: normal !important;
-//    line-height: normal !important;
-//    overscroll-behavior: none !important;
-//}
-//@mixin popup_wrapper_mobile() {
-//}
-
-//@mixin popup_wrapper($width, $height, $iframe-width, $bg-vertical, $bg-horizontal, $c-h-w, $c-t-r, $c-x-s, $b-t-b, $t-f-s, $t-c-w, $t-l-h) {
-//    position: relative;
-//    @include flex_column_center();
-//    width: $width;
-//    height: $height;
-//    border-radius: 60px;
-//    border: 1px solid #e2e0e0;
-//    box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
-//    background: rgb(100%, 100%, 100%, 0.5) url('/src/assets/ellipse.png') no-repeat $bg-vertical $bg-horizontal;
-//    .close {
-//        position: absolute;
-//        @include flex_row_center();
-//        cursor: pointer;
-//        width: $c-h-w;
-//        height: $c-h-w;
-//        border-radius: 50%;
-//        background-color: $color-white;
-//        right: $c-t-r;
-//        top: $c-t-r;
-//        box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22);
-//        img {
-//            width: $c-x-s;
-//        }
-//    }
-//    .exist_icon {
-//        display: none;
-//        position: absolute;
-//        top: -112px;
-//        margin: 0 auto;
-//        &.login {
-//            left: 55px;
-//            right: 0;
-//        }
-//        &.service {
-//        }
-//    }
-//    .iframe-wrapper {
-//        @include flex_column_center();
-//        width: 100%;
-//        height: 100%;
-//        overflow: hidden;
-//        #contentframe {
-//            border: none;
-//            outline: none;
-//            width: $iframe-width !important;
-//            height: 100vh;
-//            background-color: transparent;
-//        }
-//    }
-//
-//    .bottom_text {
-//        position: absolute;
-//        bottom: $b-t-b;
-//        @include flex_column_center();
-//        .bottom_title {
-//            text-align: center;
-//            direction: rtl;
-//            &.up {
-//                color: $color-gray-warm;
-//                text-align: center;
-//                font-size: $t-f-s;
-//                font-weight: 400;
-//                line-height: $t-l-h;
-//                width: $t-c-w;
-//            }
-//            &.middle {
-//                color: $color-bright-orange;
-//                font-size: $t-f-s;
-//                font-weight: 400;
-//                line-height: $t-l-h;
-//                .number {
-//                    font-size: $t-f-s;
-//                    font-weight: 400;
-//                    line-height: 20px;
-//                }
-//            }
-//        }
-//    }
-//}

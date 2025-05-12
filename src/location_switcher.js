@@ -1,5 +1,4 @@
 'use strict'
-const path = require('path')
 let config = {
     registration: {
         htmlfile: { template: './src/sub-pages/rdg-registration-list.html', chunks: ['main'] },
@@ -27,4 +26,4 @@ let config = {
     }
 }
 
-module.exports = config['exist_service']
+module.exports = config['upload']

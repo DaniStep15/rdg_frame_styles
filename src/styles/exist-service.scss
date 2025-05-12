@@ -52,7 +52,7 @@ body {
                 &:nth-child(1) {
                     width: max-content !important;
                     text-align: center !important;
-                    @include titles_styles(#ff0d12, 18px, 20px, 700);
+                    @include titles_styles($alert-red, 18px, 20px, 700);
                 }
                 &:nth-child(2) {
                     text-align: center !important;
@@ -104,7 +104,7 @@ body {
             .col-sm-8 {
                 p {
                     &:nth-child(1) {
-                        @include titles_styles(#ff0d12, clamp(16px, 4.8vw, 18px), normal, 700);
+                        @include titles_styles($alert-red, clamp(16px, 4.8vw, 18px), normal, 700);
                     }
                     &:nth-child(2) {
                         @include titles_styles($color-gray-warm, clamp(8px, 1.2svh, 10px), normal, 400);

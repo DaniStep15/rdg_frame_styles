@@ -90,7 +90,7 @@ body {
                     &:nth-child(4) {
                         //position:
                         width: 449px !important;
-                        @include titles_styles(#ff0d12, 13px, normal, 700);
+                        @include titles_styles($alert-red, 13px, normal, 700);
                         margin-bottom: 10px !important;
                         u {
                             text-decoration: none !important;
@@ -99,7 +99,7 @@ body {
                             width: max-content !important;
                             position: absolute !important;
                             content: 'סימן וי ׁׂ(V) ירוק';
-                            @include titles_styles(#92d223, 13px, normal, 700);
+                            @include titles_styles($lime-green, 13px, normal, 700);
                             right: 0 !important;
                             bottom: 70px !important;
                             background: white !important;
@@ -184,7 +184,7 @@ body {
                                         @include titles_styles($color-gray-warm, 13px, normal, 600);
                                     }
                                     &:nth-child(3) {
-                                        @include titles_styles(#92d223, 13px, normal, 600);
+                                        @include titles_styles($lime-green, 13px, normal, 600);
                                     }
                                 }
                                 td > h4 {
@@ -273,7 +273,7 @@ body {
                         }
                         &:nth-child(4) {
                             width: 85vw !important;
-                            @include titles_styles(#ff0d12, clamp(10px, 2svh, 12px), normal, 700);
+                            @include titles_styles($alert-red, clamp(10px, 2svh, 12px), normal, 700);
                             margin-bottom: 10px !important;
                             &:after {
                                 display: none !important;
@@ -345,7 +345,7 @@ body {
                                             @include titles_styles($color-gray-warm, 12px, normal, 600);
                                         }
                                         &:nth-child(3) {
-                                            @include titles_styles(#92d223, 12px, normal, 600);
+                                            @include titles_styles($lime-green, 12px, normal, 600);
                                         }
                                     }
                                     td > h4 {

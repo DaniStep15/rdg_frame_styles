@@ -192,14 +192,6 @@ body {
                             width: 100% !important;
                             @include titles_styles($color-gray-warm, 14px, 21px, 400);
                         }
-                        &:after {
-                            content: 'העלאת קובץ';
-                            position: absolute !important;
-                            top: 0 !important;
-                            right: 5.46rem !important;
-                            width: 100% !important;
-                            @include titles_styles($color-bright-cyan, 14px, 21px, 400);
-                        }
                     }
                 }
                 #msg[style*='color: red'] {
@@ -248,6 +240,9 @@ body {
                 width: 0 !important;
                 overflow: hidden !important;
             }
+
+            #progress {
+            }
             #restartdiv {
                 align-self: center !important;
                 width: 260px !important;
@@ -266,6 +261,14 @@ body {
                     text-align: right !important;
                     margin-bottom: 15px !important;
                     @include titles_styles($color-gray-warm, 13px, 20px, 400);
+                    &:after {
+                        content: 'במידה ואין בדיקות קודמות, ניתן לסגור את החלון';
+                        margin-top: 20px;
+                        display: block !important;
+                        position: relative !important;
+                        width: 100% !important;
+                        @include titles_styles($color-gray-warm, 13px, 20px, 600);
+                    }
                 }
                 #btn_restart {
                     position: relative !important;

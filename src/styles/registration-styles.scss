@@ -53,7 +53,34 @@ body {
                 .panel-body {
                     @include flex_column_center();
                     #div_enter_with_email {
-                        display: none !important;
+                        position: absolute !important;
+                        top: 75px !important;
+                        z-index: 20;
+                        input {
+                            outline: 1px solid #5bd7f2 !important;
+                            width: 150px !important;
+                            translate: 0 -1px;
+                            padding: 10px !important;
+                            border-radius: 2rem !important;
+                            @include titles_styles(transparent, 12px, normal, 600);
+                            @media screen and (max-width: $mobile) {
+                                @include titles_styles(transparent, 11px, normal, 600);
+                            }
+                        }
+                        &:after {
+                            display: inline-block !important;
+                            width: max-content !important;
+                            content: 'לכניסה עם כתובת אימייל' !important;
+                            position: absolute !important;
+                            @include titles_styles(#5bd7f2, 12px, 34px, 600);
+                            left: 0 !important;
+                            right: 0 !important;
+                            margin: 0 auto !important;
+                            z-index: -1 !important;
+                            @media screen and (max-width: $mobile) {
+                                @include titles_styles(#5bd7f2, 11px, 34px, 600);
+                            }
+                        }
                     }
                     .alert {
                         position: absolute !important;
@@ -61,6 +88,22 @@ body {
                         bottom: -25px !important;
                         @include titles_styles($alert-red, 11px, normal, 600);
                         z-index: 2 !important;
+                    }
+                    #contactExists {
+                        overflow: hidden !important;
+                        @include titles_styles($alert-red, 13px, normal, 600);
+                        width: max-content !important;
+                        bottom: unset !important;
+                        translate: 0 -175px !important;
+                        &:after,
+                        &:before {
+                            content: '' !important;
+                        }
+                        @media screen and (max-width: $mobile) {
+                            @include titles_styles($alert-red, 1.5svh, normal, 600);
+                            top: 35px !important;
+                            translate: unset !important;
+                        }
                     }
                     #contactSuccess {
                         color: $lime-green !important;
@@ -129,6 +172,7 @@ body {
                                         right: 5px !important;
                                         bottom: -15px !important;
                                         font-size: 10px !important;
+                                        width: max-content !important;
                                     }
                                 }
                             }
@@ -187,6 +231,7 @@ body {
 // mobile
 @media screen and (max-width: $mobile) {
     .container {
+        background: radial-gradient(301.69% 164.03% at -23.02% 16.96%, rgba(255, 238, 213, 0.4) 13.66%, #fffbee 28.39%, rgba(223, 224, 209, 0.4) 85.75%, #fff5e0 100%) !important;
         width: 100vw !important;
         height: 100svh !important;
         border-radius: 0 !important;

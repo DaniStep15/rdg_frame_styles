@@ -28,9 +28,9 @@ body {
 .container {
     @include flex_column_center();
     position: relative !important;
-    height: 455px !important;
-    min-height: 455px !important;
-    width: 480px !important;
+    height: 466px !important;
+    min-height: 466px !important;
+    width: 525px !important;
     border-radius: 60px !important;
     border: 1px solid #e2e0e0 !important;
     box-shadow: 0 4px 43px 0 rgba(166, 163, 157, 0.22) !important;
@@ -41,7 +41,7 @@ body {
     .page-title {
         @include titles_styles($color-bright-orange, 20px, normal, 700);
         position: relative !important;
-        @include login_polygon(-56px, -248px);
+        @include login_polygon(-16px, -280px, 12px, -15px);
     }
     .row {
         @include flex_column_center();
@@ -130,6 +130,7 @@ body {
 @media screen and (max-width: $mobile) {
     .container {
         @include flex_column_center();
+        background: radial-gradient(301.69% 164.03% at -23.02% 16.96%, rgba(255, 238, 213, 0.4) 13.66%, #fffbee 28.39%, rgba(223, 224, 209, 0.4) 85.75%, #fff5e0 100%) !important;
         width: 100% !important;
         height: 100% !important;
         border-radius: 0 !important;
@@ -139,7 +140,7 @@ body {
 
         .page-title {
             @include titles_styles($color-bright-orange, clamp(16px, 4.8vw, 18px), normal, 700);
-            @include login_polygon(-75px, -15vw);
+            @include login_polygon(-75px, -15vw, -10px, 130px);
         }
         .row {
             .col-md-6 {

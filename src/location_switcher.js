@@ -26,4 +26,4 @@ let config = {
     }
 }
 
-module.exports = config['upload']
+module.exports = config['order_description']

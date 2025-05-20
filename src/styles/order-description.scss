@@ -143,16 +143,7 @@ body {
                     }
                 }
                 #btn_cnt {
-                    //display: inline !important;
-                    position: absolute !important;
-                    outline: 1px solid $color-bright-cyan !important;
-                    border-radius: 2rem !important;
-                    @include titles_styles($color-bright-cyan, 12px, normal, 700);
-                    text-align: center !important;
-                    width: 100px !important;
-                    height: 32px !important;
-                    bottom: 0 !important;
-                    right: 150px !important;
+                    display: none !important;
                 }
             }
             .col-sm-4 {
@@ -207,6 +198,8 @@ body {
         padding-top: 2rem !important;
         @include flex_column_center();
         justify-content: flex-start !important;
+        background: radial-gradient(301.69% 164.03% at -23.02% 16.96%, rgba(255, 238, 213, 0.4) 13.66%, #fffbee 28.39%, rgba(223, 224, 209, 0.4) 85.75%, #fff5e0 100%) !important;
+
         width: 100% !important;
         height: 100svh !important;
         border-radius: 0 !important;

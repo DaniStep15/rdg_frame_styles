@@ -32,7 +32,7 @@ body {
         .col-xs-12 {
             @include flex_row_center();
             gap: 4px !important;
-            margin-bottom: 60px !important;
+            margin-bottom: 20px !important;
             span {
                 @include titles_styles($color-bright-orange, 20px, 20px, 700);
             }
@@ -93,22 +93,24 @@ body {
         border: 0 !important;
         box-shadow: unset !important;
         overflow: hidden !important;
+        background: radial-gradient(301.69% 164.03% at -23.02% 16.96%, rgba(255, 238, 213, 0.4) 13.66%, #fffbee 28.39%, rgba(223, 224, 209, 0.4) 85.75%, #fff5e0 100%) !important;
+
         @include bottom_yellow_image(250vw, 250vw, 90svh);
         .row {
             .col-xs-12 {
-                margin-bottom: 60px !important;
+                margin-bottom: 20px !important;
                 span {
-                    @include titles_styles($color-bright-orange, clamp(16px, 4.8vw, 18px), normal, 700);
+                    @include titles_styles($color-bright-orange, clamp(14px, 4.8vw, 18px), normal, 700);
                 }
             }
             .col-sm-8 {
                 p {
                     &:nth-child(1) {
-                        @include titles_styles($alert-red, clamp(16px, 4.8vw, 18px), normal, 700);
+                        @include titles_styles($alert-red, clamp(14px, 4.8vw, 18px), normal, 700);
                     }
                     &:nth-child(2) {
-                        @include titles_styles($color-gray-warm, clamp(8px, 1.2svh, 10px), normal, 400);
-                        width: 70vw !important;
+                        @include titles_styles($color-gray-warm, clamp(10px, 1.2svh, 12px), normal, 400);
+                        width: 75vw !important;
                     }
                 }
                 #btn_cont_order {

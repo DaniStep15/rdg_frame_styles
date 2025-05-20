@@ -39,7 +39,7 @@ body {
     .page-title {
         @include titles_styles($color-bright-orange, 20px, normal, 700);
         position: relative !important;
-        @include login_polygon(-56px, -150px);
+        @include login_polygon(-29px, -181px, 12px, -15px);
     }
     .row {
         @include flex_column_center();
@@ -126,11 +126,13 @@ body {
         height: 100% !important;
         border-radius: 0 !important;
         border: 0 !important;
+        background: radial-gradient(301.69% 164.03% at -23.02% 16.96%, rgba(255, 238, 213, 0.4) 13.66%, #fffbee 28.39%, rgba(223, 224, 209, 0.4) 85.75%, #fff5e0 100%) !important;
         padding: 0;
         @include bottom_yellow_image(250vw, 250vw, 90svh);
         .page-title {
             @include titles_styles($color-bright-orange, clamp(16px, 4.8vw, 18px), normal, 700);
-            @include login_polygon(-75px, -13vw);
+
+            @include login_polygon(-75px, -13vw, -10px, 47px);
         }
         .row {
             .col-md-6 {
